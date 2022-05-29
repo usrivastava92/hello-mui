@@ -161,7 +161,7 @@ const TopBar: React.FC = (): JSX.Element => {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, borderBottom: 1, borderColor: 'border.main' }}>
       <AppBar
         position="static"
         sx={{ bgcolor: 'background.default', color: 'text.secondary' }}
