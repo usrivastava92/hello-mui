@@ -53,8 +53,18 @@ export const getThemeOptionsByMode = (mode: PaletteMode): ThemeOptions => {
     typography: {
       allVariants: {
         color: palette.text?.primary,
-        fontSize: '0.875rem',
         fontFamily: 'Roboto'
+      }
+    },
+    components: {
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            height: '2.9rem',
+            color: palette.text?.primary,
+            borderColor: palette.border?.main
+          }
+        }
       }
     }
   };
