@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' 'src/**/*.tsx' --write",
     "dev": "vite",
     "build": "tsc && vite build",
@@ -25,7 +24,7 @@
     "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^1.3.0",
     "sass": "^1.52.0",
-    "typescript": "^4.6.3",
+    "typescript": "4.7.2",
     "vite": "^2.9.9"
   }
 }
