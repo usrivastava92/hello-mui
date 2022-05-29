@@ -1,4 +1,3 @@
-import './App.scss';
 import {
   createTheme,
   CssBaseline,
@@ -6,8 +5,9 @@ import {
   useMediaQuery
 } from '@mui/material';
 import React from 'react';
+import './App.scss';
 import { getThemeOptionsByMode } from './config/theme';
-import TopBar from './TopBar';
+import TopMenuLayout from './layouts/TopMenuLayout';
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -20,7 +20,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <TopBar />
+      <TopMenuLayout />
     </ThemeProvider>
   );
 }
