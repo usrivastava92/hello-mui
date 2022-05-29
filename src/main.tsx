@@ -6,6 +6,7 @@ import './index.scss';
 import SideMenuLayout from './layouts/SideMenuLayout';
 import SimpleMenuLayout from './layouts/SimpleMenuLayout';
 import TopMenuLayout from './layouts/TopMenuLayout';
+import PageNotFound from './pages/404';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -19,7 +20,8 @@ function getRoutes(): React.ReactNode {
       <Route path="/" element={<App />}></Route>
       <Route path="/top" element={<TopMenuLayout />}></Route>
       <Route path="/side" element={<SideMenuLayout />}></Route>
-      <Route path="/simple" element={<SimpleMenuLayout />}></Route>
+      <Route path='/simple' element={<SimpleMenuLayout />}></Route>
+      <Route path='*' element={<PageNotFound />}></Route>
     </Routes>
   );
 }
