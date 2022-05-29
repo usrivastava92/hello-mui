@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' 'src/**/*.tsx' --write",
     "dev": "vite",
     "build": "tsc && vite build",
