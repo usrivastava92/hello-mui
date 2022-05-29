@@ -1,32 +1,26 @@
 import './App.scss';
 import {
-  Button,
   createTheme,
   CssBaseline,
   ThemeProvider,
-  Typography,
   useMediaQuery
 } from '@mui/material';
 import React from 'react';
-import { getPaletteByMode } from './config/theme';
+import { getThemeOptionsByMode } from './config/theme';
+import TopBar from './TopBar';
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-
   const theme = React.useMemo(
     () =>
-      createTheme({
-        palette: getPaletteByMode(prefersDarkMode ? 'dark' : 'light')
-      }),
+      createTheme(getThemeOptionsByMode(prefersDarkMode ? 'dark' : 'light')),
     [prefersDarkMode]
   );
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Typography>
-        <Button color={'primary'}>Hello World</Button>
-      </Typography>
+      <TopBar />
     </ThemeProvider>
   );
 }
