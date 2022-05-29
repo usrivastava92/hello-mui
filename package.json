@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' 'src/**/*.tsx' --write",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
