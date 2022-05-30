@@ -12,6 +12,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import SideMenuLayout from '@/layouts/SideMenuLayout';
 import SimpleMenuLayout from '@/layouts/SimpleMenuLayout';
 import PageNotFound from '@/pages/404';
+import Login from '@/pages/Login';
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -36,6 +37,7 @@ function getRoutes(): React.ReactNode {
       <Route path="/top" element={<TopMenuLayout />}></Route>
       <Route path="/side" element={<SideMenuLayout />}></Route>
       <Route path="/simple" element={<SimpleMenuLayout />}></Route>
+      <Route path="/login" element={<Login />}></Route>
       <Route path="*" element={<PageNotFound />}></Route>
     </Routes>
   );

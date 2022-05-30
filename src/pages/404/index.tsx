@@ -1,10 +1,18 @@
-import { Box, Button, Grid, Slide, Typography, useTheme } from '@mui/material';
-import React, { useRef } from 'react';
+import {
+  Box,
+  Button,
+  Typography,
+  useMediaQuery,
+  useTheme
+} from '@mui/material';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function PageNotFound(): JSX.Element {
   const theme = useTheme();
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  const isLargeDevice = useMediaQuery(theme.breakpoints.up('lg'));
+  const isLightMode = (): boolean => theme.palette.mode === 'light';
 
   return (
     <Box>
@@ -37,7 +45,7 @@ export default function PageNotFound(): JSX.Element {
           </Typography>
           <Typography
             fontWeight="bold"
-            variant="h4"
+            variant={isLargeDevice ? 'h4' : 'h6'}
             className="intro-x"
             component="div"
             color="white"
@@ -59,9 +67,9 @@ export default function PageNotFound(): JSX.Element {
             sx={{
               mt: 4,
               color: 'white',
-              borderColor: theme.palette.mode === 'light' ? 'white' : ''
+              borderColor: isLightMode() ? 'white' : ''
             }}
-            classes="intro-x"
+            className="intro-x"
             onClick={() => navigate('/', { replace: true })}
           >
             Back to Home
