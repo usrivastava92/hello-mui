@@ -2,8 +2,8 @@
   "name": "hello-mui",
   "private": true,
   "version": "0.0.0",
+  "pre-commit": "prettier-format",
   "scripts": {
-    "pre-commit": "prettier-format",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' 'src/**/*.tsx' --write",
     "dev": "vite",
     "build": "tsc && vite build",
