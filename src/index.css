@@ -2024,4 +2024,8 @@ html body {
   padding: 0;
 }
 
+li {
+  list-style: none;
+}
+
 /*# sourceMappingURL=index.css.map */

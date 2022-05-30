@@ -159,16 +159,15 @@ const TopBar: React.FC = (): JSX.Element => {
 
   const breadcrumbs = [
     <Link underline="hover" key="1" color="inherit" href="/">
-      MUI
+      Application
     </Link>,
-    <Typography key="3" fontWeight="bold">
-      Breadcrumb
+    <Typography key="2" fontWeight="bold">
+      Dashboard
     </Typography>
   ];
 
   return (
     <Box
-      color="white"
       sx={{
         flexGrow: 1,
         borderBottom: 1,
@@ -180,14 +179,8 @@ const TopBar: React.FC = (): JSX.Element => {
         sx={{ bgcolor: 'background.default', color: 'white' }}
         elevation={0}
       >
-        <Stack
-          direction="row"
-          alignItems="center"
-          justifyContent="space-between"
-        >
+        <Stack justifyContent="space-between">
           <Stack
-            direction="row"
-            alignItems="center"
             sx={{
               borderRight: 1,
               borderColor: 'border.main',
@@ -208,12 +201,7 @@ const TopBar: React.FC = (): JSX.Element => {
               LocalstackUI
             </Typography>
           </Stack>
-          <Stack
-            direction="row"
-            alignItems="center"
-            justifyContent="space-between"
-            sx={{ width: '100%', px: 3 }}
-          >
+          <Stack justifyContent="space-between" sx={{ px: 3 }}>
             <Stack spacing={2}>
               <Breadcrumbs
                 separator={<NavigateNextIcon fontSize="small" />}
@@ -222,11 +210,7 @@ const TopBar: React.FC = (): JSX.Element => {
                 {breadcrumbs}
               </Breadcrumbs>
             </Stack>
-            <Stack
-              direction="row"
-              alignItems="center"
-              justifyContent="space-between"
-            >
+            <Stack justifyContent="space-between">
               <Search sx={{ borderRadius: 30 }}>
                 <SearchIconWrapper>
                   <SearchIcon />
@@ -238,8 +222,8 @@ const TopBar: React.FC = (): JSX.Element => {
               </Search>
               <Box sx={{ flexGrow: 1 }} />
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                <IconButton size="large" aria-label="show 17 new notifications">
-                  <Badge badgeContent={17} color="error">
+                <IconButton size="large" aria-label="show 9+ new notifications">
+                  <Badge badgeContent="9+" color="error">
                     <NotificationsIcon />
                   </Badge>
                 </IconButton>

@@ -18,8 +18,7 @@ const lightModePallet: PaletteOptions = {
   },
   text: {
     primary: '#2d3748',
-    secondary: '#fff',
-    disabled: '#2d3748'
+    secondary: '#fff'
   },
   border: {
     main: '#2e51bb'
@@ -67,9 +66,26 @@ export const getThemeOptionsByMode = (mode: PaletteMode): ThemeOptions => {
         }
       },
       MuiIconButton: {
+        defaultProps: {
+          color: 'inherit'
+        }
+      },
+      MuiStack: {
+        defaultProps: {
+          color: 'inherit',
+          direction: 'row',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }
+      },
+      MuiLink: {
+        defaultProps: {
+          color: 'inherit',
+          underline: 'none'
+        },
         styleOverrides: {
           root: {
-            color: 'inherit'
+            cursor: 'pointer'
           }
         }
       }

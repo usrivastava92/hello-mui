@@ -17,7 +17,7 @@ export default function PageNotFound(): JSX.Element {
   const isLightMode = (): boolean => theme.palette.mode === 'light';
 
   return (
-    <Box>
+    <Box color="white">
       <Stack
         direction={{ xs: 'column', lg: 'row' }}
         justifyContent="space-evenly"
@@ -35,7 +35,7 @@ export default function PageNotFound(): JSX.Element {
             image="src/assets/images/error-illustration.svg"
           />
         </Box>
-        <Box color="white">
+        <Box>
           <Typography
             fontWeight="bold"
             variant="h2"
@@ -65,7 +65,6 @@ export default function PageNotFound(): JSX.Element {
             variant="outlined"
             sx={{
               mt: 4,
-              color: 'white',
               borderColor: isLightMode() ? 'white' : ''
             }}
             className="intro-x"
