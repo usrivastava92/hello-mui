@@ -4,22 +4,23 @@ import {
   AppBar,
   Badge,
   Box,
+  Breadcrumbs,
   CardMedia,
   IconButton,
   InputBase,
+  Link,
   Menu,
   MenuItem,
   Stack,
   styled,
-  Toolbar,
   Typography
 } from '@mui/material';
 import { AccountCircle } from '@mui/icons-material';
-import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import SearchIcon from '@mui/icons-material/Search';
 import MailIcon from '@mui/icons-material/Mail';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -127,7 +128,7 @@ const TopBar: React.FC = (): JSX.Element => {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+        <IconButton size="large" aria-label="show 4 new mails">
           <Badge badgeContent={4} color="error">
             <MailIcon />
           </Badge>
@@ -135,11 +136,7 @@ const TopBar: React.FC = (): JSX.Element => {
         <p>Messages</p>
       </MenuItem>
       <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
+        <IconButton size="large" aria-label="show 17 new notifications">
           <Badge badgeContent={17} color="error">
             <NotificationsIcon />
           </Badge>
@@ -152,7 +149,6 @@ const TopBar: React.FC = (): JSX.Element => {
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
-          color="inherit"
         >
           <AccountCircle />
         </IconButton>
@@ -161,11 +157,27 @@ const TopBar: React.FC = (): JSX.Element => {
     </Menu>
   );
 
+  const breadcrumbs = [
+    <Link underline="hover" key="1" color="inherit" href="/">
+      MUI
+    </Link>,
+    <Typography key="3" color="text.primary">
+      Breadcrumb
+    </Typography>
+  ];
+
   return (
-    <Box sx={{ flexGrow: 1, borderBottom: 1, borderColor: 'border.main' }}>
+    <Box
+      color="white"
+      sx={{
+        flexGrow: 1,
+        borderBottom: 1,
+        borderColor: 'border.main'
+      }}
+    >
       <AppBar
         position="static"
-        sx={{ bgcolor: 'background.default', color: 'text.secondary' }}
+        sx={{ bgcolor: 'background.default', color: 'white' }}
         elevation={0}
       >
         <Stack
@@ -179,16 +191,11 @@ const TopBar: React.FC = (): JSX.Element => {
             sx={{
               borderRight: 1,
               borderColor: 'border.main',
-              p: 4,
+              px: 3.5,
               py: 1
             }}
           >
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-            >
+            <IconButton size="large" edge="start" aria-label="open drawer">
               <CardMedia
                 component="img"
                 height={30}
@@ -197,69 +204,68 @@ const TopBar: React.FC = (): JSX.Element => {
                 image="src/assets/images/logo.png"
               />
             </IconButton>
-            <Typography variant="h6" noWrap color="white" component="div">
+            <Typography variant="h6" component="div">
               LocalstackUI
             </Typography>
           </Stack>
           <Stack
             direction="row"
             alignItems="center"
-            justifyContent="space-evenly"
-            sx={{ px: 3 }}
+            justifyContent="space-between"
+            sx={{ width: '100%', px: 3 }}
           >
-            <Search sx={{ borderRadius: 30 }}>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </Search>
-            <Box sx={{ flexGrow: 1 }} />
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-              <IconButton
-                size="large"
-                aria-label="show 4 new mails"
-                color="inherit"
+            <Stack spacing={2}>
+              <Breadcrumbs
+                separator={<NavigateNextIcon fontSize="small" />}
+                aria-label="breadcrumb"
               >
-                <Badge badgeContent={4} color="error">
-                  <MailIcon />
-                </Badge>
-              </IconButton>
-              <IconButton
-                size="large"
-                aria-label="show 17 new notifications"
-                color="inherit"
-              >
-                <Badge badgeContent={17} color="error">
-                  <NotificationsIcon />
-                </Badge>
-              </IconButton>
-              <IconButton
-                size="large"
-                edge="end"
-                aria-label="account of current user"
-                aria-controls={menuId}
-                aria-haspopup="true"
-                onClick={handleProfileMenuOpen}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-            </Box>
-            <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-              <IconButton
-                size="large"
-                aria-label="show more"
-                aria-controls={mobileMenuId}
-                aria-haspopup="true"
-                onClick={handleMobileMenuOpen}
-                color="inherit"
-              >
-                <MoreIcon />
-              </IconButton>
-            </Box>
+                {breadcrumbs}
+              </Breadcrumbs>
+            </Stack>
+            <Stack
+              direction="row"
+              alignItems="center"
+              justifyContent="space-between"
+            >
+              <Search sx={{ borderRadius: 30 }}>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                  placeholder="Search…"
+                  inputProps={{ 'aria-label': 'search' }}
+                />
+              </Search>
+              <Box sx={{ flexGrow: 1 }} />
+              <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                <IconButton size="large" aria-label="show 17 new notifications">
+                  <Badge badgeContent={17} color="error">
+                    <NotificationsIcon />
+                  </Badge>
+                </IconButton>
+                <IconButton
+                  size="large"
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-controls={menuId}
+                  aria-haspopup="true"
+                  onClick={handleProfileMenuOpen}
+                >
+                  <AccountCircle />
+                </IconButton>
+              </Box>
+              <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+                <IconButton
+                  size="large"
+                  aria-label="show more"
+                  aria-controls={mobileMenuId}
+                  aria-haspopup="true"
+                  onClick={handleMobileMenuOpen}
+                >
+                  <MoreIcon />
+                </IconButton>
+              </Box>
+            </Stack>
           </Stack>
         </Stack>
       </AppBar>

@@ -27,7 +27,7 @@ export default function PageNotFound(): JSX.Element {
           textAlign: { xs: 'center', lg: 'left' }
         }}
       >
-        <Box className="-intro-x ">
+        <Box className="-intro-x">
           <CardMedia
             component="img"
             height="450rem"
@@ -35,13 +35,12 @@ export default function PageNotFound(): JSX.Element {
             image="src/assets/images/error-illustration.svg"
           />
         </Box>
-        <Box>
+        <Box color="white">
           <Typography
             fontWeight="bold"
             variant="h2"
             className="intro-x"
             component="div"
-            color="white"
           >
             404
           </Typography>
@@ -50,7 +49,6 @@ export default function PageNotFound(): JSX.Element {
             variant={isLargeDevice ? 'h4' : 'h6'}
             className="intro-x"
             component="div"
-            color="white"
           >
             Oops. This page has gone missing.
           </Typography>
@@ -60,7 +58,6 @@ export default function PageNotFound(): JSX.Element {
             className="intro-x"
             sx={{ mt: 1 }}
             component="div"
-            color="white"
           >
             You may have mistyped the address or the page may have moved.
           </Typography>

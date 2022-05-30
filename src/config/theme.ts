@@ -52,7 +52,7 @@ export const getThemeOptionsByMode = (mode: PaletteMode): ThemeOptions => {
     palette: palette,
     typography: {
       allVariants: {
-        color: palette.text?.primary,
+        color: 'inherit',
         fontFamily: 'Roboto'
       }
     },
@@ -61,7 +61,7 @@ export const getThemeOptionsByMode = (mode: PaletteMode): ThemeOptions => {
         styleOverrides: {
           root: {
             height: '2.9rem',
-            color: palette.text?.primary,
+            color: 'inherit',
             borderColor: palette.border?.main
           }
         }
