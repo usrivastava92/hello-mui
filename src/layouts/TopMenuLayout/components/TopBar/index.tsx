@@ -161,7 +161,7 @@ const TopBar: React.FC = (): JSX.Element => {
     <Link underline="hover" key="1" color="inherit" href="/">
       MUI
     </Link>,
-    <Typography key="3" color="text.primary">
+    <Typography key="3" fontWeight="bold">
       Breadcrumb
     </Typography>
   ];

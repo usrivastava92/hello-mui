@@ -65,6 +65,13 @@ export const getThemeOptionsByMode = (mode: PaletteMode): ThemeOptions => {
             borderColor: palette.border?.main
           }
         }
+      },
+      MuiIconButton: {
+        styleOverrides: {
+          root: {
+            color: 'inherit'
+          }
+        }
       }
     }
   };
