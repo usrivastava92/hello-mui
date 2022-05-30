@@ -1,6 +1,8 @@
 import {
   Box,
   Button,
+  CardMedia,
+  Stack,
   Typography,
   useMediaQuery,
   useTheme
@@ -16,24 +18,24 @@ export default function PageNotFound(): JSX.Element {
 
   return (
     <Box>
-      <Box
-        display="flex"
+      <Stack
+        direction={{ xs: 'column', lg: 'row' }}
+        justifyContent="space-evenly"
+        alignItems="center"
         sx={{
-          flexDirection: { xs: 'column', lg: 'row' },
-          justifyContent: 'center',
-          alignItems: 'center',
           height: '100vh',
           textAlign: { xs: 'center', lg: 'left' }
         }}
       >
-        <Box sx={{ mr: { lg: 15 } }} className="-intro-x ">
-          <img
-            style={{ height: '23rem' }}
+        <Box className="-intro-x ">
+          <CardMedia
+            component="img"
+            height="450rem"
             alt="Not Found"
-            src="src/assets/images/error-illustration.svg"
+            image="src/assets/images/error-illustration.svg"
           />
         </Box>
-        <Box sx={{ mt: { xs: 10, lg: 0 } }}>
+        <Box>
           <Typography
             fontWeight="bold"
             variant="h2"
@@ -75,7 +77,7 @@ export default function PageNotFound(): JSX.Element {
             Back to Home
           </Button>
         </Box>
-      </Box>
+      </Stack>
     </Box>
   );
 }
