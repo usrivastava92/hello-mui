@@ -168,50 +168,46 @@ const TopBar: React.FC = (): JSX.Element => {
         sx={{ bgcolor: 'background.default', color: 'text.secondary' }}
         elevation={0}
       >
-        <Toolbar>
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+        >
           <Stack
             direction="row"
             alignItems="center"
-            justifyContent="space-between"
+            sx={{
+              borderRight: 1,
+              borderColor: 'border.main',
+              p: 4,
+              py: 1
+            }}
           >
-            <Stack
-              direction="row"
-              alignItems="center"
-              justifyContent="space-evenly"
-              sx={{
-                borderRight: 1,
-                borderColor: 'border.main',
-                pr: 4,
-                py: 1.5
-              }}
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
             >
-              <IconButton
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="open drawer"
-              >
-                <CardMedia
-                  component="img"
-                  height={30}
-                  alt="Localstack UI"
-                  className="w-6"
-                  image="src/assets/images/logo.png"
-                />
-              </IconButton>
-              <Typography
-                variant="h6"
-                noWrap
-                color="white"
-                component="div"
-                sx={{
-                  display: { xs: 'none', sm: 'block' }
-                }}
-              >
-                Localstack
-              </Typography>
-            </Stack>
-            <Search>
+              <CardMedia
+                component="img"
+                height={30}
+                alt="Localstack UI"
+                className="w-6"
+                image="src/assets/images/logo.png"
+              />
+            </IconButton>
+            <Typography variant="h6" noWrap color="white" component="div">
+              LocalstackUI
+            </Typography>
+          </Stack>
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="space-evenly"
+            sx={{ px: 3 }}
+          >
+            <Search sx={{ borderRadius: 30 }}>
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
@@ -265,7 +261,7 @@ const TopBar: React.FC = (): JSX.Element => {
               </IconButton>
             </Box>
           </Stack>
-        </Toolbar>
+        </Stack>
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
