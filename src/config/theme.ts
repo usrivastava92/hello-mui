@@ -1,4 +1,5 @@
 import { PaletteMode, PaletteOptions, ThemeOptions } from '@mui/material';
+import { typographyOptions } from '@/config/theme/typography.config';
 
 declare module '@mui/material/styles' {
   interface PaletteOptions {
@@ -11,6 +12,9 @@ declare module '@mui/material/styles' {
 const lightModePallet: PaletteOptions = {
   mode: 'light',
   primary: {
+    main: '#1C3FAA'
+  },
+  secondary: {
     main: '#F1F5F8'
   },
   background: {
@@ -28,6 +32,9 @@ const lightModePallet: PaletteOptions = {
 const darkModePallet: PaletteOptions = {
   mode: 'dark',
   primary: {
+    main: '#232a3b'
+  },
+  secondary: {
     main: '#293145'
   },
   background: {
@@ -49,12 +56,7 @@ export const getThemeOptionsByMode = (mode: PaletteMode): ThemeOptions => {
   const palette = getPaletteByMode(mode);
   return {
     palette: palette,
-    typography: {
-      allVariants: {
-        color: 'inherit',
-        fontFamily: 'Roboto'
-      }
-    },
+    typography: typographyOptions,
     components: {
       MuiButton: {
         styleOverrides: {

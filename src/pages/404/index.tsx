@@ -38,7 +38,7 @@ export default function PageNotFound(): JSX.Element {
         <Box>
           <Typography
             fontWeight="bold"
-            variant="h2"
+            variant="6xl"
             className="intro-x"
             component="div"
           >
@@ -46,15 +46,14 @@ export default function PageNotFound(): JSX.Element {
           </Typography>
           <Typography
             fontWeight="bold"
-            variant={isLargeDevice ? 'h4' : 'h6'}
+            variant={isLargeDevice ? '3xl' : 'xl'}
             className="intro-x"
             component="div"
           >
             Oops. This page has gone missing.
           </Typography>
           <Typography
-            fontWeight="bold"
-            variant="body1"
+            variant="lg"
             className="intro-x"
             sx={{ mt: 1 }}
             component="div"

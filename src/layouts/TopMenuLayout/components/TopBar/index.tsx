@@ -184,8 +184,9 @@ const TopBar: React.FC = (): JSX.Element => {
             sx={{
               borderRight: 1,
               borderColor: 'border.main',
-              px: 3.5,
-              py: 1
+              px: 6.5,
+              py: 1,
+              width: 'fit-content'
             }}
           >
             <IconButton size="large" edge="start" aria-label="open drawer">
@@ -201,7 +202,7 @@ const TopBar: React.FC = (): JSX.Element => {
               LocalstackUI
             </Typography>
           </Stack>
-          <Stack justifyContent="space-between" sx={{ px: 3 }}>
+          <Stack justifyContent="space-between" sx={{ px: 3, width: '100%' }}>
             <Stack spacing={2}>
               <Breadcrumbs
                 separator={<NavigateNextIcon fontSize="small" />}
