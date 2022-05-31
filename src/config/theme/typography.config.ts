@@ -54,11 +54,12 @@ declare module '@mui/material/styles' {
 }
 
 export const typographyOptions: TypographyOptions = {
-  allVariants: {
-    color: 'inherit',
-    fontSize: '1rem',
-    fontFamily: 'Roboto'
-  },
+  fontSize: 13,
+  fontFamily: 'Roboto',
+  fontWeightLight: 300,
+  fontWeightRegular: 410,
+  fontWeightMedium: 500,
+  fontWeightBold: 700,
   xs: {
     fontSize: '0.75rem',
     lineHeight: '1rem'

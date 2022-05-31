@@ -57,6 +57,15 @@ export const getThemeOptionsByMode = (mode: PaletteMode): ThemeOptions => {
   return {
     palette: palette,
     typography: typographyOptions,
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 640,
+        md: 768,
+        lg: 1024,
+        xl: 1280
+      }
+    },
     components: {
       MuiButton: {
         styleOverrides: {
