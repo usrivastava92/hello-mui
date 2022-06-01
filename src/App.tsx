@@ -6,7 +6,7 @@ import {
 } from '@mui/material';
 import React from 'react';
 import './App.scss';
-import { getThemeOptionsByMode } from './config/theme';
+import { getThemeOptionsByMode } from './config/theme/theme';
 import TopMenuLayout from './layouts/TopMenuLayout';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import SideMenuLayout from '@/layouts/SideMenuLayout';

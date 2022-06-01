@@ -12,24 +12,11 @@ import {
 } from '@mui/material';
 import React, { useState } from 'react';
 import { AccountCircle } from '@mui/icons-material';
-import AcUnitIcon from '@mui/icons-material/AcUnit';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import AccessibilityIcon from '@mui/icons-material/Accessibility';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
-
-interface MenuItem {
-  id: string;
-  isOpen: boolean;
-  icon: JSX.Element;
-  displayName: string;
-  routerLink?: string;
-  isActive?: boolean;
-  nesterItems: MenuItem[];
-}
+import { IMenuItem } from '@/config/menu/menu.config';
 
 interface MenuItemProps {
-  menuItem: MenuItem;
+  menuItem: IMenuItem;
   level?: number;
 }
 
@@ -42,30 +29,32 @@ const MenuItem: React.FC<MenuItemProps> = ({
   }
   const [open, setOpen] = useState(menuItem.isOpen);
   return (
-    <Link
-      href={menuItem.routerLink}
-      width="100%"
-      component="li"
-      sx={{ py: 1 }}
-      onClick={() => setOpen(!open)}
-    >
-      <Stack spacing={2}>
-        {menuItem.icon}
-        <Typography>{menuItem.displayName}</Typography>
-        <Box sx={{ flexGrow: 1 }} />
-        {menuItem.nesterItems && menuItem.nesterItems.length > 0 && (
-          <KeyboardArrowDownIcon />
-        )}
-      </Stack>
+    <>
+      <Link
+        href={menuItem.routerLink}
+        width="100%"
+        component="li"
+        sx={{ py: 1 }}
+        onClick={() => setOpen(!open)}
+      >
+        <Stack spacing={2}>
+          {menuItem.icon}
+          <Typography>{menuItem.displayName}</Typography>
+          <Box sx={{ flexGrow: 1 }} />
+          {menuItem.nesterItems && menuItem.nesterItems.length > 0 && (
+            <KeyboardArrowDownIcon />
+          )}
+        </Stack>
+      </Link>
       <Box>
         <Menu menuItems={menuItem.nesterItems} open={open} level={level + 1} />
       </Box>
-    </Link>
+    </>
   );
 };
 
 interface MenuProps {
-  menuItems: MenuItem[];
+  menuItems?: IMenuItem[];
   open: boolean;
   level?: number;
 }
@@ -86,7 +75,7 @@ const getMenuSxProps = (level: number): SxProps<Theme> => {
 };
 
 const Menu: React.FC<MenuProps> = ({
-  menuItems,
+  menuItems = [],
   open,
   level = 1
 }): JSX.Element => {
@@ -113,44 +102,13 @@ const Menu: React.FC<MenuProps> = ({
   );
 };
 
-const items = [
-  {
-    displayName: 'Dashboard',
-    isOpen: false,
-    id: 'dashboard',
-    icon: <AcUnitIcon />,
-    nesterItems: [],
-    routerLink: '/',
-    isActive: true
-  },
-  {
-    displayName: 'AWS',
-    isOpen: false,
-    id: 'aws/storage/aws',
-    icon: <AccessibilityIcon />,
-    nesterItems: [
-      {
-        displayName: 'Dynamo DB',
-        isOpen: false,
-        id: 'aws/storage/dynamoDB',
-        nesterItems: [
-          {
-            displayName: 'Hello',
-            isOpen: false,
-            id: 'aws/storage/hello',
-            icon: <CloudDownloadIcon />,
-            routerLink: 'test',
-            nesterItems: []
-          }
-        ],
-        routerLink: 'dynamodb',
-        icon: <AccessTimeIcon />
-      }
-    ]
-  }
-];
+interface MobileMenuProps {
+  menuItems?: IMenuItem[];
+}
 
-export default function MobileMenu(): JSX.Element {
+const MobileMenu: React.FC<MobileMenuProps> = ({
+  menuItems = []
+}): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -182,7 +140,9 @@ export default function MobileMenu(): JSX.Element {
           <AccountCircle />
         </IconButton>
       </Stack>
-      <Menu menuItems={items} open={menuOpen} />
+      <Menu menuItems={menuItems} open={menuOpen} />
     </Box>
   );
-}
+};
+
+export default MobileMenu;
