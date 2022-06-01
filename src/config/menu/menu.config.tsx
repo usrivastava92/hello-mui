@@ -12,10 +12,11 @@ import KeyboardIcon from '@mui/icons-material/Keyboard';
 import AddCommentIcon from '@mui/icons-material/AddComment';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import InputIcon from '@mui/icons-material/Input';
-import ViewColumnIcon from '@mui/icons-material/ViewColumn';
 import InboxIcon from '@mui/icons-material/Inbox';
 import WidgetsIcon from '@mui/icons-material/Widgets';
 import RemoveFromQueueIcon from '@mui/icons-material/RemoveFromQueue';
+import AppsIcon from '@mui/icons-material/Apps';
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 
 export interface IMenuItem {
   id: string;
@@ -27,7 +28,7 @@ export interface IMenuItem {
   nesterItems?: IMenuItem[];
 }
 
-export const menuItems: IMenuItem[] = [
+export const MENU_ITEMS: IMenuItem[] = [
   {
     displayName: 'Dashboard',
     isOpen: false,
@@ -69,7 +70,7 @@ export const menuItems: IMenuItem[] = [
     displayName: 'Apps',
     isOpen: false,
     id: 'apps',
-    icon: <BoltIcon />,
+    icon: <AppsIcon />,
     nesterItems: [
       {
         displayName: 'Users',
@@ -197,7 +198,7 @@ export const menuItems: IMenuItem[] = [
     displayName: 'Pages',
     isOpen: false,
     id: 'pages',
-    icon: <ViewColumnIcon />,
+    icon: <AutoStoriesIcon />,
     nesterItems: [
       {
         displayName: 'Wizards',

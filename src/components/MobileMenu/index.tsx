@@ -14,7 +14,8 @@ import React, { useState } from 'react';
 import { AccountCircle } from '@mui/icons-material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { IMenuItem } from '@/config/menu/menu.config';
-
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 interface MenuItemProps {
   menuItem: IMenuItem;
   level?: number;
@@ -137,7 +138,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
         >
-          <AccountCircle />
+          {menuOpen ? <CloseIcon /> : <MenuIcon />}
         </IconButton>
       </Stack>
       <Menu menuItems={menuItems} open={menuOpen} />
