@@ -2,7 +2,6 @@
 @import '@fontsource/roboto/400.css';
 @import '@fontsource/roboto/500.css';
 @import '@fontsource/roboto/700.css';
-@import "intro";
 
 html {
   margin: 0;
@@ -12,8 +11,4 @@ html {
 html body {
   margin: 0;
   padding: 0;
-}
-
-li {
-  list-style: none;
 }

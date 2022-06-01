@@ -2,6 +2,10 @@ import { PaletteMode, PaletteOptions, ThemeOptions } from '@mui/material';
 import { typographyOptions } from '@/config/theme/typography.config';
 
 declare module '@mui/material/styles' {
+  interface SimplePaletteColorOptions {
+    lighter?: string;
+    darker?: string;
+  }
   interface PaletteOptions {
     border?: {
       main?: string;
@@ -12,7 +16,16 @@ declare module '@mui/material/styles' {
 const lightModePallet: PaletteOptions = {
   mode: 'light',
   primary: {
-    main: '#1C3FAA'
+    100: '#2e51bb',
+    lighter: '#2e51bb',
+    300: '#2e51bb',
+    light: '#2e51bb',
+    500: '#1C3FAA',
+    main: '#1C3FAA',
+    700: '#1A389F',
+    dark: '#1A389F',
+    900: '#142C91',
+    darker: '#142C91'
   },
   secondary: {
     main: '#F1F5F8'
@@ -32,7 +45,16 @@ const lightModePallet: PaletteOptions = {
 const darkModePallet: PaletteOptions = {
   mode: 'dark',
   primary: {
-    main: '#232a3b'
+    100: '#313a55',
+    lighter: '#313a55',
+    300: '#313a55',
+    light: '#313a55',
+    500: '#232a3b',
+    main: '#232a3b',
+    700: '#1e2533',
+    dark: '#1e2533',
+    900: '#181f29',
+    darker: '#181f29'
   },
   secondary: {
     main: '#293145'

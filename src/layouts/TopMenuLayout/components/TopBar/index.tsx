@@ -70,13 +70,14 @@ export default function TopBar(): JSX.Element {
         borderColor: 'border.main',
         bgcolor: 'background.default',
         color: 'white',
-        px: 3,
+        px: { xs: 2, md: 3 },
         py: 1
       }}
     >
       <Stack>
         <Button
           className="-intro-x"
+          disableRipple={true}
           sx={{
             display: { xs: 'none', md: 'flex' },
             borderRight: 1,
