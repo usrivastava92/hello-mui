@@ -6,7 +6,7 @@ import { MENU_ITEMS } from '@/config/menu/menu.config';
 
 export default function TopMenuLayout(): JSX.Element {
   return (
-    <Box color="white">
+    <Box>
       <MobileMenu menuItems={MENU_ITEMS} />
       <TopBar />
       <TopNav />

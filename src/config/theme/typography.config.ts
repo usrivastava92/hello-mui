@@ -53,7 +53,7 @@ declare module '@mui/material/styles' {
   }
 }
 
-export const typographyOptions: TypographyOptions = {
+export const TYPOGRAPHY_OPTIONS: TypographyOptions = {
   fontSize: 13,
   fontFamily: 'Roboto',
   fontWeightLight: 300,

@@ -113,12 +113,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <Box
-      sx={{
-        display: { xs: 'block', md: 'none' }
-      }}
-      component="div"
-    >
+    <Box sx={{ display: { xs: 'block', md: 'none' } }} component="div">
       <Stack
         justifyContent="space-between"
         sx={{ borderBottom: 1, borderColor: 'border.main' }}

@@ -6,7 +6,7 @@ export default function PageNotFound(): JSX.Element {
   const navigate = useNavigate();
 
   return (
-    <Box color="white">
+    <Box>
       <Stack
         direction={{ xs: 'column', lg: 'row' }}
         justifyContent="space-evenly"

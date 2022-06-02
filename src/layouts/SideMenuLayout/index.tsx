@@ -1,9 +1,12 @@
-import { AppBar, Box, Button, Divider } from '@mui/material';
+import { AppBar, Box, Button, Divider, Stack } from '@mui/material';
+import MobileMenu from '@/components/MobileMenu';
+import { MENU_ITEMS } from '@/config/menu/menu.config';
 
 export default function SideMenuLayout(): JSX.Element {
   return (
-    <>
-      <Box display="flex" flexDirection="row">
+    <Box>
+      <MobileMenu menuItems={MENU_ITEMS}></MobileMenu>
+      <Stack>
         <Box flexGrow={0}>
           <AppBar elevation={0} position="sticky" sx={{ height: '100vh' }}>
             <div>Left</div>
@@ -25,7 +28,7 @@ export default function SideMenuLayout(): JSX.Element {
             <Button>try me2</Button>
           </AppBar>
         </Box>
-      </Box>
-    </>
+      </Stack>
+    </Box>
   );
 }

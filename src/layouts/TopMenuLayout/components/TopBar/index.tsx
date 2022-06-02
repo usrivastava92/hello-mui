@@ -102,7 +102,7 @@ export default function TopBar(): JSX.Element {
           separator={<NavigateNextIcon fontSize="small" />}
           aria-label="breadcrumb"
         >
-          <Link underline="hover" key="1" color="inherit" href="/">
+          <Link underline="hover" key="1" href="/">
             Application
           </Link>
           <Typography key="2" fontWeight="bold">
