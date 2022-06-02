@@ -2,6 +2,11 @@ import { Components, PaletteOptions } from '@mui/material';
 
 export const getComponentOptions = (palette: PaletteOptions): Components => {
   return {
+    MuiDivider: {
+      defaultProps: {
+        color: palette.border?.main
+      }
+    },
     MuiBreadcrumbs: {
       defaultProps: {
         color: 'inherit'

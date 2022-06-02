@@ -7,7 +7,11 @@ declare module '@mui/material/styles' {
   }
   interface PaletteOptions {
     border?: {
+      light?: string;
+      lighter?: string;
       main?: string;
+      dark?: string;
+      darker?: string;
     };
   }
 }
@@ -37,7 +41,8 @@ const lightModePallet: PaletteOptions = {
     secondary: '#2d3748'
   },
   border: {
-    main: '#2e51bb'
+    main: '#2e51bb',
+    light: ''
   }
 };
 

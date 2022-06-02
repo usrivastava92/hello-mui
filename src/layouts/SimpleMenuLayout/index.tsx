@@ -1,31 +1,16 @@
-import { AppBar, Box, Button, Divider } from '@mui/material';
+import { Box, Stack } from '@mui/material';
+import MobileMenu from '@/components/MobileMenu';
+import { MENU_ITEMS } from '@/config/menu/menu.config';
+import SideNav from '@/layouts/SimpleMenuLayout/components/SideNav';
 
 export default function SimpleMenuLayout(): JSX.Element {
   return (
     <>
-      <Box display="flex" flexDirection="row">
-        <Box flexGrow={0}>
-          <AppBar elevation={0} position="sticky">
-            <div>Left</div>
-            <div>appBar</div>
-            <Button>try me</Button>
-            <Divider />
-            <Button>try me2</Button>
-          </AppBar>
-        </Box>
-        <Box display="flex" flexDirection="row" flexGrow={1}>
-          <Box display="flex" flexDirection="column" flexGrow={1}></Box>
-        </Box>
-        <Box flexGrow={0}>
-          <AppBar elevation={0} position="sticky">
-            <div>Right</div>
-            <div>appBar</div>
-            <Button>try me</Button>
-            <Divider />
-            <Button>try me2</Button>
-          </AppBar>
-        </Box>
-      </Box>
+      <MobileMenu menuItems={MENU_ITEMS}></MobileMenu>
+      <Stack>
+        <SideNav menuItems={MENU_ITEMS} variant="mini" />
+        <Box sx={{ height: '100vh' }} flexGrow={1}></Box>
+      </Stack>
     </>
   );
 }
