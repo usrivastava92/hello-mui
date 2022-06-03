@@ -20,7 +20,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import SearchIcon from '@mui/icons-material/Search';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
-const Search = styled('div')(({ theme }) => ({
+export const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -36,7 +36,7 @@ const Search = styled('div')(({ theme }) => ({
   }
 }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
+export const SearchIconWrapper = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: '100%',
   position: 'absolute',
@@ -46,7 +46,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   justifyContent: 'center'
 }));
 
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
+export const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
@@ -66,10 +66,8 @@ export default function TopBar(): JSX.Element {
     <>
       <AppBar
         position="static"
-        elevation={0}
         sx={{
           bgcolor: 'background.default',
-          color: 'white',
           px: { xs: 2, md: 3 },
           py: 1
         }}

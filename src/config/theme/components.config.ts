@@ -39,6 +39,11 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
         alignItems: 'center'
       }
     },
+    MuiAppBar: {
+      defaultProps: {
+        elevation: 0
+      }
+    },
     MuiLink: {
       defaultProps: {
         color: 'inherit',

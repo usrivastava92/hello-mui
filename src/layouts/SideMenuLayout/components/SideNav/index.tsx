@@ -89,7 +89,7 @@ const Menu: React.FC<MenuProps> = ({
     level = 1;
   }
   return (
-    <List>
+    <List className="intro-x">
       {menuItems.map((item) => (
         <MenuItem key={item.id} item={item} mini={mini} level={level} />
       ))}
@@ -116,19 +116,11 @@ const SideNav: React.FC<SideNavProps> = ({
         display: { md: 'block', xs: 'none' }
       }}
     >
-      <AppBar
-        sx={{
-          borderColor: 'border.main',
-          bgcolor: 'background.default',
-          color: 'white'
-        }}
-        elevation={0}
-        position="sticky"
-      >
+      <AppBar sx={{ bgcolor: 'background.default' }} position="sticky">
         <Button
           className="intro-x"
           disableRipple={true}
-          sx={{ typography: 'h6', pr: mini ? 2.5 : 'auto' }}
+          sx={{ typography: 'h6', mb: 1, pr: mini ? 2.5 : 'auto' }}
           endIcon={
             <CardMedia
               component="img"

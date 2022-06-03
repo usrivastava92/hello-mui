@@ -5,7 +5,9 @@ declare module '@mui/material/styles' {
     lighter?: string;
     darker?: string;
   }
-
+  interface TypeBackground {
+    secondary?: string;
+  }
   interface PaletteOptions {
     border?: {
       light?: string;
@@ -35,7 +37,8 @@ const lightModePallet: PaletteOptions = {
     main: '#F1F5F8'
   },
   background: {
-    default: '#1C3FAA'
+    default: '#1C3FAA',
+    secondary: '#F1F5F8'
   },
   text: {
     primary: '#fff',
@@ -65,7 +68,8 @@ const darkModePallet: PaletteOptions = {
     main: '#293145'
   },
   background: {
-    default: '#232a3b'
+    default: '#232a3b',
+    secondary: '#293145'
   },
   text: {
     primary: '#e2e8f0'
