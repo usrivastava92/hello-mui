@@ -134,6 +134,7 @@ const SideNav: React.FC<SideNavProps> = ({
         </Button>
         <Divider variant="middle" flexItem={true} light={true} />
         <Menu menuItems={menuItems} mini={mini} />
+        <Divider variant="middle" flexItem={true} light={true} />
       </AppBar>
     </Box>
   );
