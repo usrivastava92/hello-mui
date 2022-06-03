@@ -10,7 +10,7 @@ $max: 50;
     transform: translateX(50px);
     animation: 0.4s intro-x-animation ease-in-out 0.33333s;
     animation-fill-mode: forwards;
-    animation-delay: calc($i / 10)s;
+    animation-delay: calc($i / 10) s;
   }
   * > .-intro-x:nth-child(#{$i}) {
     z-index: #{$max - $i};
@@ -19,7 +19,7 @@ $max: 50;
     transform: translateX(-50px);
     animation: 0.4s intro-x-animation ease-in-out 0.33333s;
     animation-fill-mode: forwards;
-    animation-delay: calc($i / 10)s;
+    animation-delay: calc($i / 10) s;
   }
   * > .intro-y:nth-child(#{$i}) {
     z-index: #{$max - $i};
@@ -28,7 +28,7 @@ $max: 50;
     transform: translateY(50px);
     animation: 0.4s intro-y-animation ease-in-out 0.33333s;
     animation-fill-mode: forwards;
-    animation-delay: calc($i / 10)s;
+    animation-delay: calc($i / 10) s;
   }
   * > .-intro-y:nth-child(#{$i}) {
     z-index: #{$max - $i};
@@ -37,7 +37,7 @@ $max: 50;
     transform: translateY(-50px);
     animation: 0.4s intro-y-animation ease-in-out 0.33333s;
     animation-fill-mode: forwards;
-    animation-delay: calc($i / 10)s;
+    animation-delay: calc($i / 10) s;
   }
 }
 

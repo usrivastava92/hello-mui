@@ -3,52 +3,52 @@ import {
   CardMedia,
   Collapse,
   IconButton,
-  Link,
   List,
+  ListItemButton,
+  ListItemText,
   Stack,
   SxProps,
-  Theme,
-  Typography
+  Theme
 } from '@mui/material';
 import React, { useState } from 'react';
-import { AccountCircle } from '@mui/icons-material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { IMenuItem } from '@/config/menu/menu.config';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { useNavigate } from 'react-router-dom';
+
 interface MenuItemProps {
-  menuItem: IMenuItem;
+  item: IMenuItem;
   level?: number;
 }
 
 const MenuItem: React.FC<MenuItemProps> = ({
-  menuItem,
+  item,
   level = 1
 }): JSX.Element => {
   if (level <= 0) {
     level = 1;
   }
-  const [open, setOpen] = useState(menuItem.isOpen);
+  const navigate = useNavigate();
+  const [open, setOpen] = useState(item.isOpen);
+  const hasNestedMenu = item.nesterItems && item.nesterItems.length > 0;
+  const handleClick = () => {
+    if (item.routerLink) {
+      navigate(item.routerLink);
+    } else {
+      item.isOpen = !item.isOpen;
+      setOpen(!open);
+    }
+  };
   return (
     <>
-      <Link
-        href={menuItem.routerLink}
-        width="100%"
-        component="li"
-        sx={{ py: 1 }}
-        onClick={() => setOpen(!open)}
-      >
-        <Stack spacing={2}>
-          {menuItem.icon}
-          <Typography>{menuItem.displayName}</Typography>
-          <Box sx={{ flexGrow: 1 }} />
-          {menuItem.nesterItems && menuItem.nesterItems.length > 0 && (
-            <KeyboardArrowDownIcon />
-          )}
-        </Stack>
-      </Link>
+      <ListItemButton component="li" sx={{ py: 1 }} onClick={handleClick}>
+        {item.icon}
+        <ListItemText sx={{ ml: 1.5 }} primary={item.displayName} />
+        {hasNestedMenu && <KeyboardArrowDownIcon />}
+      </ListItemButton>
       <Box>
-        <Menu menuItems={menuItem.nesterItems} open={open} level={level + 1} />
+        <Menu menuItems={item.nesterItems} open={open} level={level + 1} />
       </Box>
     </>
   );
@@ -95,7 +95,7 @@ const Menu: React.FC<MenuProps> = ({
       {menuItems && menuItems.length > 0 && (
         <List component="ul">
           {menuItems.map((menuItem) => (
-            <MenuItem key={menuItem.id} menuItem={menuItem} level={level} />
+            <MenuItem key={menuItem.id} item={menuItem} level={level} />
           ))}
         </List>
       )}

@@ -5,6 +5,11 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
     MuiDivider: {
       defaultProps: {
         color: palette.border?.main
+      },
+      styleOverrides: {
+        root: {
+          borderColor: palette.border?.main
+        }
       }
     },
     MuiBreadcrumbs: {

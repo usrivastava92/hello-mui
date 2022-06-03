@@ -3,34 +3,115 @@ import {
   Box,
   Button,
   CardMedia,
+  Collapse,
   Divider,
   List,
   ListItemButton,
   ListItemText
 } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import { IMenuItem } from '@/config/menu/menu.config';
-import { menuItems } from '@/layouts/TopMenuLayout/components/TopNav';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import BootstrapTooltip from '@/components/BootstrapTooltip';
+import { useNavigate } from 'react-router-dom';
+
+const getBgColorByLevel = (level: number): string => {
+  if (level >= 3) {
+    return 'primary.darker';
+  }
+  if (level === 2) {
+    return 'primary.dark';
+  }
+  return 'primary.main';
+};
+
+interface MenuItemProps {
+  mini?: boolean;
+  item: IMenuItem;
+  level?: number;
+}
+
+const MenuItem: React.FC<MenuItemProps> = ({
+  mini = false,
+  item,
+  level = 1
+}): JSX.Element => {
+  if (level <= 0) {
+    level = 1;
+  }
+  const navigate = useNavigate();
+  const [open, setOpen] = useState(item.isOpen);
+  const handleClick = () => {
+    if (item.routerLink) {
+      navigate(item.routerLink);
+    } else {
+      item.isOpen = !item.isOpen;
+      setOpen(!open);
+    }
+  };
+  const hasNestedMenu = item.nesterItems && item.nesterItems.length > 0;
+  return (
+    <>
+      <BootstrapTooltip title={mini ? item.displayName : ''} placement="right">
+        <ListItemButton
+          sx={{ mx: 2, bgcolor: getBgColorByLevel(level) }}
+          onClick={handleClick}
+        >
+          {item.icon}
+          {!mini && (
+            <ListItemText sx={{ ml: 1.5 }} primary={item.displayName} />
+          )}
+          {!mini && hasNestedMenu && <KeyboardArrowDownIcon />}
+        </ListItemButton>
+      </BootstrapTooltip>
+
+      {hasNestedMenu && (
+        <Collapse in={open}>
+          <Menu menuItems={item.nesterItems} mini={mini} level={level + 1} />
+        </Collapse>
+      )}
+    </>
+  );
+};
+
+interface MenuProps {
+  mini?: boolean;
+  menuItems?: IMenuItem[];
+  level?: number;
+}
+
+const Menu: React.FC<MenuProps> = ({
+  mini = false,
+  menuItems = [],
+  level = 1
+}) => {
+  if (level <= 0) {
+    level = 1;
+  }
+  return (
+    <List>
+      {menuItems.map((item) => (
+        <MenuItem key={item.id} item={item} mini={mini} level={level} />
+      ))}
+    </List>
+  );
+};
 
 interface SideNavProps {
-  variant?: 'default' | 'mini';
+  mini?: boolean;
   menuItems?: IMenuItem[];
 }
 
 const SideNav: React.FC<SideNavProps> = ({
-  variant = 'default',
+  mini = false,
   menuItems = []
 }): JSX.Element => {
-  const isMini = variant == 'mini';
-
   return (
     <Box
       sx={{
-        bgcolor: 'background.default',
         height: '100vh',
-        width: isMini ? '85px' : '230px',
-        px: 'auto',
-        pb: '4rem',
+        width: mini ? '85px' : '230px',
+        pt: 3,
         overflowX: 'hidden',
         display: { md: 'block', xs: 'none' }
       }}
@@ -45,9 +126,9 @@ const SideNav: React.FC<SideNavProps> = ({
         position="sticky"
       >
         <Button
-          className="-intro-x"
+          className="intro-x"
           disableRipple={true}
-          sx={{ typography: 'h6', pr: isMini ? 2.5 : 'auto' }}
+          sx={{ typography: 'h6', pr: mini ? 2.5 : 'auto' }}
           endIcon={
             <CardMedia
               component="img"
@@ -57,17 +138,10 @@ const SideNav: React.FC<SideNavProps> = ({
             />
           }
         >
-          {!isMini && 'Localstack'}
+          {!mini && 'Localstack'}
         </Button>
         <Divider variant="middle" flexItem={true} light={true} />
-        <List>
-          {menuItems.map((item, index) => (
-            <ListItemButton key={index} sx={{ pl: isMini ? 4 : 'auto' }}>
-              {item.icon}
-              {!isMini && <ListItemText primary={item.displayName} />}
-            </ListItemButton>
-          ))}
-        </List>
+        <Menu menuItems={menuItems} mini={mini} />
       </AppBar>
     </Box>
   );

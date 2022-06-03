@@ -5,6 +5,7 @@ declare module '@mui/material/styles' {
     lighter?: string;
     darker?: string;
   }
+
   interface PaletteOptions {
     border?: {
       light?: string;

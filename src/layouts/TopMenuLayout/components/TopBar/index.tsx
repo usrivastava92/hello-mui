@@ -7,6 +7,7 @@ import {
   Breadcrumbs,
   Button,
   CardMedia,
+  Divider,
   IconButton,
   InputBase,
   Link,
@@ -62,79 +63,81 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function TopBar(): JSX.Element {
   return (
-    <AppBar
-      position="static"
-      elevation={0}
-      sx={{
-        borderBottom: 1,
-        borderColor: 'border.main',
-        bgcolor: 'background.default',
-        color: 'white',
-        px: { xs: 2, md: 3 },
-        py: 1
-      }}
-    >
-      <Stack>
-        <Button
-          className="-intro-x"
-          disableRipple={true}
-          sx={{
-            display: { xs: 'none', md: 'flex' },
-            borderRight: 1,
-            borderColor: 'border.main',
-            pr: 4,
-            mr: 4,
-            typography: 'h6'
-          }}
-          endIcon={
-            <CardMedia
-              component="img"
-              height={30}
-              alt="Localstack UI"
-              image="src/assets/images/logo.png"
-            />
-          }
-        >
-          Localstack
-        </Button>
-        <Breadcrumbs
-          className="-intro-x"
-          separator={<NavigateNextIcon fontSize="small" />}
-          aria-label="breadcrumb"
-        >
-          <Link underline="hover" key="1" href="/">
-            Application
-          </Link>
-          <Typography key="2" fontWeight="bold">
-            Dashboard
-          </Typography>
-        </Breadcrumbs>
-        <Box sx={{ flexGrow: 1 }} />
-        <Stack className="intro-x" justifyContent="space-between">
-          <Search sx={{ borderRadius: 30 }}>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-          <IconButton size="large" aria-label="show 9+ new notifications">
-            <Badge badgeContent="9+" color="error">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <IconButton
-            size="large"
-            edge="end"
-            aria-label="account of current user"
-            aria-haspopup="true"
+    <>
+      <AppBar
+        position="static"
+        elevation={0}
+        sx={{
+          bgcolor: 'background.default',
+          color: 'white',
+          px: { xs: 2, md: 3 },
+          py: 1
+        }}
+      >
+        <Stack>
+          <Button
+            className="-intro-x"
+            disableRipple={true}
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              typography: 'h6'
+            }}
+            endIcon={
+              <CardMedia
+                component="img"
+                height={30}
+                alt="Localstack UI"
+                image="src/assets/images/logo.png"
+              />
+            }
           >
-            <AccountCircle />
-          </IconButton>
+            Localstack
+          </Button>
+          <Divider
+            flexItem={true}
+            orientation="vertical"
+            sx={{ mx: 3, display: { xs: 'none', md: 'flex' } }}
+          />
+          <Breadcrumbs
+            className="-intro-x"
+            separator={<NavigateNextIcon fontSize="small" />}
+            aria-label="breadcrumb"
+          >
+            <Link underline="hover" key="1" href="/">
+              Application
+            </Link>
+            <Typography key="2" fontWeight="bold">
+              Dashboard
+            </Typography>
+          </Breadcrumbs>
+          <Box sx={{ flexGrow: 1 }} />
+          <Stack className="intro-x" justifyContent="space-between">
+            <Search sx={{ borderRadius: 30 }}>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ 'aria-label': 'search' }}
+              />
+            </Search>
+            <IconButton size="large" aria-label="show 9+ new notifications">
+              <Badge badgeContent="9+" color="error">
+                <NotificationsIcon />
+              </Badge>
+            </IconButton>
+            <IconButton
+              size="large"
+              edge="end"
+              aria-label="account of current user"
+              aria-haspopup="true"
+            >
+              <AccountCircle />
+            </IconButton>
+          </Stack>
         </Stack>
-      </Stack>
-    </AppBar>
+      </AppBar>
+      <Divider />
+    </>
   );
 }
