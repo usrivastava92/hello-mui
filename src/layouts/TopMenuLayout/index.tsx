@@ -12,7 +12,9 @@ export default function TopMenuLayout(): JSX.Element {
       <TopBar />
       <TopNav />
       <Box display="flex" flexDirection="column" sx={{ minHeight: '100vh' }}>
-        <ContentWrapper></ContentWrapper>
+        <ContentWrapper>
+          <></>
+        </ContentWrapper>
       </Box>
     </Box>
   );
