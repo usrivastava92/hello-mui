@@ -17,7 +17,7 @@ specifiers:
   react-router-dom: ^6.3.0
   react-test-renderer: ^18.1.0
   sass: ^1.52.1
-  typescript: 4.7.2
+  typescript: 4.7.3
   vite: ^2.9.9
 
 dependencies:
@@ -39,7 +39,7 @@ devDependencies:
   pre-commit: 1.2.2
   react-test-renderer: 18.1.0_react@18.1.0
   sass: 1.52.1
-  typescript: 4.7.2
+  typescript: 4.7.3
   vite: 2.9.9_sass@1.52.1
 
 packages:
@@ -3202,8 +3202,8 @@ packages:
     resolution: {integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=}
     dev: true
 
-  /typescript/4.7.2:
-    resolution: {integrity: sha512-Mamb1iX2FDUpcTRzltPxgWMKy3fhg0TN378ylbktPGPK/99KbDtMQ4W1hwgsbPAsG3a0xKa1vmw4VKZQbkvz5A==}
+  /typescript/4.7.3:
+    resolution: {integrity: sha512-WOkT3XYvrpXx4vMMqlD+8R8R37fZkjyLGlxavMc4iB8lrl8L0DeTcHbYgw/v0N/z9wAFsgBhcsF0ruoySS22mA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
