@@ -6,6 +6,8 @@ import {
   Breadcrumbs,
   Divider,
   IconButton,
+  InputAdornment,
+  InputBase,
   Link,
   Stack,
   Typography
@@ -14,11 +16,6 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { AccountCircle } from '@mui/icons-material';
-import {
-  Search,
-  SearchIconWrapper,
-  StyledInputBase
-} from '@/layouts/TopMenuLayout/components/TopBar';
 
 const TopBar: React.FC = () => {
   return (
@@ -47,15 +44,21 @@ const TopBar: React.FC = () => {
           </Breadcrumbs>
           <Box sx={{ flexGrow: 1 }} />
           <Stack className="intro-x" justifyContent="space-between">
-            <Search sx={{ borderRadius: 30 }}>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </Search>
+            <InputBase
+              sx={{
+                borderRadius: 30,
+                height: 40,
+                pl: 2,
+                bgcolor: 'secondary.dark',
+                color: 'text.secondary'
+              }}
+              placeholder="Search..."
+              endAdornment={
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              }
+            />
             <IconButton size="large" aria-label="show 9+ new notifications">
               <Badge badgeContent="9+" color="error" component="div">
                 <NotificationsIcon />

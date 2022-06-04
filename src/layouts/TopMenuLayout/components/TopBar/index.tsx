@@ -63,31 +63,24 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const BrandLogo = (): JSX.Element => {
   return (
-    <>
-      <Button
-        className="-intro-x"
-        disableRipple={true}
-        sx={{
-          display: { xs: 'none', md: 'flex' },
-          typography: 'h6'
-        }}
-        endIcon={
-          <CardMedia
-            component="img"
-            height={30}
-            alt="Localstack UI"
-            image="src/assets/images/logo.png"
-          />
-        }
-      >
-        Localstack
-      </Button>
-      <Divider
-        flexItem={true}
-        orientation="vertical"
-        sx={{ mx: 3, display: { xs: 'none', md: 'flex' } }}
-      />
-    </>
+    <Button
+      className="-intro-x"
+      disableRipple={true}
+      sx={{
+        display: { xs: 'none', md: 'flex' },
+        typography: 'h6'
+      }}
+      endIcon={
+        <CardMedia
+          component="img"
+          height={30}
+          alt="Localstack UI"
+          image="src/assets/images/logo.png"
+        />
+      }
+    >
+      Localstack
+    </Button>
   );
 };
 
@@ -104,6 +97,11 @@ export default function TopBar(): JSX.Element {
       >
         <Stack>
           <BrandLogo />
+          <Divider
+            flexItem={true}
+            orientation="vertical"
+            sx={{ mx: 3, display: { xs: 'none', md: 'flex' } }}
+          />
           <Breadcrumbs
             className="-intro-x"
             separator={<NavigateNextIcon fontSize="small" />}
