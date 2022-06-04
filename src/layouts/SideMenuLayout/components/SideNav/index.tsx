@@ -15,7 +15,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import BootstrapTooltip from '@/components/BootstrapTooltip';
 import { useNavigate } from 'react-router-dom';
 
-const getBgColorByLevel = (level: number): string => {
+export const getBgColorByLevel = (level: number): string => {
   if (level >= 3) {
     return 'primary.darker';
   }

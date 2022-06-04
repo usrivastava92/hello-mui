@@ -1,77 +1,79 @@
 import React from 'react';
-import {
-  Box,
-  List,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  MenuItem,
-  MenuList,
-  Popper,
-  Stack
-} from '@mui/material';
+import { Box, List, ListItemButton, ListItemText } from '@mui/material';
 import { IMenuItem } from '@/config/menu/menu.config';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import '@/top-nav.scss';
+import { getBgColorByLevel } from '@/layouts/SideMenuLayout/components/SideNav';
+import { useNavigate } from 'react-router-dom';
+
+interface MenuItemProps {
+  item: IMenuItem;
+  level?: number;
+}
+
+const MenuItem: React.FC<MenuItemProps> = ({ item, level = 1 }) => {
+  if (level <= 0) {
+    level = 1;
+  }
+  const navigate = useNavigate();
+  const hasNestedItems = item.nesterItems && item.nesterItems.length > 0;
+  const handleClick = () => {
+    if (item.routerLink) {
+      navigate(item.routerLink);
+    }
+  };
+  return (
+    <ListItemButton component="li" className="top-menu" onClick={handleClick}>
+      {item.icon}
+      <ListItemText primary={item.displayName} sx={{ ml: 2 }} />
+      {hasNestedItems && (
+        <KeyboardArrowDownIcon className="top-menu__sub-icon" />
+      )}
+      {hasNestedItems && (
+        <Menu menuItems={item.nesterItems} level={level + 1} />
+      )}
+    </ListItemButton>
+  );
+};
+
+interface MenuProps {
+  menuItems?: IMenuItem[];
+  level?: number;
+}
+
+const Menu: React.FC<MenuProps> = ({ menuItems = [], level = 1 }) => {
+  if (level <= 0) {
+    level = 1;
+  }
+  return (
+    <List
+      component="ul"
+      sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        padding: 0,
+        bgcolor: getBgColorByLevel(level)
+      }}
+    >
+      {menuItems.map((item) => (
+        <MenuItem key={item.id} item={item} level={level} />
+      ))}
+    </List>
+  );
+};
 
 interface TopNavProps {
   menuItems?: IMenuItem[];
 }
 
-interface MenuProps {
-  menuItems: IMenuItem[];
-}
-
-const Menu: React.FC<MenuProps> = ({ menuItems }) => {
-  return (
-    <Box sx={{ m: 1, bgcolor: 'primary.dark' }}>
-      <MenuList>
-        {menuItems.map((item) => (
-          <MenuItem key={item.id}>
-            <ListItemIcon>{item.icon}</ListItemIcon>
-            <ListItemText>{item.displayName}</ListItemText>
-          </MenuItem>
-        ))}
-      </MenuList>
-    </Box>
-  );
-};
-
 const TopNav: React.FC<TopNavProps> = ({ menuItems = [] }): JSX.Element => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-
-  const handleOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(anchorEl ? null : event.currentTarget);
-  };
-  const handleClose = () => setAnchorEl(null);
-  const open = Boolean(anchorEl);
-
   return (
-    <Box sx={{ mt: 2, px: 6, display: { xs: 'none', md: 'block' } }}>
-      <List
-        component="nav"
-        sx={{ display: 'flex', flexDirection: 'row', padding: 0 }}
-      >
-        {menuItems.map((item) => (
-          <ListItemButton
-            key={item.id}
-            onMouseEnter={handleOpen}
-            onMouseLeave={handleClose}
-          >
-            <Stack spacing={1.5}>
-              {item.icon}
-              <ListItemText primary={item.displayName} />
-              {item.nesterItems && item.nesterItems.length > 0 && (
-                <KeyboardArrowDownIcon />
-              )}
-            </Stack>
-            {item.nesterItems && item.nesterItems.length > 0 && (
-              <Popper open={open} anchorEl={anchorEl} placement="right-end">
-                <Menu menuItems={item.nesterItems} />
-              </Popper>
-            )}
-          </ListItemButton>
-        ))}
-      </List>
+    <Box
+      sx={{ mt: 2, px: 6, display: { xs: 'none', md: 'block' } }}
+      className="top-nav"
+      component="nav"
+    >
+      <Menu menuItems={menuItems} />
     </Box>
   );
 };
