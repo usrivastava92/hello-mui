@@ -21,7 +21,7 @@ export default function PageNotFound(): JSX.Element {
             component="img"
             height="450rem"
             alt="Not Found"
-            image="src/assets/images/error-illustration.svg"
+            image="/src/assets/images/error-illustration.svg"
           />
         </Box>
         <Box>

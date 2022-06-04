@@ -12,11 +12,8 @@ declare module '@mui/material/styles' {
 
   interface PaletteOptions {
     border?: {
-      light?: string;
-      lighter?: string;
-      main?: string;
-      dark?: string;
-      darker?: string;
+      primary?: string;
+      secondary?: string;
     };
   }
 }
@@ -24,8 +21,8 @@ declare module '@mui/material/styles' {
 const lightModePallet: PaletteOptions = {
   mode: 'light',
   primary: {
-    100: '#2e51bb',
-    lighter: '#2e51bb',
+    100: '#3151BC',
+    lighter: '#3151BC',
     300: '#2e51bb',
     light: '#2e51bb',
     500: '#1C3FAA',
@@ -47,8 +44,8 @@ const lightModePallet: PaletteOptions = {
     secondary: '#2d3748'
   },
   border: {
-    main: '#2e51bb',
-    light: ''
+    primary: '#2e51bb',
+    secondary: '#dee7ef'
   }
 };
 
@@ -77,7 +74,7 @@ const darkModePallet: PaletteOptions = {
     primary: '#e2e8f0'
   },
   border: {
-    main: '#313a55'
+    primary: '#313a55'
   }
 };
 

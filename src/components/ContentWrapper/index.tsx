@@ -9,6 +9,7 @@ const ContentWrapper: React.FC<ContentWrapperProps> = ({ children }) => {
   return (
     <Box
       sx={{
+        color: 'text.secondary',
         bgcolor: 'secondary.main',
         m: 2,
         p: 2,

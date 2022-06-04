@@ -57,7 +57,7 @@ const TopBar: React.FC = () => {
               />
             </Search>
             <IconButton size="large" aria-label="show 9+ new notifications">
-              <Badge badgeContent="9+" color="error">
+              <Badge badgeContent="9+" color="error" component="div">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
@@ -72,7 +72,7 @@ const TopBar: React.FC = () => {
           </Stack>
         </Stack>
       </AppBar>
-      <Divider />
+      <Divider sx={{ borderColor: 'border.secondary' }} />
     </>
   );
 };

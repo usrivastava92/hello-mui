@@ -4,11 +4,11 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
   return {
     MuiDivider: {
       defaultProps: {
-        color: palette.border?.main
+        color: palette.border?.primary
       },
       styleOverrides: {
         root: {
-          borderColor: palette.border?.main
+          borderColor: palette.border?.primary
         }
       }
     },
@@ -22,7 +22,7 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
         root: {
           height: '2.9rem',
           color: 'inherit',
-          borderColor: palette.border?.main
+          borderColor: palette.border?.primary
         }
       }
     },
@@ -41,6 +41,7 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
     },
     MuiAppBar: {
       defaultProps: {
+        color: 'inherit',
         elevation: 0
       }
     },

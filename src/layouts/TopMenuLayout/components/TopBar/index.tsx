@@ -61,6 +61,36 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
   }
 }));
 
+const BrandLogo = (): JSX.Element => {
+  return (
+    <>
+      <Button
+        className="-intro-x"
+        disableRipple={true}
+        sx={{
+          display: { xs: 'none', md: 'flex' },
+          typography: 'h6'
+        }}
+        endIcon={
+          <CardMedia
+            component="img"
+            height={30}
+            alt="Localstack UI"
+            image="src/assets/images/logo.png"
+          />
+        }
+      >
+        Localstack
+      </Button>
+      <Divider
+        flexItem={true}
+        orientation="vertical"
+        sx={{ mx: 3, display: { xs: 'none', md: 'flex' } }}
+      />
+    </>
+  );
+};
+
 export default function TopBar(): JSX.Element {
   return (
     <>
@@ -73,29 +103,7 @@ export default function TopBar(): JSX.Element {
         }}
       >
         <Stack>
-          <Button
-            className="-intro-x"
-            disableRipple={true}
-            sx={{
-              display: { xs: 'none', md: 'flex' },
-              typography: 'h6'
-            }}
-            endIcon={
-              <CardMedia
-                component="img"
-                height={30}
-                alt="Localstack UI"
-                image="src/assets/images/logo.png"
-              />
-            }
-          >
-            Localstack
-          </Button>
-          <Divider
-            flexItem={true}
-            orientation="vertical"
-            sx={{ mx: 3, display: { xs: 'none', md: 'flex' } }}
-          />
+          <BrandLogo />
           <Breadcrumbs
             className="-intro-x"
             separator={<NavigateNextIcon fontSize="small" />}
@@ -120,7 +128,7 @@ export default function TopBar(): JSX.Element {
               />
             </Search>
             <IconButton size="large" aria-label="show 9+ new notifications">
-              <Badge badgeContent="9+" color="error">
+              <Badge badgeContent="9+" color="error" component="div">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
