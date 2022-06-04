@@ -6,7 +6,7 @@ specifiers:
   '@fontsource/roboto': ^4.5.7
   '@mui/icons-material': ^5.8.0
   '@mui/material': ^5.8.0
-  '@types/jest': ^27.5.1
+  '@types/jest': 28.1.0
   '@types/react': 18.0.11
   '@types/react-dom': ^18.0.0
   '@vitejs/plugin-react': ^1.3.0
@@ -31,7 +31,7 @@ dependencies:
   react-router-dom: 6.3.0_ef5jwxihqo6n7gxfmzogljlgcm
 
 devDependencies:
-  '@types/jest': 27.5.2
+  '@types/jest': 28.1.0
   '@types/react': 18.0.11
   '@types/react-dom': 18.0.5
   '@vitejs/plugin-react': 1.3.2
@@ -1048,8 +1048,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/27.5.2:
-    resolution: {integrity: sha512-mpT8LJJ4CMeeahobofYWIjFo0xonRS/HfxnVEPMPFSQdGUt1uHCnoPT7Zhb+sjDU2wz0oKV0OLUR0WzrHNgfeA==}
+  /@types/jest/28.1.0:
+    resolution: {integrity: sha512-ITfF6JJIl9zbEi2k6NmhNE/BiDqfsI/ceqfvdaWaPbcrCpYyyRq4KtDQIWh6vQUru6SqwppODiom/Zhid+np6A==}
     dependencies:
       jest-matcher-utils: 27.5.1
       pretty-format: 27.5.1
