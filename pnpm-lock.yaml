@@ -16,7 +16,7 @@ specifiers:
   react-dom: ^18.0.0
   react-router-dom: ^6.3.0
   react-test-renderer: ^18.1.0
-  sass: ^1.52.1
+  sass: 1.52.2
   typescript: 4.7.3
   vite: ^2.9.9
 
@@ -38,9 +38,9 @@ devDependencies:
   jest: 28.1.0
   pre-commit: 1.2.2
   react-test-renderer: 18.1.0_react@18.1.0
-  sass: 1.52.1
+  sass: 1.52.2
   typescript: 4.7.3
-  vite: 2.9.9_sass@1.52.1
+  vite: 2.9.9_sass@1.52.2
 
 packages:
 
@@ -2966,8 +2966,8 @@ packages:
   /safe-buffer/5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
 
-  /sass/1.52.1:
-    resolution: {integrity: sha512-fSzYTbr7z8oQnVJ3Acp9hV80dM1fkMN7mSD/25mpcct9F7FPBMOI8krEYALgU1aZoqGhQNhTPsuSmxjnIvAm4Q==}
+  /sass/1.52.2:
+    resolution: {integrity: sha512-mfHB2VSeFS7sZlPv9YohB9GB7yWIgQNTGniQwfQ04EoQN0wsQEv7SwpCwy/x48Af+Z3vDeFXz+iuXM3HK/phZQ==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
@@ -3221,7 +3221,7 @@ packages:
       convert-source-map: 1.8.0
     dev: true
 
-  /vite/2.9.9_sass@1.52.1:
+  /vite/2.9.9_sass@1.52.2:
     resolution: {integrity: sha512-ffaam+NgHfbEmfw/Vuh6BHKKlI/XIAhxE5QSS7gFLIngxg171mg1P3a4LSRME0z2ZU1ScxoKzphkipcYwSD5Ew==}
     engines: {node: '>=12.2.0'}
     hasBin: true
@@ -3241,7 +3241,7 @@ packages:
       postcss: 8.4.14
       resolve: 1.22.0
       rollup: 2.75.1
-      sass: 1.52.1
+      sass: 1.52.2
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
