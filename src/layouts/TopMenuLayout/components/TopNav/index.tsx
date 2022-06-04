@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, List, ListItemButton, ListItemText } from '@mui/material';
 import { IMenuItem } from '@/config/menu/menu.config';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import '@/top-nav.scss';
+import './topNav.scss';
 import { getBgColorByLevel } from '@/layouts/SideMenuLayout/components/SideNav';
 import { useNavigate } from 'react-router-dom';
 
@@ -23,7 +23,13 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, level = 1 }) => {
     }
   };
   return (
-    <ListItemButton component="li" className="top-menu" onClick={handleClick}>
+    <ListItemButton
+      component="li"
+      className={`top-menu ${
+        level === 1 && item.isActive ? 'top-menu--active' : ''
+      }`}
+      onClick={handleClick}
+    >
       {item.icon}
       <ListItemText primary={item.displayName} sx={{ ml: 2 }} />
       {hasNestedItems && (
