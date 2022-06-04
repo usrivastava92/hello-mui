@@ -2,6 +2,7 @@ import {
   Box,
   CardMedia,
   Collapse,
+  Divider,
   IconButton,
   List,
   ListItemButton,
@@ -62,17 +63,12 @@ interface MenuProps {
 
 const getMenuSxProps = (level: number): SxProps<Theme> => {
   if (level >= 3) {
-    return { borderRadius: 2, bgcolor: 'primary.darker', border: 0 };
+    return { borderRadius: 2, bgcolor: 'primary.darker' };
   }
   if (level === 2) {
-    return { borderRadius: 2, bgcolor: 'primary.dark', border: 0 };
+    return { borderRadius: 2, bgcolor: 'primary.dark' };
   }
-  return {
-    borderRadius: 0,
-    bgcolor: 'primary.main',
-    borderBottom: 1,
-    borderColor: 'border.main'
-  };
+  return { borderRadius: 0, bgcolor: 'primary.main' };
 };
 
 const Menu: React.FC<MenuProps> = ({
@@ -114,10 +110,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 
   return (
     <Box sx={{ display: { xs: 'block', md: 'none' } }} component="div">
-      <Stack
-        justifyContent="space-between"
-        sx={{ borderBottom: 1, borderColor: 'border.main' }}
-      >
+      <Stack justifyContent="space-between">
         <IconButton size="large" aria-label="open drawer">
           <CardMedia
             component="img"
@@ -136,7 +129,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
           {menuOpen ? <CloseIcon /> : <MenuIcon />}
         </IconButton>
       </Stack>
+      <Divider />
       <Menu menuItems={menuItems} open={menuOpen} />
+      <Divider />
     </Box>
   );
 };

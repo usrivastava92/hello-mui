@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, List, ListItemButton, ListItemText } from '@mui/material';
+import { Box, List, ListItemButton, ListItemText, Stack } from '@mui/material';
 import { IMenuItem } from '@/config/menu/menu.config';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
@@ -16,11 +16,13 @@ const TopNav: React.FC<TopNavProps> = ({ menuItems = [] }): JSX.Element => {
       >
         {menuItems.map((item) => (
           <ListItemButton key={item.id}>
-            {item.icon}
-            <ListItemText sx={{ ml: 1.5 }} primary={item.displayName} />
-            {item.nesterItems && item.nesterItems.length > 0 && (
-              <KeyboardArrowDownIcon />
-            )}
+            <Stack spacing={1.5}>
+              {item.icon}
+              <ListItemText primary={item.displayName} />
+              {item.nesterItems && item.nesterItems.length > 0 && (
+                <KeyboardArrowDownIcon />
+              )}
+            </Stack>
           </ListItemButton>
         ))}
       </List>

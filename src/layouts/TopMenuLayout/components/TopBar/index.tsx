@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  alpha,
   AppBar,
   Badge,
   Box,
@@ -9,57 +8,47 @@ import {
   CardMedia,
   Divider,
   IconButton,
+  InputAdornment,
   InputBase,
+  InputBaseProps,
   Link,
   Stack,
-  styled,
   Typography
 } from '@mui/material';
 import { AccountCircle } from '@mui/icons-material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import SearchIcon from '@mui/icons-material/Search';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import SearchIcon from '@mui/icons-material/Search';
 
-export const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25)
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(3),
-    width: 'auto'
-  }
-}));
-
-export const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center'
-}));
-
-export const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-      display: 'block'
-    }
-  }
-}));
+export const SearchInput: React.FC<InputBaseProps> = ({ sx }): JSX.Element => {
+  return (
+    <>
+      <InputBase
+        sx={{
+          display: { md: 'flex', xs: 'none' },
+          borderRadius: 30,
+          pl: 2,
+          height: 40,
+          bgcolor: 'primary.dark',
+          ...sx
+        }}
+        placeholder="Search..."
+        endAdornment={
+          <InputAdornment sx={{ color: '#999' }} position="start">
+            <SearchIcon />
+          </InputAdornment>
+        }
+      />
+      <IconButton
+        aria-label="delete"
+        size="large"
+        sx={{ display: { md: 'none', xs: 'flex' } }}
+      >
+        <SearchIcon />
+      </IconButton>
+    </>
+  );
+};
 
 const BrandLogo = (): JSX.Element => {
   return (
@@ -116,15 +105,7 @@ export default function TopBar(): JSX.Element {
           </Breadcrumbs>
           <Box sx={{ flexGrow: 1 }} />
           <Stack className="intro-x" justifyContent="space-between">
-            <Search sx={{ borderRadius: 30 }}>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </Search>
+            <SearchInput />
             <IconButton size="large" aria-label="show 9+ new notifications">
               <Badge badgeContent="9+" color="error" component="div">
                 <NotificationsIcon />

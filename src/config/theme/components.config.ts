@@ -3,9 +3,6 @@ import { Components, PaletteOptions } from '@mui/material';
 export const getComponentOptions = (palette: PaletteOptions): Components => {
   return {
     MuiDivider: {
-      defaultProps: {
-        color: palette.border?.primary
-      },
       styleOverrides: {
         root: {
           borderColor: palette.border?.primary
