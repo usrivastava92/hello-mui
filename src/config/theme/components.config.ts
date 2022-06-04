@@ -52,6 +52,11 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
           cursor: 'pointer'
         }
       }
+    },
+    MuiListItemIcon: {
+      defaultProps: {
+        color: 'text.primary'
+      }
     }
   };
 };
