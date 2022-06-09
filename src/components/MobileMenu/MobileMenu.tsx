@@ -116,7 +116,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
             component="img"
             height={30}
             alt="logo"
-            image="/src/assets/images/logo.png"
+            image="/assets/images/logo.png"
           />
         </IconButton>
         <IconButton

@@ -64,7 +64,7 @@ const BrandLogo = (): JSX.Element => {
           component="img"
           height={30}
           alt="logo"
-          image="/src/assets/images/logo.png"
+          image="/assets/images/logo.png"
         />
       }
     >

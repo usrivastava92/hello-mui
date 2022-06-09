@@ -23,7 +23,7 @@ export const Login: React.FC = () => {
             <img
               alt="Localstack UI"
               style={{ height: '3rem', width: '3rem' }}
-              src="/src/assets/images/logo.png"
+              src="/assets/images/logo.png"
             />
             <Typography
               color="white"
@@ -38,7 +38,7 @@ export const Login: React.FC = () => {
             <img
               alt="Localstack UI"
               className="-intro-x w-1/2 -mt-16"
-              src="/src/assets/images/illustration.svg"
+              src="/public/assets/images/illustration.svg"
             />
             <div className="-intro-x text-white font-medium text-4xl leading-tight mt-10">
               A few more clicks to
