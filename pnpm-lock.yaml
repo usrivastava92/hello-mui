@@ -4,8 +4,8 @@ specifiers:
   '@emotion/react': ^11.9.0
   '@emotion/styled': ^11.8.1
   '@fontsource/roboto': ^4.5.7
-  '@mui/icons-material': 5.8.2
-  '@mui/material': 5.8.2
+  '@mui/icons-material': 5.8.3
+  '@mui/material': 5.8.3
   '@types/jest': 28.1.1
   '@types/react': 18.0.12
   '@types/react-dom': ^18.0.4
@@ -24,7 +24,7 @@ dependencies:
   '@emotion/react': 11.9.0_mojt4vfvzjgczlgs4u436xt75u
   '@emotion/styled': 11.8.1_ev7eaohrznmneepri7xttmcb7i
   '@fontsource/roboto': 4.5.7
-  '@mui/icons-material': 5.8.2_3hxywclfwnnxlb2ixyivhf5uam
+  '@mui/icons-material': 5.8.3_3hxywclfwnnxlb2ixyivhf5uam
   '@mui/material': 5.8.1_b3paoylv2eq5sxjah6ov6v6pji
   react: 18.1.0
   react-dom: 18.1.0_react@18.1.0
@@ -824,8 +824,8 @@ packages:
       react-is: 17.0.2
     dev: false
 
-  /@mui/icons-material/5.8.2_3hxywclfwnnxlb2ixyivhf5uam:
-    resolution: {integrity: sha512-fP6KUCCZZjc2rdbMSmkNmBHDskLkmP0uCox57cbVXvomU6BOPrCxnr5YXsSsQrZB8fchx7hfH0bkAgvMZ5KM0Q==}
+  /@mui/icons-material/5.8.3_3hxywclfwnnxlb2ixyivhf5uam:
+    resolution: {integrity: sha512-dAdhimSLKOV0Q8FR7AYGEaCrTUh9OV7zU4Ueo5REoUt4cC3Vy+UBKDjZk66x5ezaYb63AFgQIFwtnZj3B/QDbQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       '@mui/material': ^5.0.0
