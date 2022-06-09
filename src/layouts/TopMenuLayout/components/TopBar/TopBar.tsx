@@ -64,7 +64,7 @@ const BrandLogo = (): JSX.Element => {
           component="img"
           height={30}
           alt="Localstack UI"
-          image="src/assets/images/logo.png"
+          image="/src/assets/images/logo.png"
         />
       }
     >

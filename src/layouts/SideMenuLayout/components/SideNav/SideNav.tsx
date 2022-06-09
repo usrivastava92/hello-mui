@@ -125,8 +125,8 @@ export const SideNav: React.FC<SideNavProps> = ({
             <CardMedia
               component="img"
               height={30}
-              alt="Localstack UI"
-              image="src/assets/images/logo.png"
+              alt="logo"
+              image="/src/assets/images/logo.png"
             />
           }
         >
