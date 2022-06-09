@@ -63,7 +63,7 @@ const BrandLogo = (): JSX.Element => {
         <CardMedia
           component="img"
           height={30}
-          alt="Localstack UI"
+          alt="logo"
           image="/src/assets/images/logo.png"
         />
       }

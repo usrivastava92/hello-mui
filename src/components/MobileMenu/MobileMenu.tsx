@@ -115,7 +115,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           <CardMedia
             component="img"
             height={30}
-            alt="Localstack UI"
+            alt="logo"
             image="/src/assets/images/logo.png"
           />
         </IconButton>
