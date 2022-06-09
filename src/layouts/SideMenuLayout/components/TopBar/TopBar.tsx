@@ -15,7 +15,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { AccountCircle } from '@mui/icons-material';
 import { SearchInput } from '@/layouts/TopMenuLayout/components/TopBar';
 
-const TopBar: React.FC = () => {
+export const TopBar: React.FC = () => {
   return (
     <>
       <AppBar
@@ -65,4 +65,3 @@ const TopBar: React.FC = () => {
     </>
   );
 };
-export default TopBar;

@@ -1,16 +1,16 @@
 import { Box, Stack } from '@mui/material';
-import MobileMenu from '@/components/MobileMenu';
 import { MENU_ITEMS } from '@/config/menu/menu.config';
-import SideNav from '@/layouts/SideMenuLayout/components/SideNav';
-import ContentWrapper from '@/components/ContentWrapper';
-import TopBar from '@/layouts/SideMenuLayout/components/TopBar';
+import { MobileMenu } from '@/components/MobileMenu';
+import { SideNav } from '@/layouts/SideMenuLayout/components/SideNav';
+import { ContentWrapper } from '@/components/ContentWrapper';
+import { TopBar } from '@/layouts/SideMenuLayout/components/TopBar/TopBar';
 
-export default function SimpleMenuLayout(): JSX.Element {
+export const SideMenuLayout: React.FC = () => {
   return (
     <>
       <MobileMenu menuItems={MENU_ITEMS}></MobileMenu>
       <Stack>
-        <SideNav menuItems={MENU_ITEMS} mini />
+        <SideNav menuItems={MENU_ITEMS} />
         <Box sx={{ height: '100vh' }} flexGrow={1}>
           <ContentWrapper>
             <TopBar />
@@ -19,4 +19,4 @@ export default function SimpleMenuLayout(): JSX.Element {
       </Stack>
     </>
   );
-}
+};

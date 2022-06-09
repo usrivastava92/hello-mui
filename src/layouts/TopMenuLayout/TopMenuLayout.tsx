@@ -1,11 +1,11 @@
-import TopBar from './components/TopBar';
 import { Box } from '@mui/material';
-import TopNav from '@/layouts/TopMenuLayout/components/TopNav';
-import MobileMenu from '@/components/MobileMenu';
 import { MENU_ITEMS } from '@/config/menu/menu.config';
-import ContentWrapper from '@/components/ContentWrapper';
+import { MobileMenu } from '@/components/MobileMenu';
+import { TopBar } from '@/layouts/TopMenuLayout/components/TopBar';
+import { TopNav } from '@/layouts/TopMenuLayout/components/TopNav';
+import { ContentWrapper } from '@/components/ContentWrapper';
 
-export default function TopMenuLayout(): JSX.Element {
+export const TopMenuLayout: React.FC = () => {
   return (
     <Box>
       <MobileMenu menuItems={MENU_ITEMS} />
@@ -18,4 +18,4 @@ export default function TopMenuLayout(): JSX.Element {
       </Box>
     </Box>
   );
-}
+};

@@ -2,7 +2,7 @@ import { Box, Button, CardMedia, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function PageNotFound(): JSX.Element {
+export const PageNotFound: React.FC = () => {
   const navigate = useNavigate();
 
   return (
@@ -64,4 +64,4 @@ export default function PageNotFound(): JSX.Element {
       </Stack>
     </Box>
   );
-}
+};
