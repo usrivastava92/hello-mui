@@ -18,7 +18,7 @@ specifiers:
   react-test-renderer: ^18.1.0
   sass: 1.52.3
   typescript: 4.7.3
-  vite: ^2.9.9
+  vite: 2.9.10
 
 dependencies:
   '@emotion/react': 11.9.0_mojt4vfvzjgczlgs4u436xt75u
@@ -40,7 +40,7 @@ devDependencies:
   react-test-renderer: 18.1.0_react@18.1.0
   sass: 1.52.3
   typescript: 4.7.3
-  vite: 2.9.9_sass@1.52.3
+  vite: 2.9.10_sass@1.52.3
 
 packages:
 
@@ -3221,8 +3221,8 @@ packages:
       convert-source-map: 1.8.0
     dev: true
 
-  /vite/2.9.9_sass@1.52.3:
-    resolution: {integrity: sha512-ffaam+NgHfbEmfw/Vuh6BHKKlI/XIAhxE5QSS7gFLIngxg171mg1P3a4LSRME0z2ZU1ScxoKzphkipcYwSD5Ew==}
+  /vite/2.9.10_sass@1.52.3:
+    resolution: {integrity: sha512-TwZRuSMYjpTurLqXspct+HZE7ONiW9d+wSWgvADGxhDPPyoIcNywY+RX4ng+QpK30DCa1l/oZgi2PLZDibhzbQ==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
