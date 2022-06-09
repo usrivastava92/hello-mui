@@ -68,11 +68,13 @@ const Menu: React.FC<MenuProps> = ({ menuItems = [], level = 1 }) => {
   );
 };
 
-interface TopNavProps {
+export interface TopNavProps {
   menuItems?: IMenuItem[];
 }
 
-const TopNav: React.FC<TopNavProps> = ({ menuItems = [] }): JSX.Element => {
+export const TopNav: React.FC<TopNavProps> = ({
+  menuItems = []
+}): JSX.Element => {
   return (
     <Box
       sx={{ mt: 2, px: 6, display: { xs: 'none', md: 'block' } }}
@@ -83,5 +85,3 @@ const TopNav: React.FC<TopNavProps> = ({ menuItems = [] }): JSX.Element => {
     </Box>
   );
 };
-
-export default TopNav;

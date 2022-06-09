@@ -1,7 +1,7 @@
 import { styled, Tooltip, tooltipClasses, TooltipProps } from '@mui/material';
 import React from 'react';
 
-const BootstrapTooltip: React.FC<TooltipProps> = styled(
+export const BootstrapTooltip: React.FC<TooltipProps> = styled(
   ({ className, children, ...props }: TooltipProps) => (
     <Tooltip
       {...props}
@@ -18,5 +18,3 @@ const BootstrapTooltip: React.FC<TooltipProps> = styled(
     backgroundColor: theme.palette.common.black
   }
 }));
-
-export default BootstrapTooltip;

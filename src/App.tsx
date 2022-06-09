@@ -7,12 +7,12 @@ import {
 import React from 'react';
 import './App.scss';
 import { getThemeOptionsByMode } from './config/theme/theme';
-import TopMenuLayout from './layouts/TopMenuLayout';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import SideMenuLayout from '@/layouts/SideMenuLayout';
-import SimpleMenuLayout from '@/layouts/SimpleMenuLayout';
-import PageNotFound from '@/pages/404';
-import Login from '@/pages/Login';
+import { TopMenuLayout } from '@/layouts/TopMenuLayout';
+import { SideMenuLayout } from '@/layouts/SideMenuLayout/SideMenuLayout';
+import { Login } from '@/pages/Login';
+import { PageNotFound } from '@/pages/404';
+import { SimpleMenuLayout } from '@/layouts/SimpleMenuLayout';
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');

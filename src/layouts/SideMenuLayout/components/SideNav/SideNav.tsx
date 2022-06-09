@@ -12,8 +12,8 @@ import {
 import React, { useState } from 'react';
 import { IMenuItem } from '@/config/menu/menu.config';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import BootstrapTooltip from '@/components/BootstrapTooltip';
 import { useNavigate } from 'react-router-dom';
+import { BootstrapTooltip } from '@/components/BootstrapTooltip';
 
 export const getBgColorByLevel = (level: number): string => {
   if (level >= 3) {
@@ -97,12 +97,12 @@ const Menu: React.FC<MenuProps> = ({
   );
 };
 
-interface SideNavProps {
+export interface SideNavProps {
   mini?: boolean;
   menuItems?: IMenuItem[];
 }
 
-const SideNav: React.FC<SideNavProps> = ({
+export const SideNav: React.FC<SideNavProps> = ({
   mini = false,
   menuItems = []
 }): JSX.Element => {
@@ -139,4 +139,3 @@ const SideNav: React.FC<SideNavProps> = ({
     </Box>
   );
 };
-export default SideNav;

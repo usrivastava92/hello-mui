@@ -1,6 +1,6 @@
 import { Box, Grid, Link, Typography } from '@mui/material';
 
-export default function Login(): JSX.Element {
+export const Login: React.FC = () => {
   return (
     <Box sx={{ px: { sm: 10 } }} className="container">
       <Grid container className="block xl:grid grid-cols-2 gap-4">
@@ -113,4 +113,4 @@ export default function Login(): JSX.Element {
       </Grid>
     </Box>
   );
-}
+};

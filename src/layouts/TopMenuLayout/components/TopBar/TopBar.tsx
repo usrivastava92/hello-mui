@@ -73,7 +73,7 @@ const BrandLogo = (): JSX.Element => {
   );
 };
 
-export default function TopBar(): JSX.Element {
+export const TopBar: React.FC = () => {
   return (
     <>
       <AppBar
@@ -125,4 +125,4 @@ export default function TopBar(): JSX.Element {
       <Divider />
     </>
   );
-}
+};

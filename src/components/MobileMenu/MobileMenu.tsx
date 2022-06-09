@@ -99,11 +99,11 @@ const Menu: React.FC<MenuProps> = ({
   );
 };
 
-interface MobileMenuProps {
+export interface MobileMenuProps {
   menuItems?: IMenuItem[];
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({
+export const MobileMenu: React.FC<MobileMenuProps> = ({
   menuItems = []
 }): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -135,5 +135,3 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
     </Box>
   );
 };
-
-export default MobileMenu;

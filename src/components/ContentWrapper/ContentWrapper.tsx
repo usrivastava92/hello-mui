@@ -5,7 +5,7 @@ interface ContentWrapperProps {
   children: JSX.Element;
 }
 
-const ContentWrapper: React.FC<ContentWrapperProps> = ({ children }) => {
+export const ContentWrapper: React.FC<ContentWrapperProps> = ({ children }) => {
   return (
     <Box
       sx={{
@@ -22,5 +22,3 @@ const ContentWrapper: React.FC<ContentWrapperProps> = ({ children }) => {
     </Box>
   );
 };
-
-export default ContentWrapper;
