@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, List, ListItemButton, ListItemText } from '@mui/material';
+import { Box, List, ListItemButton, ListItemText, Stack } from '@mui/material';
 import { IMenuItem } from '@/config/menu/menu.config';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import './topNav.scss';
@@ -52,11 +52,9 @@ const Menu: React.FC<MenuProps> = ({ menuItems = [], level = 1 }) => {
     level = 1;
   }
   return (
-    <List
-      component="ul"
+    <Stack
+      component={List}
       sx={{
-        display: 'flex',
-        flexDirection: 'row',
         padding: 0,
         bgcolor: getBgColorByLevel(level)
       }}
@@ -64,7 +62,7 @@ const Menu: React.FC<MenuProps> = ({ menuItems = [], level = 1 }) => {
       {menuItems.map((item) => (
         <MenuItem key={item.id} item={item} level={level} />
       ))}
-    </List>
+    </Stack>
   );
 };
 

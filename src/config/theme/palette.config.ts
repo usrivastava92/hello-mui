@@ -18,6 +18,37 @@ declare module '@mui/material/styles' {
   }
 }
 
+const commonPaletteOptions: PaletteOptions = {
+  info: {
+    lighter: '#fff',
+    light: '#F1F5F8',
+    main: '#3160D8',
+    dark: '#D2DFEA',
+    darker: '#607F96'
+  },
+  success: {
+    lighter: '#fff',
+    light: '#D8F8BC',
+    main: '#91C714',
+    dark: '#D2DFEA',
+    darker: '#607F96'
+  },
+  warning: {
+    lighter: '#fff',
+    light: '#FBC500',
+    main: '#F78B00',
+    dark: '#D2DFEA',
+    darker: '#607F96'
+  },
+  error: {
+    lighter: '#fff',
+    light: '#ffd8d8',
+    main: '#D32929',
+    dark: '#D2DFEA',
+    darker: '#607F96'
+  }
+};
+
 const lightModePallet: PaletteOptions = {
   mode: 'light',
   primary: {
@@ -45,7 +76,8 @@ const lightModePallet: PaletteOptions = {
   border: {
     primary: '#2e51bb',
     secondary: '#dee7ef'
-  }
+  },
+  ...commonPaletteOptions
 };
 
 const darkModePallet: PaletteOptions = {
@@ -75,7 +107,8 @@ const darkModePallet: PaletteOptions = {
   border: {
     primary: '#313a55',
     secondary: '#313a55'
-  }
+  },
+  ...commonPaletteOptions
 };
 
 export const getPaletteByMode = (mode: PaletteMode) => {
