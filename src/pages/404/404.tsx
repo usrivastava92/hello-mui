@@ -21,7 +21,7 @@ export const PageNotFound: React.FC = () => {
             component="img"
             height="450rem"
             alt="Not Found"
-            image="/src/assets/images/error-illustration.svg"
+            image="/assets/images/error-illustration.svg"
           />
         </Box>
         <Box>
