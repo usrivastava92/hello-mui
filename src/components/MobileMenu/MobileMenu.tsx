@@ -116,7 +116,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
             component="img"
             height={30}
             alt="Localstack UI"
-            image="src/assets/images/logo.png"
+            image="/src/assets/images/logo.png"
           />
         </IconButton>
         <IconButton
