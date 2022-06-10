@@ -17,7 +17,7 @@ import { SearchInput } from '@/layouts/TopMenuLayout/components/TopBar';
 
 export const TopBar: React.FC = () => {
   return (
-    <>
+    <Box sx={{ mb: 2 }}>
       <AppBar
         position="static"
         sx={{
@@ -62,6 +62,6 @@ export const TopBar: React.FC = () => {
         </Stack>
       </AppBar>
       <Divider sx={{ borderColor: 'border.secondary' }} />
-    </>
+    </Box>
   );
 };

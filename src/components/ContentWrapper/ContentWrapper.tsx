@@ -12,8 +12,9 @@ export const ContentWrapper: React.FC<ContentWrapperProps> = ({ children }) => {
         color: 'text.secondary',
         bgcolor: 'secondary.main',
         m: 2,
-        p: 2,
+        p: 1,
         borderRadius: 10,
+        maxWidth: '100vw',
         minHeight: '96%'
       }}
     >

@@ -447,7 +447,7 @@ export const MENU_ITEMS: IMenuItem[] = [
         id: 'components/tooltip',
         icon: <BoltIcon />,
         nesterItems: [],
-        routerLink: 'tooltip'
+        routerLink: 'tooltips'
       },
       {
         displayName: 'Dropdown',
