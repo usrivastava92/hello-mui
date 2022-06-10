@@ -18,14 +18,28 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
       styleOverrides: {
         root: {
           height: '2.5rem',
-          borderColor: palette.border?.primary,
-          borderRadius: 10
+          borderRadius: 8
+        },
+        containedSecondary: {
+          borderColor: palette.secondary?.darker,
+          color: palette.secondary?.contrastText,
+          '&:hover': {
+            backgroundColor: palette.secondary?.dark
+          }
+        },
+        outlinedSecondary: {
+          borderColor: palette.secondary?.darker,
+          color: palette.secondary?.contrastText,
+          '&:hover': {
+            backgroundColor: palette.secondary?.dark
+          }
+        },
+        textSecondary: {
+          color: palette.secondary?.contrastText,
+          '&:hover': {
+            backgroundColor: palette.secondary?.dark
+          }
         }
-      }
-    },
-    MuiIconButton: {
-      defaultProps: {
-        color: 'inherit'
       }
     },
     MuiStack: {

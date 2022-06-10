@@ -12,20 +12,12 @@ declare module '@mui/material/styles' {
     contrastText?: string;
   }
 
-  interface TypeBackground {
-    secondary?: string;
-  }
-
   interface PaletteOptions {
     border?: {
       primary?: string;
       secondary?: string;
     };
     dark?: PaletteColorOptions;
-  }
-
-  interface ButtonPropsColorOverrides {
-    dark: string;
   }
 }
 
@@ -76,8 +68,8 @@ const lightModePallet: PaletteOptions = {
     lighter: '#fff',
     light: '#F1F5F8',
     main: '#F1F5F8',
-    dark: '#D2DFEA',
-    darker: '#607F96',
+    dark: '#E6F3FF',
+    darker: '#8DA9BE',
     contrastText: '#2d3748'
   },
   dark: {
@@ -128,8 +120,7 @@ const darkModePallet: PaletteOptions = {
     contrastText: '#fff'
   },
   background: {
-    default: '#232a3b',
-    secondary: '#293145'
+    default: '#232a3b'
   },
   text: {
     primary: '#fff'
