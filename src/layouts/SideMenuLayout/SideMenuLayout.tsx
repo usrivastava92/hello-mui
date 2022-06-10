@@ -18,7 +18,7 @@ export const SideMenuLayout: React.FC<SideMenuLayoutProps> = ({
     <>
       <MobileMenu menuItems={MENU_ITEMS}></MobileMenu>
       <Stack>
-        <SideNav menuItems={MENU_ITEMS} mini />
+        <SideNav menuItems={MENU_ITEMS} mini={mini} />
         <Box sx={{ height: '100vh' }} flexGrow={1}>
           <ContentWrapper>
             <>

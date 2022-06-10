@@ -42,7 +42,7 @@ function getRoutes(): JSX.Element {
       <Route path="/side" element={<SideMenuLayout />}>
         {getNestedRoutes()}
       </Route>
-      <Route path="/simple" element={<SimpleMenuLayout />}>
+      <Route path="/simple" element={<SideMenuLayout mini />}>
         {getNestedRoutes()}
       </Route>
       <Route path="/login" element={<Login />}></Route>
