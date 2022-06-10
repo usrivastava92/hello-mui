@@ -12,7 +12,6 @@ import { TopMenuLayout } from '@/layouts/TopMenuLayout';
 import { SideMenuLayout } from '@/layouts/SideMenuLayout/SideMenuLayout';
 import { Login } from '@/pages/Login';
 import { PageNotFound } from '@/pages/404';
-import { SimpleMenuLayout } from '@/layouts/SimpleMenuLayout';
 import { Buttons } from '@/pages/Buttons';
 import { Tooltips } from '@/pages/Tooltip';
 
