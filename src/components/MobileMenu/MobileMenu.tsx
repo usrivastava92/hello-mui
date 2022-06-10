@@ -1,6 +1,5 @@
 import {
   Box,
-  CardMedia,
   Collapse,
   Divider,
   IconButton,
@@ -17,6 +16,7 @@ import { IMenuItem } from '@/config/menu/menu.config';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
+import { BrandLogo } from '@/layouts/TopMenuLayout/components/TopBar';
 
 interface MenuItemProps {
   item: IMenuItem;
@@ -110,15 +110,8 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
 
   return (
     <Box sx={{ display: { xs: 'block', md: 'none' } }} component="div">
-      <Stack justifyContent="space-between">
-        <IconButton size="large" aria-label="open drawer">
-          <CardMedia
-            component="img"
-            height={30}
-            alt="logo"
-            image="/assets/images/logo.png"
-          />
-        </IconButton>
+      <Stack justifyContent="space-between" sx={{ mx: 2 }}>
+        <BrandLogo />
         <IconButton
           onClick={() => setMenuOpen(!menuOpen)}
           size="large"

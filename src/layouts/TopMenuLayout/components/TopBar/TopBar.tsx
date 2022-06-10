@@ -20,6 +20,7 @@ import { AccountCircle } from '@mui/icons-material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate } from 'react-router-dom';
 
 export const SearchInput: React.FC<InputBaseProps> = ({ sx }): JSX.Element => {
   return (
@@ -60,16 +61,18 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   sx,
   className
 }): JSX.Element => {
+  const navigate = useNavigate();
   return (
     <Avatar
       className={className}
       src="/assets/images/logo.png"
-      sx={{ my: 1, mx: 'auto', ...sx }}
+      sx={{ cursor: 'pointer', ...sx }}
+      onClick={() => navigate('/')}
     />
   );
 };
 
-export const TopBar: React.FC = () => {
+export const TopBar: React.FC = (): JSX.Element => {
   return (
     <>
       <AppBar
@@ -81,7 +84,10 @@ export const TopBar: React.FC = () => {
         }}
       >
         <Stack>
-          <BrandLogo className="-intro-x" />
+          <BrandLogo
+            sx={{ my: 1, mx: 'auto', display: { xs: 'none', md: 'flex' } }}
+            className="-intro-x"
+          />
           <Divider
             flexItem={true}
             orientation="vertical"

@@ -116,7 +116,7 @@ export const SideNav: React.FC<SideNavProps> = ({
       }}
     >
       <AppBar sx={{ bgcolor: 'background.default' }} position="sticky">
-        <BrandLogo className="intro-x" />
+        <BrandLogo sx={{ my: 1, mx: 'auto' }} className="intro-x" />
         <Divider variant="middle" flexItem={true} light={true} />
         <Menu menuItems={menuItems} mini={mini} />
         <Divider variant="middle" flexItem={true} light={true} />
