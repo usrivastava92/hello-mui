@@ -22,9 +22,6 @@ export const Buttons: React.FC = () => {
       <Button color="error" variant="contained">
         Error
       </Button>
-      <Button color="dark" variant="contained">
-        Dark
-      </Button>
       <Button color="primary" variant="outlined">
         Primary
       </Button>
@@ -43,9 +40,6 @@ export const Buttons: React.FC = () => {
       <Button color="error" variant="outlined">
         Error
       </Button>
-      <Button color="dark" variant="outlined">
-        Dark
-      </Button>
       <Button color="primary" variant="text">
         Primary
       </Button>
@@ -63,9 +57,6 @@ export const Buttons: React.FC = () => {
       </Button>
       <Button color="error" variant="text">
         Error
-      </Button>
-      <Button color="dark" variant="text">
-        Dark
       </Button>
     </>
   );
