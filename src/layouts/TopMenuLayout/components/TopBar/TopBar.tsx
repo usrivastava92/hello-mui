@@ -1,11 +1,10 @@
 import React from 'react';
 import {
   AppBar,
+  Avatar,
   Badge,
   Box,
   Breadcrumbs,
-  Button,
-  CardMedia,
   Divider,
   IconButton,
   InputAdornment,
@@ -13,6 +12,8 @@ import {
   InputBaseProps,
   Link,
   Stack,
+  SxProps,
+  Theme,
   Typography
 } from '@mui/material';
 import { AccountCircle } from '@mui/icons-material';
@@ -32,16 +33,16 @@ export const SearchInput: React.FC<InputBaseProps> = ({ sx }): JSX.Element => {
           bgcolor: 'primary.dark',
           ...sx
         }}
-        placeholder="Search..."
+        placeholder='Search...'
         endAdornment={
-          <InputAdornment sx={{ color: '#999' }} position="start">
+          <InputAdornment sx={{ color: '#999' }} position='start'>
             <SearchIcon />
           </InputAdornment>
         }
       />
       <IconButton
-        aria-label="delete"
-        size="large"
+        aria-label='delete'
+        size='large'
         sx={{ display: { md: 'none', xs: 'flex' } }}
       >
         <SearchIcon />
@@ -50,26 +51,14 @@ export const SearchInput: React.FC<InputBaseProps> = ({ sx }): JSX.Element => {
   );
 };
 
-const BrandLogo = (): JSX.Element => {
+export interface BrandLogoProps {
+  sx?: SxProps<Theme>;
+  className?: string;
+}
+
+export const BrandLogo: React.FC<BrandLogoProps> = ({ sx, className }): JSX.Element => {
   return (
-    <Button
-      className="-intro-x"
-      disableRipple={true}
-      sx={{
-        display: { xs: 'none', md: 'flex' },
-        typography: 'h6'
-      }}
-      endIcon={
-        <CardMedia
-          component="img"
-          height={30}
-          alt="logo"
-          image="/assets/images/logo.png"
-        />
-      }
-    >
-      Localstack
-    </Button>
+    <Avatar className={className} src='/assets/images/logo.png' sx={{ my: 1, mx: 'auto', ...sx }} />
   );
 };
 
@@ -77,7 +66,7 @@ export const TopBar: React.FC = () => {
   return (
     <>
       <AppBar
-        position="static"
+        position='static'
         sx={{
           bgcolor: 'background.default',
           px: { xs: 2, md: 3 },
@@ -85,10 +74,10 @@ export const TopBar: React.FC = () => {
         }}
       >
         <Stack>
-          <BrandLogo />
+          <BrandLogo className='-intro-x' />
           <Divider
             flexItem={true}
-            orientation="vertical"
+            orientation='vertical'
             sx={{ mx: 3, display: { xs: 'none', md: 'flex' } }}
           />
           <Breadcrumbs

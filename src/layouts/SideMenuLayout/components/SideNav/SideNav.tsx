@@ -1,19 +1,10 @@
-import {
-  AppBar,
-  Box,
-  Button,
-  CardMedia,
-  Collapse,
-  Divider,
-  List,
-  ListItemButton,
-  ListItemText
-} from '@mui/material';
+import { AppBar, Box, Collapse, Divider, List, ListItemButton, ListItemText } from '@mui/material';
 import React, { useState } from 'react';
 import { IMenuItem } from '@/config/menu/menu.config';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useNavigate } from 'react-router-dom';
 import { BootstrapTooltip } from '@/components/BootstrapTooltip';
+import { BrandLogo } from '@/layouts/TopMenuLayout/components/TopBar';
 
 export const getBgColorByLevel = (level: number): string => {
   if (level >= 3) {
@@ -116,25 +107,11 @@ export const SideNav: React.FC<SideNavProps> = ({
         display: { md: 'block', xs: 'none' }
       }}
     >
-      <AppBar sx={{ bgcolor: 'background.default' }} position="sticky">
-        <Button
-          className="intro-x"
-          disableRipple={true}
-          sx={{ typography: 'h6', mb: 1, pr: mini ? 2.5 : 'auto' }}
-          endIcon={
-            <CardMedia
-              component="img"
-              height={30}
-              alt="logo"
-              image="/assets/images/logo.png"
-            />
-          }
-        >
-          {!mini && 'Localstack'}
-        </Button>
-        <Divider variant="middle" flexItem={true} light={true} />
+      <AppBar sx={{ bgcolor: 'background.default' }} position='sticky'>
+        <BrandLogo className='intro-x' />
+        <Divider variant='middle' flexItem={true} light={true} />
         <Menu menuItems={menuItems} mini={mini} />
-        <Divider variant="middle" flexItem={true} light={true} />
+        <Divider variant='middle' flexItem={true} light={true} />
       </AppBar>
     </Box>
   );
