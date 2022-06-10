@@ -33,16 +33,16 @@ export const SearchInput: React.FC<InputBaseProps> = ({ sx }): JSX.Element => {
           bgcolor: 'primary.dark',
           ...sx
         }}
-        placeholder='Search...'
+        placeholder="Search..."
         endAdornment={
-          <InputAdornment sx={{ color: '#999' }} position='start'>
+          <InputAdornment sx={{ color: '#999' }} position="start">
             <SearchIcon />
           </InputAdornment>
         }
       />
       <IconButton
-        aria-label='delete'
-        size='large'
+        aria-label="delete"
+        size="large"
         sx={{ display: { md: 'none', xs: 'flex' } }}
       >
         <SearchIcon />
@@ -56,9 +56,16 @@ export interface BrandLogoProps {
   className?: string;
 }
 
-export const BrandLogo: React.FC<BrandLogoProps> = ({ sx, className }): JSX.Element => {
+export const BrandLogo: React.FC<BrandLogoProps> = ({
+  sx,
+  className
+}): JSX.Element => {
   return (
-    <Avatar className={className} src='/assets/images/logo.png' sx={{ my: 1, mx: 'auto', ...sx }} />
+    <Avatar
+      className={className}
+      src="/assets/images/logo.png"
+      sx={{ my: 1, mx: 'auto', ...sx }}
+    />
   );
 };
 
@@ -66,7 +73,7 @@ export const TopBar: React.FC = () => {
   return (
     <>
       <AppBar
-        position='static'
+        position="static"
         sx={{
           bgcolor: 'background.default',
           px: { xs: 2, md: 3 },
@@ -74,10 +81,10 @@ export const TopBar: React.FC = () => {
         }}
       >
         <Stack>
-          <BrandLogo className='-intro-x' />
+          <BrandLogo className="-intro-x" />
           <Divider
             flexItem={true}
-            orientation='vertical'
+            orientation="vertical"
             sx={{ mx: 3, display: { xs: 'none', md: 'flex' } }}
           />
           <Breadcrumbs

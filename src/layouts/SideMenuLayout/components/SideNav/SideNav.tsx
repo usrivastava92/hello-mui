@@ -1,4 +1,12 @@
-import { AppBar, Box, Collapse, Divider, List, ListItemButton, ListItemText } from '@mui/material';
+import {
+  AppBar,
+  Box,
+  Collapse,
+  Divider,
+  List,
+  ListItemButton,
+  ListItemText
+} from '@mui/material';
 import React, { useState } from 'react';
 import { IMenuItem } from '@/config/menu/menu.config';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -107,11 +115,11 @@ export const SideNav: React.FC<SideNavProps> = ({
         display: { md: 'block', xs: 'none' }
       }}
     >
-      <AppBar sx={{ bgcolor: 'background.default' }} position='sticky'>
-        <BrandLogo className='intro-x' />
-        <Divider variant='middle' flexItem={true} light={true} />
+      <AppBar sx={{ bgcolor: 'background.default' }} position="sticky">
+        <BrandLogo className="intro-x" />
+        <Divider variant="middle" flexItem={true} light={true} />
         <Menu menuItems={menuItems} mini={mini} />
-        <Divider variant='middle' flexItem={true} light={true} />
+        <Divider variant="middle" flexItem={true} light={true} />
       </AppBar>
     </Box>
   );
