@@ -22,9 +22,9 @@ export const TopBar: React.FC = () => {
         position="static"
         sx={{
           borderRadius: 100,
-          bgcolor: 'background.secondary',
+          bgcolor: 'secondary.main',
           px: { xs: 2, md: 3 },
-          py: 1
+          pb: 1
         }}
       >
         <Stack>

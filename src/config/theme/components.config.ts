@@ -17,9 +17,9 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
     MuiButton: {
       styleOverrides: {
         root: {
-          height: '2.9rem',
-          color: 'inherit',
-          borderColor: palette.border?.primary
+          height: '2.5rem',
+          borderColor: palette.border?.primary,
+          borderRadius: 10
         }
       }
     },
@@ -55,7 +55,7 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
     },
     MuiListItemIcon: {
       defaultProps: {
-        color: 'text.primary'
+        color: palette.text?.primary
       }
     }
   };

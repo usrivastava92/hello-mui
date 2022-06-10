@@ -1,9 +1,15 @@
 import { PaletteMode, PaletteOptions } from '@mui/material';
+import { PaletteColorOptions } from '@mui/material/styles';
+import { amber, grey, lightGreen, red } from '@mui/material/colors';
 
 declare module '@mui/material/styles' {
-  interface SimplePaletteColorOptions {
+  interface PaletteColorOptions {
     lighter?: string;
+    light?: string;
+    main: string;
+    dark?: string;
     darker?: string;
+    contrastText?: string;
   }
 
   interface TypeBackground {
@@ -15,37 +21,44 @@ declare module '@mui/material/styles' {
       primary?: string;
       secondary?: string;
     };
+    dark?: PaletteColorOptions;
+  }
+
+  interface ButtonPropsColorOverrides {
+    dark: string;
   }
 }
 
 const commonPaletteOptions: PaletteOptions = {
   info: {
     lighter: '#fff',
-    light: '#F1F5F8',
+    light: '#E6F3FF',
     main: '#3160D8',
-    dark: '#D2DFEA',
-    darker: '#607F96'
+    contrastText: '#fff'
   },
   success: {
-    lighter: '#fff',
-    light: '#D8F8BC',
-    main: '#91C714',
-    dark: '#D2DFEA',
-    darker: '#607F96'
+    lighter: lightGreen[100],
+    light: lightGreen[300],
+    main: lightGreen[500],
+    dark: lightGreen[700],
+    darker: lightGreen[900],
+    contrastText: '#fff'
   },
   warning: {
-    lighter: '#fff',
-    light: '#FBC500',
-    main: '#F78B00',
-    dark: '#D2DFEA',
-    darker: '#607F96'
+    lighter: amber[400],
+    light: amber[500],
+    main: amber[600],
+    dark: amber[700],
+    darker: amber[800],
+    contrastText: '#fff'
   },
   error: {
-    lighter: '#fff',
-    light: '#ffd8d8',
-    main: '#D32929',
-    dark: '#D2DFEA',
-    darker: '#607F96'
+    lighter: red[500],
+    light: red[600],
+    main: red[700],
+    dark: red[800],
+    darker: red[900],
+    contrastText: '#fff'
   }
 };
 
@@ -56,22 +69,30 @@ const lightModePallet: PaletteOptions = {
     light: '#2e51bb',
     main: '#1C3FAA',
     dark: '#1A389F',
-    darker: '#142C91'
+    darker: '#142C91',
+    contrastText: '#fff'
   },
   secondary: {
     lighter: '#fff',
     light: '#F1F5F8',
     main: '#F1F5F8',
     dark: '#D2DFEA',
-    darker: '#607F96'
+    darker: '#607F96',
+    contrastText: '#2d3748'
+  },
+  dark: {
+    lighter: grey[100],
+    light: grey[200],
+    main: grey[300],
+    dark: grey[400],
+    darker: grey[500],
+    contrastText: '#fff'
   },
   background: {
-    default: '#1C3FAA',
-    secondary: '#F1F5F8'
+    default: '#1C3FAA'
   },
   text: {
-    primary: '#fff',
-    secondary: '#2d3748'
+    primary: '#fff'
   },
   border: {
     primary: '#2e51bb',
@@ -87,22 +108,31 @@ const darkModePallet: PaletteOptions = {
     light: '#313a55',
     main: '#232a3b',
     dark: '#1e2533',
-    darker: '#181f29'
+    darker: '#181f29',
+    contrastText: '#fff'
   },
   secondary: {
     lighter: '#313a55',
     light: '#313a55',
     main: '#293145',
     dark: '#1e2533',
-    darker: '#181f29'
+    darker: '#181f29',
+    contrastText: '#fff'
+  },
+  dark: {
+    lighter: grey[300],
+    light: grey[400],
+    main: grey[500],
+    dark: grey[600],
+    darker: grey[700],
+    contrastText: '#fff'
   },
   background: {
     default: '#232a3b',
     secondary: '#293145'
   },
   text: {
-    primary: '#fff',
-    secondary: '#e2e8f0'
+    primary: '#fff'
   },
   border: {
     primary: '#313a55',
