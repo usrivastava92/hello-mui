@@ -17,75 +17,13 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { AppDivider } from '@/components/Divider';
-
-const USERS: User[] = [
-  {
-    name: 'Robert De Niro',
-    profession: 'Frontend Engineer',
-    progress: 20
-  },
-  {
-    name: 'Christian Bale',
-    profession: 'Frontend Engineer',
-    progress: 80
-  },
-  {
-    name: 'Brad Pitt',
-    profession: 'Devops Engineer',
-    progress: 10
-  },
-  {
-    name: 'Keanu Reeves',
-    profession: 'Frontend Engineer',
-    progress: 20
-  },
-  {
-    name: 'Robert De Niro',
-    profession: 'Software Engineer',
-    progress: 15
-  },
-  {
-    name: 'Denzel Washington',
-    profession: 'DevOps Engineer',
-    progress: 50
-  },
-  {
-    name: 'Edward Norton',
-    profession: 'DevOps Engineer',
-    progress: 90
-  },
-  {
-    name: 'Hugh Jackman',
-    profession: 'Devops Engineer',
-    progress: 10
-  },
-  {
-    name: 'Denzel Washington',
-    profession: 'Software Engineer',
-    progress: 60
-  },
-  {
-    name: 'Tom Cruise',
-    profession: 'Software Engineer',
-    progress: 40
-  }
-];
-
-interface User {
-  name: string;
-  profession: string;
-  progress: number;
-}
-
-interface UserProps {
-  user: User;
-}
+import { UserProps, USERS } from '@/pages/Users/UserData';
 
 const User: React.FC<UserProps> = ({ user }) => {
   return (
     <Card>
       <Stack spacing={2} sx={{ p: 2 }}>
-        <Avatar sx={{ width: 56, height: 56, color: 'grey.200' }}></Avatar>
+        <Avatar sx={{ width: 56, height: 56, color: 'dark.lighter' }}></Avatar>
         <Stack direction="column" alignItems="left">
           <Typography component={Link} fontWeight="bold">
             {user.name}
@@ -139,7 +77,7 @@ const User: React.FC<UserProps> = ({ user }) => {
 export const UserLayout1: React.FC = () => {
   return (
     <>
-      <Typography variant="lg">Users Layout</Typography>
+      <Typography variant="lg">Users Layout 1</Typography>
       <Stack spacing={1} sx={{ py: 2 }}>
         <Button sx={{ boxShadow: 1 }} color="info" variant="contained">
           Add New User
@@ -150,9 +88,9 @@ export const UserLayout1: React.FC = () => {
         <Box flexGrow={1}></Box>
         <SearchInput sx={{ borderRadius: 2, bgcolor: 'secondary.lighter' }} />
       </Stack>
-      <Grid container rowSpacing={2} columnSpacing={2}>
-        {USERS.map((user) => (
-          <Grid item xs={12} md={6}>
+      <Grid className="intro-y" container rowSpacing={2} columnSpacing={2}>
+        {USERS.map((user, index) => (
+          <Grid key={index} item xs={12} md={6}>
             <User user={user} />
           </Grid>
         ))}
