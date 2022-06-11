@@ -2,6 +2,17 @@ import { Components, PaletteOptions } from '@mui/material';
 
 export const getComponentOptions = (palette: PaletteOptions): Components => {
   return {
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          color: 'inherit',
+          backgroundColor: palette.secondary?.lighter
+        }
+      },
+      defaultProps: {
+        elevation: 0
+      }
+    },
     MuiDivider: {
       styleOverrides: {
         root: {
@@ -20,6 +31,9 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
           height: '2.5rem',
           borderRadius: 8
         }
+      },
+      defaultProps: {
+        disableElevation: true
       }
     },
     MuiStack: {

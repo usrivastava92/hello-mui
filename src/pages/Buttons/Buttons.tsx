@@ -1,35 +1,16 @@
-import {
-  Button,
-  Card,
-  Divider,
-  Grid,
-  Stack,
-  styled,
-  Typography
-} from '@mui/material';
+import { Box, Button, Card, Divider, Grid, Typography } from '@mui/material';
 import React from 'react';
-
-interface ButtonProps {
-  color:
-    | 'primary'
-    | 'secondary'
-    | 'info'
-    | 'success'
-    | 'warning'
-    | 'error'
-    | 'dark';
-}
 
 export const Buttons: React.FC = () => {
   return (
     <Grid container spacing={2}>
       <Grid item sm={12} lg={6}>
         <Card sx={{ m: 2 }}>
-          <Typography sx={{ m: 2 }} variant="h6" component="div" color="black">
+          <Typography sx={{ m: 2 }} variant="h6" component="div">
             Basic Buttons
           </Typography>
           <Divider sx={{ borderColor: 'border.secondary' }} />
-          <Stack spacing={1} sx={{ m: 2 }}>
+          <Box sx={{ m: 2 }}>
             <Button color="primary" variant="contained">
               Primary
             </Button>
@@ -51,16 +32,16 @@ export const Buttons: React.FC = () => {
             <Button color="error" variant="contained">
               Error
             </Button>
-          </Stack>
+          </Box>
         </Card>
       </Grid>
       <Grid item sm={12} lg={6}>
         <Card sx={{ m: 2 }}>
-          <Typography sx={{ m: 2 }} variant="h6" component="div" color="black">
+          <Typography sx={{ m: 2 }} variant="h6" component="div">
             Outlined Buttons
           </Typography>
           <Divider sx={{ borderColor: 'border.secondary' }} />
-          <Stack sx={{ m: 2 }} spacing={1}>
+          <Box sx={{ m: 2 }}>
             <Button color="primary" variant="outlined">
               Primary
             </Button>
@@ -82,16 +63,16 @@ export const Buttons: React.FC = () => {
             <Button color="error" variant="outlined">
               Error
             </Button>
-          </Stack>
+          </Box>
         </Card>
       </Grid>
       <Grid item sm={12} lg={6}>
         <Card sx={{ m: 2 }}>
-          <Typography sx={{ m: 2 }} variant="h6" component="div" color="black">
+          <Typography sx={{ m: 2 }} variant="h6" component="div">
             Text Buttons
           </Typography>
           <Divider sx={{ borderColor: 'border.secondary' }} />
-          <Stack sx={{ m: 2 }} spacing={1}>
+          <Box sx={{ m: 2 }}>
             <Button color="primary" variant="text">
               Primary
             </Button>
@@ -113,7 +94,7 @@ export const Buttons: React.FC = () => {
             <Button color="error" variant="text">
               Error
             </Button>
-          </Stack>
+          </Box>
         </Card>
       </Grid>
     </Grid>
