@@ -14,6 +14,9 @@ import { Login } from '@/pages/Login';
 import { PageNotFound } from '@/pages/404';
 import { Buttons } from '@/pages/Buttons';
 import { Tooltips } from '@/pages/Tooltip';
+import { UserLayout1 } from '@/pages/Users/Layout1';
+import { UserLayout2 } from '@/pages/Users/Layout2';
+import { UserLayout3 } from '@/pages/Users/Layout3';
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -55,6 +58,9 @@ function getNestedRoutes(): JSX.Element {
     <>
       <Route path="buttons" element={<Buttons />}></Route>
       <Route path="tooltips" element={<Tooltips />}></Route>
+      <Route path="usersLayout1" element={<UserLayout1 />}></Route>
+      <Route path="usersLayout2" element={<UserLayout2 />}></Route>
+      <Route path="usersLayout3" element={<UserLayout3 />}></Route>
     </>
   );
 }

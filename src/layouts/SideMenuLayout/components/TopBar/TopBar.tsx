@@ -4,7 +4,6 @@ import {
   Badge,
   Box,
   Breadcrumbs,
-  Divider,
   IconButton,
   Link,
   Stack,
@@ -14,6 +13,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { AccountCircle } from '@mui/icons-material';
 import { SearchInput } from '@/layouts/TopMenuLayout/components/TopBar';
+import { AppDivider } from '@/components/Divider';
 
 export const TopBar: React.FC = () => {
   return (
@@ -61,7 +61,7 @@ export const TopBar: React.FC = () => {
           </Stack>
         </Stack>
       </AppBar>
-      <Divider sx={{ borderColor: 'border.secondary' }} />
+      <AppDivider type="secondary" />
     </Box>
   );
 };

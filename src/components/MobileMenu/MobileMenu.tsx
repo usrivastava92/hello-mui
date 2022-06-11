@@ -1,7 +1,6 @@
 import {
   Box,
   Collapse,
-  Divider,
   IconButton,
   List,
   ListItemButton,
@@ -17,6 +16,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
 import { BrandLogo } from '@/layouts/TopMenuLayout/components/TopBar';
+import { AppDivider } from '@/components/Divider';
 
 interface MenuItemProps {
   item: IMenuItem;
@@ -122,9 +122,9 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           {menuOpen ? <CloseIcon /> : <MenuIcon />}
         </IconButton>
       </Stack>
-      <Divider />
+      <AppDivider type="primary" />
       <Menu menuItems={menuItems} open={menuOpen} />
-      <Divider />
+      <AppDivider type="primary" />
     </Box>
   );
 };

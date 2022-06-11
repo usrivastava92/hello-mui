@@ -2,7 +2,6 @@ import {
   AppBar,
   Box,
   Collapse,
-  Divider,
   List,
   ListItemButton,
   ListItemText
@@ -13,6 +12,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useNavigate } from 'react-router-dom';
 import { BootstrapTooltip } from '@/components/BootstrapTooltip';
 import { BrandLogo } from '@/layouts/TopMenuLayout/components/TopBar';
+import { AppDivider } from '@/components/Divider';
 
 export const getBgColorByLevel = (level: number): string => {
   if (level >= 3) {
@@ -117,9 +117,19 @@ export const SideNav: React.FC<SideNavProps> = ({
     >
       <AppBar sx={{ bgcolor: 'background.default' }} position="sticky">
         <BrandLogo sx={{ my: 1, mx: 'auto' }} className="intro-x" />
-        <Divider variant="middle" flexItem={true} light={true} />
+        <AppDivider
+          type="primary"
+          variant="middle"
+          flexItem={true}
+          light={true}
+        />
         <Menu menuItems={menuItems} mini={mini} />
-        <Divider variant="middle" flexItem={true} light={true} />
+        <AppDivider
+          type="primary"
+          variant="middle"
+          flexItem={true}
+          light={true}
+        />
       </AppBar>
     </Box>
   );

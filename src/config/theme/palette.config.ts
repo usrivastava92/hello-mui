@@ -9,6 +9,7 @@ declare module '@mui/material/styles' {
 
   interface PaletteColor {
     contrastText: string;
+    contrastBorder: string;
   }
 
   interface PaletteColorOptions {
@@ -18,13 +19,10 @@ declare module '@mui/material/styles' {
     dark?: string;
     darker?: string;
     contrastText?: string;
+    contrastBorder?: string;
   }
 
   interface PaletteOptions {
-    border?: {
-      primary?: string;
-      secondary?: string;
-    };
     dark?: PaletteColorOptions;
   }
 }
@@ -38,8 +36,8 @@ declare module '@mui/material/Button' {
 const commonPaletteOptions: PaletteOptions = {
   info: {
     lighter: '#fff',
-    light: '#E6F3FF',
-    main: '#3160D8',
+    light: '#3160D8',
+    main: '#1C3FAA',
     contrastText: '#fff'
   },
   success: {
@@ -76,7 +74,8 @@ const lightModePallet: PaletteOptions = {
     main: '#1C3FAA',
     dark: '#1A389F',
     darker: '#142C91',
-    contrastText: '#fff'
+    contrastText: '#fff',
+    contrastBorder: '#2e51bb'
   },
   secondary: {
     lighter: '#fff',
@@ -84,7 +83,8 @@ const lightModePallet: PaletteOptions = {
     main: '#F1F5F8',
     dark: '#E6F3FF',
     darker: '#8DA9BE',
-    contrastText: '#2d3748'
+    contrastText: '#2d3748',
+    contrastBorder: '#dee7ef'
   },
   dark: {
     lighter: grey[100],
@@ -100,10 +100,6 @@ const lightModePallet: PaletteOptions = {
   text: {
     primary: '#fff'
   },
-  border: {
-    primary: '#2e51bb',
-    secondary: '#dee7ef'
-  },
   ...commonPaletteOptions
 };
 
@@ -115,7 +111,8 @@ const darkModePallet: PaletteOptions = {
     main: '#232a3b',
     dark: '#1e2533',
     darker: '#181f29',
-    contrastText: '#fff'
+    contrastText: '#fff',
+    contrastBorder: '#313a55'
   },
   secondary: {
     lighter: '#313a55',
@@ -123,7 +120,8 @@ const darkModePallet: PaletteOptions = {
     main: '#293145',
     dark: '#1e2533',
     darker: '#181f29',
-    contrastText: '#fff'
+    contrastText: '#fff',
+    contrastBorder: '#3f4865'
   },
   dark: {
     lighter: grey[300],
@@ -138,10 +136,6 @@ const darkModePallet: PaletteOptions = {
   },
   text: {
     primary: '#fff'
-  },
-  border: {
-    primary: '#313a55',
-    secondary: '#313a55'
   },
   ...commonPaletteOptions
 };

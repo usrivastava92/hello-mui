@@ -13,13 +13,6 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
         elevation: 0
       }
     },
-    MuiDivider: {
-      styleOverrides: {
-        root: {
-          borderColor: palette.border?.primary
-        }
-      }
-    },
     MuiBreadcrumbs: {
       defaultProps: {
         color: 'inherit'

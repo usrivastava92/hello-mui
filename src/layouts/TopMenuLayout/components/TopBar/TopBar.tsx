@@ -5,7 +5,6 @@ import {
   Badge,
   Box,
   Breadcrumbs,
-  Divider,
   IconButton,
   InputAdornment,
   InputBase,
@@ -21,6 +20,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from 'react-router-dom';
+import { AppDivider } from '@/components/Divider';
 
 export const SearchInput: React.FC<InputBaseProps> = ({ sx }): JSX.Element => {
   return (
@@ -88,7 +88,8 @@ export const TopBar: React.FC = (): JSX.Element => {
             sx={{ my: 1, mx: 'auto', display: { xs: 'none', md: 'flex' } }}
             className="-intro-x"
           />
-          <Divider
+          <AppDivider
+            type="primary"
             flexItem={true}
             orientation="vertical"
             sx={{ mx: 3, display: { xs: 'none', md: 'flex' } }}
@@ -124,7 +125,7 @@ export const TopBar: React.FC = (): JSX.Element => {
           </Stack>
         </Stack>
       </AppBar>
-      <Divider />
+      <AppDivider type="primary" />
     </>
   );
 };
