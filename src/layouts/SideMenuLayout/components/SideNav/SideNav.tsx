@@ -113,7 +113,7 @@ export const SideNav: React.FC<SideNavProps> = ({
         minWidth: width,
         maxWidth: width,
         width: width,
-        pt: 2,
+        pt: 3,
         overflowX: 'hidden',
         display: { md: 'block', xs: 'none' }
       }}

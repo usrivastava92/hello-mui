@@ -67,9 +67,9 @@ export const TYPOGRAPHY_OPTIONS: TypographyOptions = {
   fontSize: 13,
   fontFamily: 'Roboto',
   fontWeightLight: 300,
-  fontWeightRegular: 410,
+  fontWeightRegular: 405,
   fontWeightMedium: 500,
-  fontWeightBold: 700,
+  fontWeightBold: 600,
   xs: {
     fontSize: '0.75rem',
     lineHeight: '1rem'

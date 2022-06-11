@@ -11,21 +11,21 @@ import {
   Stack,
   Typography
 } from '@mui/material';
+import { UserProps, USERS } from '@/pages/Users/userData';
 import AddIcon from '@mui/icons-material/Add';
 import { SearchInput } from '@/layouts/TopMenuLayout/components/TopBar';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { AppDivider } from '@/components/Divider';
-import { UserProps, USERS } from '@/pages/Users/UserData';
 
 const User: React.FC<UserProps> = ({ user }) => {
   return (
     <Card>
       <Stack spacing={2} sx={{ p: 2 }}>
         <Avatar sx={{ width: 56, height: 56, color: 'dark.lighter' }}></Avatar>
-        <Stack direction="column" alignItems="left">
-          <Typography component={Link} fontWeight="bold">
+        <Stack direction="column" alignItems="flex-start">
+          <Typography component={Link} fontWeight="medium">
             {user.name}
           </Typography>
           <Typography variant="xs" color="dark.main">
