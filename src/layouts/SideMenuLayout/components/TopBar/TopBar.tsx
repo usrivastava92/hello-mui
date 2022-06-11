@@ -17,7 +17,7 @@ import { AppDivider } from '@/components/Divider';
 
 export const TopBar: React.FC = () => {
   return (
-    <Box sx={{ mb: 2 }}>
+    <Box sx={{ py: 1 }}>
       <AppBar
         position="static"
         sx={{

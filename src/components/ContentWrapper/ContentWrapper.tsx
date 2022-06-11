@@ -1,24 +1,10 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, styled } from '@mui/material';
 
-interface ContentWrapperProps {
-  children: JSX.Element;
-}
-
-export const ContentWrapper: React.FC<ContentWrapperProps> = ({ children }) => {
-  return (
-    <Box
-      sx={{
-        color: 'secondary.contrastText',
-        bgcolor: 'secondary.main',
-        m: 2,
-        p: 1,
-        borderRadius: 10,
-        maxWidth: '100vw',
-        minHeight: '100%'
-      }}
-    >
-      {children}
-    </Box>
-  );
-};
+export const ContentWrapper = styled(Box)(({ theme }) => ({
+  color: theme.palette.secondary.contrastText,
+  backgroundColor: theme.palette.secondary.main,
+  borderRadius: theme.spacing(2),
+  maxWidth: '100vw',
+  minHeight: '100%'
+}));

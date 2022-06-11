@@ -14,7 +14,7 @@ export const TopMenuLayout: React.FC = () => {
       <TopBar />
       <TopNav menuItems={MENU_ITEMS} />
       <Box display="flex" flexDirection="column" sx={{ minHeight: '100vh' }}>
-        <ContentWrapper>
+        <ContentWrapper sx={{ m: 2, p: 2 }}>
           <Outlet />
         </ContentWrapper>
       </Box>

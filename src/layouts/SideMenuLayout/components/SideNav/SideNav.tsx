@@ -105,12 +105,15 @@ export const SideNav: React.FC<SideNavProps> = ({
   mini = false,
   menuItems = []
 }): JSX.Element => {
+  const width = mini ? 85 : 250;
   return (
     <Box
       sx={{
         height: '100vh',
-        width: mini ? '85px' : '230px',
-        pt: 3,
+        minWidth: width,
+        maxWidth: width,
+        width: width,
+        pt: 2,
         overflowX: 'hidden',
         display: { md: 'block', xs: 'none' }
       }}

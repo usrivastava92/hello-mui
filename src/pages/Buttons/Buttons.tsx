@@ -4,7 +4,7 @@ import { AppDivider } from '@/components/Divider';
 
 export const Buttons: React.FC = () => {
   return (
-    <Box sx={{ m: 2 }}>
+    <Box>
       <Typography variant="h5" fontWeight="medium">
         Buttons
       </Typography>

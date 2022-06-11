@@ -1,4 +1,4 @@
-import { Box, MenuItem, Stack, styled } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import { MENU_ITEMS } from '@/config/menu/menu.config';
 import { MobileMenu } from '@/components/MobileMenu';
 import { SideNav } from '@/layouts/SideMenuLayout/components/SideNav';
@@ -20,11 +20,11 @@ export const SideMenuLayout: React.FC<SideMenuLayoutProps> = ({
       <Stack>
         <SideNav menuItems={MENU_ITEMS} mini={mini} />
         <Box sx={{ height: '100vh' }} flexGrow={1}>
-          <ContentWrapper>
-            <>
-              <TopBar />
+          <ContentWrapper sx={{ m: 2 }}>
+            <TopBar />
+            <ContentWrapper sx={{ p: 2 }}>
               <Outlet />
-            </>
+            </ContentWrapper>
           </ContentWrapper>
         </Box>
       </Stack>
