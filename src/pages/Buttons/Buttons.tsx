@@ -1,17 +1,17 @@
-import { Box, Button, Card, Grid, Stack, Typography } from '@mui/material';
+import { Button, Card, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { AppDivider } from '@/components/Divider';
 
 export const Buttons: React.FC = () => {
   return (
-    <Box>
-      <Typography variant="h5" fontWeight="medium">
+    <>
+      <Typography variant="lg" fontWeight="medium">
         Buttons
       </Typography>
       <Grid sx={{ mt: 1 }} container rowSpacing={2} columnSpacing={2}>
         <Grid item sm={12} lg={6}>
           <Card>
-            <Typography sx={{ m: 2 }} variant="h6" component="div">
+            <Typography sx={{ m: 2 }} variant="base" component="div">
               Basic Buttons
             </Typography>
             <AppDivider type="secondary" />
@@ -42,7 +42,7 @@ export const Buttons: React.FC = () => {
         </Grid>
         <Grid item sm={12} lg={6}>
           <Card>
-            <Typography sx={{ m: 2 }} variant="h6" component="div">
+            <Typography sx={{ m: 2 }} variant="base" component="div">
               Outlined Buttons
             </Typography>
             <AppDivider type="secondary" />
@@ -73,7 +73,7 @@ export const Buttons: React.FC = () => {
         </Grid>
         <Grid item sm={12} lg={6}>
           <Card>
-            <Typography sx={{ m: 2 }} variant="h6" component="div">
+            <Typography sx={{ m: 2 }} variant="base" component="div">
               Text Buttons
             </Typography>
             <AppDivider type="secondary" />
@@ -103,6 +103,6 @@ export const Buttons: React.FC = () => {
           </Card>
         </Grid>
       </Grid>
-    </Box>
+    </>
   );
 };

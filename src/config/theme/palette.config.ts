@@ -87,11 +87,11 @@ const lightModePallet: PaletteOptions = {
     contrastBorder: '#dee7ef'
   },
   dark: {
-    lighter: grey[100],
-    light: grey[200],
-    main: grey[300],
-    dark: grey[400],
-    darker: grey[500],
+    lighter: grey[300],
+    light: grey[400],
+    main: grey[500],
+    dark: grey[600],
+    darker: grey[700],
     contrastText: '#fff'
   },
   background: {

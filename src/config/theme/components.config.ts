@@ -21,7 +21,6 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
     MuiButton: {
       styleOverrides: {
         root: {
-          height: '2.5rem',
           borderRadius: 8
         }
       },
