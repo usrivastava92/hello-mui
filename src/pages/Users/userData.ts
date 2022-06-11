@@ -1,12 +1,10 @@
 import { faker } from '@faker-js/faker';
 
-const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-const randomInt = (min = 0, max = 100): number => {
+export const randomInt = (min = 0, max = 100): number => {
   return min + Math.floor(Math.random() * max);
 };
 
-const randomUser = (): IUser => {
+export const randomUser = (): IUser => {
   return {
     name: faker.name.findName(),
     profession: faker.name.jobTitle(),

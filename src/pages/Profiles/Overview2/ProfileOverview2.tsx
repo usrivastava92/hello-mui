@@ -20,7 +20,7 @@ const User: React.FC<UserProps> = ({ user }) => {
       <Stack spacing={2} sx={{ p: 2 }}>
         <Avatar sx={{ width: 56, height: 56, color: 'dark.lighter' }}></Avatar>
         <Stack direction="column" alignItems="flex-start">
-          <Typography component={Link} fontWeight="medium">
+          <Typography component={Link} fontWeight="bold">
             {user.name}
           </Typography>
           <Typography variant="xs" color="dark.main">
@@ -41,11 +41,11 @@ const User: React.FC<UserProps> = ({ user }) => {
   );
 };
 
-export const UserLayout2: React.FC = () => {
+export const ProfileOverview2: React.FC = () => {
   return (
     <>
       {' '}
-      <Typography variant="lg">Users Layout 2</Typography>
+      <Typography variant="lg">Profile Overview 2</Typography>
       <Stack spacing={1} sx={{ py: 2 }}>
         <Button sx={{ boxShadow: 1 }} color="info" variant="contained">
           Add New User
