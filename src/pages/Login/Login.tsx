@@ -27,7 +27,7 @@ export const Login: React.FC = () => {
             />
             <Typography
               color="white"
-              variant="h4"
+              variant="lg"
               fontWeight="bold"
               sx={{ ml: 3 }}
             >
