@@ -19,26 +19,6 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
         root: {
           height: '2.5rem',
           borderRadius: 8
-        },
-        containedSecondary: {
-          borderColor: palette.secondary?.darker,
-          color: palette.secondary?.contrastText,
-          '&:hover': {
-            backgroundColor: palette.secondary?.dark
-          }
-        },
-        outlinedSecondary: {
-          borderColor: palette.secondary?.darker,
-          color: palette.secondary?.contrastText,
-          '&:hover': {
-            backgroundColor: palette.secondary?.dark
-          }
-        },
-        textSecondary: {
-          color: palette.secondary?.contrastText,
-          '&:hover': {
-            backgroundColor: palette.secondary?.dark
-          }
         }
       }
     },

@@ -50,7 +50,7 @@ export const PageNotFound: React.FC = () => {
             You may have mistyped the address or the page may have moved.
           </Typography>
           <Button
-            color="secondary"
+            color="dark"
             variant="outlined"
             sx={(theme) => ({
               mt: 4,

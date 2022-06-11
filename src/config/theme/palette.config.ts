@@ -3,6 +3,14 @@ import { PaletteColorOptions } from '@mui/material/styles';
 import { amber, grey, lightGreen, red } from '@mui/material/colors';
 
 declare module '@mui/material/styles' {
+  interface Palette {
+    dark: PaletteColor;
+  }
+
+  interface PaletteColor {
+    contrastText: string;
+  }
+
   interface PaletteColorOptions {
     lighter?: string;
     light?: string;
@@ -18,6 +26,12 @@ declare module '@mui/material/styles' {
       secondary?: string;
     };
     dark?: PaletteColorOptions;
+  }
+}
+
+declare module '@mui/material/Button' {
+  interface ButtonPropsColorOverrides {
+    dark: true;
   }
 }
 
