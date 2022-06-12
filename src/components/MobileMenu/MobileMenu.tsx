@@ -1,7 +1,6 @@
 import {
   Box,
   Collapse,
-  IconButton,
   List,
   ListItemButton,
   ListItemText,
@@ -110,17 +109,18 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
 
   return (
     <Box sx={{ display: { xs: 'block', md: 'none' } }} component="div">
-      <Stack justifyContent="space-between" sx={{ mx: 2 }}>
+      <Stack justifyContent="space-between" sx={{ mx: 2, my: 0.5 }}>
         <BrandLogo />
-        <IconButton
-          onClick={() => setMenuOpen(!menuOpen)}
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-        >
-          {menuOpen ? <CloseIcon /> : <MenuIcon />}
-        </IconButton>
+        <Stack onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? (
+            <CloseIcon
+              sx={{ color: 'primary.contrastText' }}
+              fontSize="large"
+            />
+          ) : (
+            <MenuIcon sx={{ color: 'primary.contrastText' }} fontSize="large" />
+          )}
+        </Stack>
       </Stack>
       <AppDivider type="primary" />
       <Menu menuItems={menuItems} open={menuOpen} />

@@ -42,9 +42,12 @@ export const SearchInput: React.FC<InputBaseProps> = ({ sx }): JSX.Element => {
         }
       />
       <IconButton
-        aria-label="delete"
         size="large"
-        sx={{ display: { md: 'none', xs: 'flex' } }}
+        edge="end"
+        sx={{
+          display: { md: 'none', xs: 'flex' },
+          color: 'primary.contrastText'
+        }}
       >
         <SearchIcon />
       </IconButton>
@@ -80,7 +83,7 @@ export const TopBar: React.FC = (): JSX.Element => {
         sx={{
           bgcolor: 'background.default',
           px: { xs: 2, md: 3 },
-          py: 1
+          py: { xs: 0, md: 1 }
         }}
       >
         <Stack>
@@ -109,7 +112,11 @@ export const TopBar: React.FC = (): JSX.Element => {
           <Box sx={{ flexGrow: 1 }} />
           <Stack className="intro-x" justifyContent="space-between">
             <SearchInput />
-            <IconButton size="large" aria-label="show 9+ new notifications">
+            <IconButton
+              size="large"
+              edge="end"
+              sx={{ color: 'primary.contrastText' }}
+            >
               <Badge badgeContent="9+" color="error" component="div">
                 <NotificationsIcon />
               </Badge>
@@ -117,8 +124,7 @@ export const TopBar: React.FC = (): JSX.Element => {
             <IconButton
               size="large"
               edge="end"
-              aria-label="account of current user"
-              aria-haspopup="true"
+              sx={{ color: 'primary.contrastText' }}
             >
               <AccountCircle />
             </IconButton>

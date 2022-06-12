@@ -22,30 +22,54 @@ import { AppDivider } from '@/components/Divider';
 const User: React.FC<UserProps> = ({ user }) => {
   return (
     <Card>
-      <Stack spacing={2} sx={{ p: 2 }}>
-        <Avatar sx={{ width: 56, height: 56, color: 'dark.lighter' }}></Avatar>
-        <Stack direction="column" alignItems="flex-start">
-          <Typography component={Link} fontWeight="medium">
-            {user.name}
-          </Typography>
-          <Typography variant="xs" color="dark.main">
-            {user.profession}
-          </Typography>
-        </Stack>
-        <Box flexGrow={1}></Box>
-        <IconButton>
-          <FacebookIcon />
-        </IconButton>
-        <IconButton>
-          <TwitterIcon />
-        </IconButton>
-        <IconButton>
-          <LinkedInIcon />
-        </IconButton>
-      </Stack>
+      <Grid container sx={{ p: 2 }}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          display="flex"
+          flexDirection={{ xs: 'column', md: 'row' }}
+          justifyContent={{ xs: 'center', md: 'flex-start' }}
+          alignItems="center"
+        >
+          <Avatar
+            sx={{ width: 56, height: 56, color: 'dark.lighter' }}
+          ></Avatar>
+          <Stack
+            sx={{ m: 2 }}
+            direction="column"
+            alignItems={{ xs: 'center', md: 'flex-start' }}
+          >
+            <Typography component={Link} fontWeight="medium">
+              {user.name}
+            </Typography>
+            <Typography variant="xs" color="dark.main">
+              {user.profession}
+            </Typography>
+          </Stack>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          display="flex"
+          justifyContent={{ xs: 'center', md: 'flex-end' }}
+          alignItems="center"
+        >
+          <IconButton>
+            <FacebookIcon />
+          </IconButton>
+          <IconButton>
+            <TwitterIcon />
+          </IconButton>
+          <IconButton>
+            <LinkedInIcon />
+          </IconButton>
+        </Grid>
+      </Grid>
       <AppDivider type="secondary" />
-      <Stack sx={{ m: 2 }} justifyContent="space-between">
-        <Stack direction="column" sx={{ width: '50%' }} spacing={1}>
+      <Grid container sx={{ p: 2 }} spacing={2}>
+        <Grid item xs={12} md={6}>
           <Stack justifyContent="space-between" sx={{ width: '100%' }}>
             <Typography variant="xs" component={Link} color="dark.main">
               Progress
@@ -60,16 +84,23 @@ const User: React.FC<UserProps> = ({ user }) => {
             variant="determinate"
             value={user.progress}
           />
-        </Stack>
-        <Stack spacing={2}>
-          <Button size="small" color="info" variant="contained">
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          display="flex"
+          justifyContent={{ xs: 'center', md: 'flex-end' }}
+          alignItems="center"
+        >
+          <Button size="small" color="info" variant="contained" sx={{ mr: 2 }}>
             Message
           </Button>
           <Button size="small" color="dark" variant="contained">
             Profile
           </Button>
-        </Stack>
-      </Stack>
+        </Grid>
+      </Grid>
     </Card>
   );
 };
