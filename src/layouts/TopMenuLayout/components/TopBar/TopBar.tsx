@@ -45,8 +45,7 @@ export const SearchInput: React.FC<InputBaseProps> = ({ sx }): JSX.Element => {
         size="large"
         edge="end"
         sx={{
-          display: { md: 'none', xs: 'flex' },
-          color: 'primary.contrastText'
+          display: { md: 'none', xs: 'flex' }
         }}
       >
         <SearchIcon />
@@ -112,20 +111,12 @@ export const TopBar: React.FC = (): JSX.Element => {
           <Box sx={{ flexGrow: 1 }} />
           <Stack className="intro-x" justifyContent="space-between">
             <SearchInput />
-            <IconButton
-              size="large"
-              edge="end"
-              sx={{ color: 'primary.contrastText' }}
-            >
+            <IconButton size="large" edge="end">
               <Badge badgeContent="9+" color="error" component="div">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              sx={{ color: 'primary.contrastText' }}
-            >
+            <IconButton size="large" edge="end">
               <AccountCircle />
             </IconButton>
           </Stack>

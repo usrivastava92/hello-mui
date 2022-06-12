@@ -106,12 +106,12 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
   menuItems = []
 }): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const toggleMenu = () => setMenuOpen(!menuOpen);
   return (
     <Box sx={{ display: { xs: 'block', md: 'none' } }} component="div">
       <Stack justifyContent="space-between" sx={{ mx: 2, my: 0.5 }}>
         <BrandLogo />
-        <Stack onClick={() => setMenuOpen(!menuOpen)}>
+        <Stack onClick={toggleMenu}>
           {menuOpen ? (
             <CloseIcon
               sx={{ color: 'primary.contrastText' }}

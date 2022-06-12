@@ -1,7 +1,7 @@
 import React from 'react';
 import { Divider, styled } from '@mui/material';
 
-interface DividerProps {
+export interface DividerProps {
   type: 'primary' | 'secondary';
 }
 

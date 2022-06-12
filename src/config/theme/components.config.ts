@@ -18,6 +18,13 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
         color: 'inherit'
       }
     },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          color: 'inherit'
+        }
+      }
+    },
     MuiButton: {
       styleOverrides: {
         root: {
