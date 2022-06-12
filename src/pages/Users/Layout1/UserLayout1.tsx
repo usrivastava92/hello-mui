@@ -93,12 +93,14 @@ const User: React.FC<UserProps> = ({ user }) => {
           justifyContent={{ xs: 'center', md: 'flex-end' }}
           alignItems="center"
         >
-          <Button size="small" color="info" variant="contained" sx={{ mr: 2 }}>
-            Message
-          </Button>
-          <Button size="small" color="dark" variant="contained">
-            Profile
-          </Button>
+          <Stack spacing={2}>
+            <Button size="small" color="info" variant="contained">
+              Message
+            </Button>
+            <Button size="small" color="dark" variant="contained">
+              Profile
+            </Button>
+          </Stack>
         </Grid>
       </Grid>
     </Card>
