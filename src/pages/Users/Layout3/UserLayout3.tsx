@@ -7,7 +7,6 @@ import {
   Card,
   Grid,
   IconButton,
-  LinearProgress,
   Link,
   Stack,
   Typography
@@ -21,13 +20,24 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 const User: React.FC<UserProps> = ({ user }) => {
   return (
     <Card>
-      <Box sx={{ p: 2 }}>
-        <Stack spacing={2} justifyContent="flex-start">
+      <Grid container sx={{ p: 2 }} rowSpacing={1}>
+        <Grid
+          item
+          xs={12}
+          display="flex"
+          flexDirection={{ xs: 'column', md: 'row' }}
+          justifyContent={{ xs: 'center', md: 'flex-start' }}
+          alignItems="center"
+        >
           <Avatar
             variant="square"
             sx={{ width: 56, height: 56, color: 'dark.lighter' }}
           ></Avatar>
-          <Stack direction="column" alignItems="flex-start">
+          <Stack
+            sx={{ m: 2 }}
+            direction="column"
+            alignItems={{ xs: 'center', md: 'flex-start' }}
+          >
             <Typography component={Link} fontWeight="medium">
               {user.name}
             </Typography>
@@ -35,44 +45,44 @@ const User: React.FC<UserProps> = ({ user }) => {
               {user.profession}
             </Typography>
           </Stack>
-        </Stack>
-        <Typography sx={{ py: 2 }}>{user.bio}</Typography>
-        <Stack justifyContent="flex-start" spacing={1} color="dark.main">
-          <EmailIcon />
-          <Typography>{user.email}</Typography>
-        </Stack>
-        <Stack justifyContent="flex-start" spacing={1} color="dark.main">
-          <InstagramIcon />
-          <Typography>{user.name}</Typography>
-        </Stack>
-      </Box>
-      <AppDivider type="secondary" />
-      <Stack sx={{ m: 2 }} justifyContent="space-between">
-        <Stack direction="column" sx={{ width: '50%' }} spacing={1}>
-          <Stack justifyContent="space-between" sx={{ width: '100%' }}>
-            <Typography variant="xs" component={Link} color="dark.main">
-              Progress
-            </Typography>
-            <Typography variant="xs" color="dark.main">
-              {user.progress}%
-            </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+            {user.bio}
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Stack
+            spacing={1}
+            justifyContent={{ xs: 'center', md: 'flex-start' }}
+          >
+            <EmailIcon />
+            <Typography>{user.email}</Typography>
           </Stack>
-          <LinearProgress
-            sx={{ width: '100%' }}
-            color="info"
-            variant="determinate"
-            value={user.progress}
-          />
-        </Stack>
-        <Stack spacing={2}>
-          <Button size="small" color="info" variant="contained">
-            Message
-          </Button>
-          <Button size="small" color="dark" variant="contained">
-            Profile
-          </Button>
-        </Stack>
-      </Stack>
+        </Grid>
+        <Grid item xs={12}>
+          <Stack
+            spacing={1}
+            justifyContent={{ xs: 'center', md: 'flex-start' }}
+          >
+            <InstagramIcon />
+            <Typography>{user.name}</Typography>
+          </Stack>
+        </Grid>
+      </Grid>
+      <AppDivider type="secondary" />
+      <Grid container sx={{ p: 2 }}>
+        <Grid item xs={12}>
+          <Stack spacing={2} justifyContent="space-between">
+            <Button size="small" color="info" variant="contained">
+              Message
+            </Button>
+            <Button size="small" color="dark" variant="contained">
+              Profile
+            </Button>
+          </Stack>
+        </Grid>
+      </Grid>
     </Card>
   );
 };

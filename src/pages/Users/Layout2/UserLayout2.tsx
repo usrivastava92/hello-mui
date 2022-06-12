@@ -17,7 +17,7 @@ import { UserProps, USERS } from '@/pages/Users/userData';
 const User: React.FC<UserProps> = ({ user }) => {
   return (
     <Card sx={{ p: 2 }}>
-      <Grid container spacing={2}>
+      <Grid container>
         <Grid
           item
           xs={12}
