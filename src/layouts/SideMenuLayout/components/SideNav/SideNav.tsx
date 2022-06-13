@@ -53,6 +53,8 @@ const MenuItem: React.FC<MenuItemProps> = ({
     <>
       <BootstrapTooltip title={mini ? item.displayName : ''} placement="right">
         <ListItemButton
+          className="intro-x"
+          component={'li'}
           sx={{ mx: 2, bgcolor: getBgColorByLevel(level) }}
           onClick={handleClick}
         >
@@ -65,7 +67,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
       </BootstrapTooltip>
 
       {hasNestedMenu && (
-        <Collapse in={open}>
+        <Collapse in={open} unmountOnExit mountOnEnter>
           <Menu menuItems={item.nesterItems} mini={mini} level={level + 1} />
         </Collapse>
       )}
@@ -88,7 +90,7 @@ const Menu: React.FC<MenuProps> = ({
     level = 1;
   }
   return (
-    <List className="intro-x">
+    <List>
       {menuItems.map((item) => (
         <MenuItem key={item.id} item={item} mini={mini} level={level} />
       ))}
