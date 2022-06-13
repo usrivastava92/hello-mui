@@ -18,6 +18,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { AppDivider } from '@/components/Divider';
+import { GroupedTransition } from '@/components/GroupedTransition';
 
 const User: React.FC<UserProps> = ({ user }) => {
   return (
@@ -121,12 +122,14 @@ export const UserLayout1: React.FC = () => {
         <Box flexGrow={1}></Box>
         <SearchInput sx={{ borderRadius: 2, bgcolor: 'secondary.lighter' }} />
       </Stack>
-      <Grid className="intro-y" container rowSpacing={2} columnSpacing={2}>
-        {USERS.map((user, index) => (
-          <Grid key={index} item xs={12} md={6}>
-            <User user={user} />
-          </Grid>
-        ))}
+      <Grid container rowSpacing={2} columnSpacing={2}>
+        <GroupedTransition>
+          {USERS.map((user, index) => (
+            <Grid key={index} item xs={12} md={6}>
+              <User user={user} />
+            </Grid>
+          ))}
+        </GroupedTransition>
       </Grid>
     </>
   );

@@ -16,6 +16,7 @@ import AddIcon from '@mui/icons-material/Add';
 import { SearchInput } from '@/layouts/TopMenuLayout/components/TopBar';
 import EmailIcon from '@mui/icons-material/Email';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import { GroupedTransition } from '@/components/GroupedTransition';
 
 const User: React.FC<UserProps> = ({ user }) => {
   return (
@@ -101,12 +102,14 @@ export const UserLayout3: React.FC = () => {
         <Box flexGrow={1}></Box>
         <SearchInput sx={{ borderRadius: 2, bgcolor: 'secondary.lighter' }} />
       </Stack>
-      <Grid className="intro-y" container rowSpacing={2} columnSpacing={2}>
-        {USERS.map((user, index) => (
-          <Grid key={index} item xs={12} md={6} lg={4}>
-            <User user={user} />
-          </Grid>
-        ))}
+      <Grid container rowSpacing={2} columnSpacing={2}>
+        <GroupedTransition>
+          {USERS.map((user, index) => (
+            <Grid key={index} item xs={12} md={6} lg={4}>
+              <User user={user} />
+            </Grid>
+          ))}
+        </GroupedTransition>
       </Grid>
     </>
   );
