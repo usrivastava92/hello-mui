@@ -25,9 +25,10 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, level = 1 }) => {
   return (
     <ListItemButton
       component="li"
-      className={`top-menu -intro-y ${
-        level === 1 && item.isActive ? 'top-menu--active' : ''
-      }`}
+      className={`top-menu 
+      ${level === 1 ? '-intro-y' : ''}
+      ${level === 1 && item.isActive ? 'top-menu--active' : ''}
+      `}
       onClick={handleClick}
     >
       {item.icon}
