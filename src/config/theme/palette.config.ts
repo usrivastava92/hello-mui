@@ -1,6 +1,7 @@
 import { PaletteMode, PaletteOptions } from '@mui/material';
 import { PaletteColorOptions } from '@mui/material/styles';
 import { amber, grey, lightGreen, red } from '@mui/material/colors';
+import { ChipPropsColorOverrides } from '@mui/material/Chip/Chip';
 
 declare module '@mui/material/styles' {
   interface Palette {
@@ -70,19 +71,19 @@ const lightModePallet: PaletteOptions = {
   mode: 'light',
   primary: {
     lighter: '#3151BC',
-    light: '#2e51bb',
+    light: '#2047c0',
     main: '#1C3FAA',
-    dark: '#1A389F',
-    darker: '#142C91',
+    dark: '#183794',
+    darker: '#152f7e',
     contrastText: '#fff',
     contrastBorder: '#2e51bb'
   },
   secondary: {
     lighter: '#fff',
-    light: '#F1F5F8',
+    light: '#f2f5f7',
     main: '#F1F5F8',
-    dark: '#E6F3FF',
-    darker: '#8DA9BE',
+    dark: '#e0e9f0',
+    darker: '#cfdde7',
     contrastText: '#2d3748',
     contrastBorder: '#dee7ef'
   },
