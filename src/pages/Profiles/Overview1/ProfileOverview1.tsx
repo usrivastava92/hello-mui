@@ -43,9 +43,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
                 alignItems="center"
                 sx={{ p: 2 }}
               >
-                <Avatar
-                  sx={{ width: '5rem', height: '5rem', color: 'dark.lighter' }}
-                ></Avatar>
+                <Avatar sx={{ width: '5rem', height: '5rem' }}></Avatar>
                 <Stack
                   direction="column"
                   alignItems="flex-start"
@@ -54,9 +52,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
                   <Typography variant="lg" fontWeight="medium">
                     {profileInfo.name}
                   </Typography>
-                  <Typography color="dark.darker">
-                    {profileInfo.profession}
-                  </Typography>
+                  <Typography>{profileInfo.profession}</Typography>
                 </Stack>
               </Grid>
               <Grid

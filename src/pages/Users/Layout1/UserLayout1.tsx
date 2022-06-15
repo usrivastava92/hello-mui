@@ -33,9 +33,7 @@ const User: React.FC<UserProps> = ({ user }) => {
           justifyContent={{ xs: 'center', md: 'flex-start' }}
           alignItems="center"
         >
-          <Avatar
-            sx={{ width: 56, height: 56, color: 'dark.lighter' }}
-          ></Avatar>
+          <Avatar sx={{ width: 56, height: 56 }}></Avatar>
           <Stack
             sx={{ m: 2 }}
             direction="column"
@@ -44,9 +42,7 @@ const User: React.FC<UserProps> = ({ user }) => {
             <Typography component={Link} fontWeight="medium">
               {user.name}
             </Typography>
-            <Typography variant="xs" color="dark.main">
-              {user.profession}
-            </Typography>
+            <Typography variant="xs">{user.profession}</Typography>
           </Stack>
         </Grid>
         <Grid
@@ -72,12 +68,10 @@ const User: React.FC<UserProps> = ({ user }) => {
       <Grid container sx={{ p: 2 }} spacing={2}>
         <Grid item xs={12} md={6}>
           <Stack justifyContent="space-between" sx={{ width: '100%' }}>
-            <Typography variant="xs" component={Link} color="dark.main">
+            <Typography variant="xs" component={Link}>
               Progress
             </Typography>
-            <Typography variant="xs" color="dark.main">
-              {user.progress}%
-            </Typography>
+            <Typography variant="xs">{user.progress}%</Typography>
           </Stack>
           <LinearProgress
             sx={{ width: '100%' }}

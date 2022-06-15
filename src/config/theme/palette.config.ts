@@ -129,7 +129,7 @@ const darkModePallet: PaletteOptions = {
     700: '#1d2432',
     800: '#1b222d',
     900: '#181f29',
-    A100: '',
+    A100: '#313a55',
     main: '#293145',
     contrastText: '#fff'
   },
