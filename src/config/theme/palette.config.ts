@@ -1,5 +1,16 @@
 import { PaletteMode, PaletteOptions } from '@mui/material';
 
+declare module '@mui/material/Button' {
+  interface ButtonPropsVariantOverrides {
+    soft: true;
+  }
+}
+declare module '@mui/material/Chip' {
+  interface ChipPropsVariantOverrides {
+    soft: true;
+  }
+}
+
 const commonPaletteOptions: PaletteOptions = {
   info: {
     50: '#e6f3ff',

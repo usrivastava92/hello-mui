@@ -1,7 +1,21 @@
 import { Components, PaletteOptions } from '@mui/material';
+import { getButtonVariants } from '@/config/theme/components/button.config';
+import { getChipVariants } from '@/config/theme/components/chip.config';
 
 export const getComponentOptions = (palette: PaletteOptions): Components => {
   return {
+    MuiChip: {
+      variants: getChipVariants()
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+          fontWeight: 600
+        }
+      },
+      variants: getButtonVariants()
+    },
     MuiBreadcrumbs: {
       defaultProps: {
         color: 'inherit'

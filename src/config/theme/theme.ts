@@ -1,7 +1,7 @@
 import { PaletteMode, ThemeOptions } from '@mui/material';
 import { TYPOGRAPHY_OPTIONS } from '@/config/theme/typography.config';
 import { getPaletteByMode } from '@/config/theme/palette.config';
-import { getComponentOptions } from '@/config/theme/components.config';
+import { getComponentOptions } from '@/config/theme/components/components.config';
 import { SHADOW_OPTIONS } from '@/config/theme/shadow.config';
 import { BREAKPOINT_OPTIONS } from '@/config/theme/breakpoint.config';
 

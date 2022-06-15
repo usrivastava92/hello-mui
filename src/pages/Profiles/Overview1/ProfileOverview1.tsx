@@ -173,7 +173,12 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
                   alignItems="center"
                 >
                   <Typography>HTML, PHP, Mysql</Typography>
-                  <Chip size="small" label="+150" color="success" />
+                  <Chip
+                    size="small"
+                    variant="soft"
+                    label="+150"
+                    color="success"
+                  />
                 </Grid>
               </Grid>
               <Grid
@@ -204,7 +209,12 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
                   alignItems="center"
                 >
                   <Typography>HTML, PHP, Mysql</Typography>
-                  <Chip size="small" label="+150" color="warning" />
+                  <Chip
+                    size="small"
+                    variant="soft"
+                    label="+150"
+                    color="warning"
+                  />
                 </Grid>
               </Grid>
               <Grid
@@ -234,7 +244,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
                   justifyContent="space-between"
                 >
                   <Typography>HTML, PHP, Mysql</Typography>
-                  <Chip size="small" label="+150" color="info" />
+                  <Chip size="small" variant="soft" label="+150" color="info" />
                 </Grid>
               </Grid>
             </Grid>
@@ -339,7 +349,12 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
                   alignItems="center"
                 >
                   <Typography>HTML, PHP, Mysql</Typography>
-                  <Chip size="small" label="+150" color="success" />
+                  <Chip
+                    size="small"
+                    variant="soft"
+                    label="+150"
+                    color="success"
+                  />
                 </Grid>
               </Grid>
               <Grid
@@ -370,7 +385,12 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
                   alignItems="center"
                 >
                   <Typography>HTML, PHP, Mysql</Typography>
-                  <Chip size="small" label="+150" color="warning" />
+                  <Chip
+                    size="small"
+                    variant="soft"
+                    label="+150"
+                    color="warning"
+                  />
                 </Grid>
               </Grid>
               <Grid
@@ -400,7 +420,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
                   justifyContent="space-between"
                 >
                   <Typography>HTML, PHP, Mysql</Typography>
-                  <Chip size="small" label="+150" color="info" />
+                  <Chip size="small" variant="soft" label="+150" color="info" />
                 </Grid>
               </Grid>
             </Grid>
@@ -450,7 +470,12 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
                   alignItems="center"
                 >
                   <Typography>HTML, PHP, Mysql</Typography>
-                  <Chip size="small" label="+150" color="success" />
+                  <Chip
+                    size="small"
+                    variant="soft"
+                    label="+150"
+                    color="success"
+                  />
                 </Grid>
               </Grid>
               <Grid
@@ -481,7 +506,12 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
                   alignItems="center"
                 >
                   <Typography>HTML, PHP, Mysql</Typography>
-                  <Chip size="small" label="+150" color="warning" />
+                  <Chip
+                    size="small"
+                    variant="soft"
+                    label="+150"
+                    color="warning"
+                  />
                 </Grid>
               </Grid>
               <Grid
@@ -511,7 +541,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
                   justifyContent="space-between"
                 >
                   <Typography>HTML, PHP, Mysql</Typography>
-                  <Chip size="small" label="+150" color="info" />
+                  <Chip size="small" variant="soft" label="+150" color="info" />
                 </Grid>
               </Grid>
             </Grid>
