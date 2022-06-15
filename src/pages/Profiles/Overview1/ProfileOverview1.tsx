@@ -300,9 +300,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
                 />
               </Grid>
               <Grid item xs={12} sx={{ textAlign: 'center' }}>
-                <Typography color="dark.dark" component={Link}>
-                  View more details...
-                </Typography>
+                <Typography component={Link}>View more details...</Typography>
               </Grid>
             </Grid>
           </Card>
@@ -311,11 +309,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
           <Card>
             <Stack sx={{ p: 2 }} justifyContent="space-between">
               <Typography fontWeight="bold">Daily Sales</Typography>
-              <Button
-                variant="outlined"
-                color="dark"
-                startIcon={<BorderAllIcon />}
-              >
+              <Button variant="outlined" startIcon={<BorderAllIcon />}>
                 Download Excel
               </Button>
             </Stack>
@@ -531,7 +525,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
           <Card>
             <Stack sx={{ p: 2 }} justifyContent="space-between">
               <Typography fontWeight="bold">General Statistics</Typography>
-              <Button variant="outlined" color="dark" startIcon={<CodeIcon />}>
+              <Button variant="outlined" startIcon={<CodeIcon />}>
                 Download XML
               </Button>
             </Stack>

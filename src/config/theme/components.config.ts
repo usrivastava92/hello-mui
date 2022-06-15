@@ -2,17 +2,6 @@ import { Components, PaletteOptions } from '@mui/material';
 
 export const getComponentOptions = (palette: PaletteOptions): Components => {
   return {
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          color: 'inherit',
-          backgroundColor: palette.secondary?.lighter
-        }
-      },
-      defaultProps: {
-        elevation: 0
-      }
-    },
     MuiBreadcrumbs: {
       defaultProps: {
         color: 'inherit'
@@ -25,19 +14,8 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
         }
       }
     },
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: 8
-        }
-      },
-      defaultProps: {
-        disableElevation: true
-      }
-    },
     MuiStack: {
       defaultProps: {
-        color: 'inherit',
         direction: 'row',
         justifyContent: 'center',
         alignItems: 'center'
@@ -56,13 +34,12 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
       },
       styleOverrides: {
         root: {
-          cursor: 'pointer'
+          cursor: 'pointer',
+          '&:hover': {
+            fontWeight: 'bold',
+            textDecoration: 'none'
+          }
         }
-      }
-    },
-    MuiListItemIcon: {
-      defaultProps: {
-        color: palette.text?.primary
       }
     }
   };

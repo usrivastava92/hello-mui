@@ -68,7 +68,7 @@ const User: React.FC<UserProps> = ({ user }) => {
           <Button size="small" color="info" variant="contained">
             Message
           </Button>
-          <Button size="small" color="dark" variant="contained">
+          <Button size="small" variant="contained">
             Profile
           </Button>
         </Stack>

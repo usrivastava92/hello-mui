@@ -19,9 +19,7 @@ export const Buttons: React.FC = () => {
               <Button color="primary" variant="contained">
                 Primary
               </Button>
-              <Button color="dark" variant="contained">
-                Dark
-              </Button>
+              <Button variant="contained">Dark</Button>
               <Button color="secondary" variant="contained">
                 Secondary
               </Button>
@@ -50,9 +48,7 @@ export const Buttons: React.FC = () => {
               <Button color="primary" variant="outlined">
                 Primary
               </Button>
-              <Button color="dark" variant="outlined">
-                Dark
-              </Button>
+              <Button variant="outlined">Dark</Button>
               <Button color="secondary" variant="outlined">
                 Secondary
               </Button>
@@ -81,9 +77,36 @@ export const Buttons: React.FC = () => {
               <Button color="primary" variant="text">
                 Primary
               </Button>
-              <Button color="dark" variant="text">
-                Dark
+              <Button variant="text">Dark</Button>
+              <Button color="secondary" variant="text">
+                Secondary
               </Button>
+              <Button color="info" variant="text">
+                Info
+              </Button>
+              <Button color="success" variant="text">
+                Success
+              </Button>
+              <Button color="warning" variant="text">
+                Warning
+              </Button>
+              <Button color="error" variant="text">
+                Error
+              </Button>
+            </Stack>
+          </Card>
+        </Grid>
+        <Grid item sm={12} lg={6}>
+          <Card>
+            <Typography sx={{ m: 2 }} variant="base" component="div">
+              Soft Buttons
+            </Typography>
+            <AppDivider type="secondary" />
+            <Stack sx={{ m: 2, flexWrap: 'wrap' }} spacing={2}>
+              <Button color="primary" variant="text">
+                Primary
+              </Button>
+              <Button variant="text">Dark</Button>
               <Button color="secondary" variant="text">
                 Secondary
               </Button>

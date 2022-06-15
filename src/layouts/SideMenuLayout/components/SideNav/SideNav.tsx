@@ -16,12 +16,12 @@ import { AppDivider } from '@/components/Divider';
 
 export const getBgColorByLevel = (level: number): string => {
   if (level >= 3) {
-    return 'primary.darker';
+    return 'primary.800';
   }
   if (level === 2) {
-    return 'primary.dark';
+    return 'primary.600';
   }
-  return 'primary.main';
+  return 'background.default';
 };
 
 interface MenuItemProps {
@@ -53,14 +53,17 @@ const MenuItem: React.FC<MenuItemProps> = ({
     <>
       <BootstrapTooltip title={mini ? item.displayName : ''} placement="right">
         <ListItemButton
-          className="intro-x"
           component={'li'}
           sx={{ mx: 2, bgcolor: getBgColorByLevel(level) }}
           onClick={handleClick}
         >
-          {item.icon}
+          {React.cloneElement(item.icon, { className: 'intro-x' })}
           {!mini && (
-            <ListItemText sx={{ ml: 1.5 }} primary={item.displayName} />
+            <ListItemText
+              className="intro-x"
+              sx={{ ml: 1.5 }}
+              primary={item.displayName}
+            />
           )}
           {!mini && hasNestedMenu && <KeyboardArrowDownIcon />}
         </ListItemButton>

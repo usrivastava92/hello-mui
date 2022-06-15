@@ -76,7 +76,11 @@ export const TopNav: React.FC<TopNavProps> = ({
 }): JSX.Element => {
   return (
     <Box
-      sx={{ mt: 2, px: 6, display: { xs: 'none', md: 'block' } }}
+      sx={{
+        mt: 2,
+        px: 6,
+        display: { xs: 'none', md: 'block' }
+      }}
       className="top-nav"
       component="nav"
     >
