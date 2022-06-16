@@ -1,7 +1,6 @@
-import { Card, Grid, Stack, Typography } from '@mui/material';
+import { Alert, Card, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { AppDivider } from '@/components/Divider';
-import { Alert } from '@mui/lab';
 import {
   AlertColors,
   AlertVariants
