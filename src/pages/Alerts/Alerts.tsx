@@ -1,4 +1,4 @@
-import { Alert, Card, Grid, Stack, Typography } from '@mui/material';
+import { Alert, Card, Grid, Typography } from '@mui/material';
 import React from 'react';
 import { AppDivider } from '@/components/Divider';
 import {
@@ -10,9 +10,9 @@ export const Alerts: React.FC = () => {
   return (
     <>
       <Typography variant="lg" fontWeight="medium">
-        Buttons
+        Alerts
       </Typography>
-      <Grid sx={{ mt: 1 }} container spacing={2}>
+      <Grid sx={{ pt: 1 }} container spacing={2}>
         {AlertVariants.map((variant, index) => (
           <Grid key={index} item sm={12} lg={6}>
             <Card>
@@ -24,17 +24,15 @@ export const Alerts: React.FC = () => {
                 {variant} Alerts
               </Typography>
               <AppDivider type="secondary" />
-              <Stack
-                sx={{ m: 2, flexWrap: 'wrap' }}
-                spacing={2}
-                justifyContent="space-evenly"
-              >
+              <Grid container spacing={2} sx={{ p: 2 }}>
                 {AlertColors.map((color, index) => (
-                  <Alert key={index} color={color} variant={variant}>
-                    {color}
-                  </Alert>
+                  <Grid key={index} item xs={12}>
+                    <Alert color={color} variant={variant}>
+                      {color}
+                    </Alert>
+                  </Grid>
                 ))}
-              </Stack>
+              </Grid>
             </Card>
           </Grid>
         ))}
