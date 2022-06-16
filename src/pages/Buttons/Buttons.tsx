@@ -17,12 +17,8 @@ export const Buttons: React.FC = () => {
             </Typography>
             <AppDivider type="secondary" />
             <Stack sx={{ m: 2, flexWrap: 'wrap' }} spacing={2}>
-              <Button color="primary" variant="contained">
-                Primary
-              </Button>
-              <Button variant="contained">Dark</Button>
-              <Button color="secondary" variant="contained">
-                Secondary
+              <Button color="neutral" variant="contained">
+                Neutral
               </Button>
               <Button color="info" variant="contained">
                 Info
@@ -46,12 +42,8 @@ export const Buttons: React.FC = () => {
             </Typography>
             <AppDivider type="secondary" />
             <Stack sx={{ m: 2, flexWrap: 'wrap' }} spacing={2}>
-              <Button color="primary" variant="outlined">
-                Primary
-              </Button>
-              <Button variant="outlined">Dark</Button>
-              <Button color="secondary" variant="outlined">
-                Secondary
+              <Button color="neutral" variant="outlined">
+                Neutral
               </Button>
               <Button color="info" variant="outlined">
                 Info
@@ -75,12 +67,8 @@ export const Buttons: React.FC = () => {
             </Typography>
             <AppDivider type="secondary" />
             <Stack sx={{ m: 2, flexWrap: 'wrap' }} spacing={2}>
-              <Button color="primary" variant="text">
-                Primary
-              </Button>
-              <Button variant="text">Dark</Button>
-              <Button color="secondary" variant="text">
-                Secondary
+              <Button color="neutral" variant="text">
+                Neutral
               </Button>
               <Button color="info" variant="text">
                 Info
@@ -104,12 +92,8 @@ export const Buttons: React.FC = () => {
             </Typography>
             <AppDivider type="secondary" />
             <Stack sx={{ m: 2, flexWrap: 'wrap' }} spacing={2}>
-              <Button color="primary" variant="soft">
-                Primary
-              </Button>
-              <Button variant="text">Dark</Button>
-              <Button color="secondary" variant="soft">
-                Secondary
+              <Button color="neutral" variant="soft">
+                Neutral
               </Button>
               <Button color="info" variant="soft">
                 Info

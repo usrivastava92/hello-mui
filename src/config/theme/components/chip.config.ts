@@ -1,16 +1,30 @@
 import { Interpolation } from '@mui/material';
-import { ColorPartial } from '@mui/material/styles/createPalette';
+import {
+  ColorPartial,
+  SimplePaletteColorOptions
+} from '@mui/material/styles/createPalette';
 import { ComponentsPropsList } from '@mui/material/styles/props';
 import { Theme } from '@mui/material/styles/createTheme';
 
+declare module '@mui/material/Chip' {
+  interface ChipPropsVariantOverrides {
+    soft: true;
+  }
+
+  interface ChipPropsColorOverrides {
+    neutral: true;
+    primary: false;
+    secondary: false;
+  }
+}
+
 const ChipVariants = ['outlined', 'soft', 'filled'] as const;
 const ButtonColors = [
-  'primary',
-  'secondary',
   'info',
   'success',
   'warning',
-  'error'
+  'error',
+  'neutral'
 ] as const;
 type ButtonColorsType = typeof ButtonColors[number];
 type ChipVariantProps = {
@@ -33,7 +47,7 @@ const filledVariant = (color: ButtonColorsType): ChipVariantProps => {
   return {
     props: { variant: 'filled', color: color },
     style: ({ theme }) => ({
-      color: theme.palette[color].contrastText
+      color: (theme.palette[color] as SimplePaletteColorOptions).contrastText
     })
   };
 };
@@ -42,7 +56,7 @@ const outlinedVariant = (color: ButtonColorsType): ChipVariantProps => {
   return {
     props: { variant: 'outlined', color: color },
     style: ({ theme }) => ({
-      color: theme.palette[color].main
+      color: (theme.palette[color] as SimplePaletteColorOptions).main
     })
   };
 };

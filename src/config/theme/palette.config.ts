@@ -1,29 +1,33 @@
 import { PaletteMode, PaletteOptions } from '@mui/material';
+import { PaletteColorOptions } from '@mui/material/styles/createPalette';
 
-declare module '@mui/material/Button' {
-  interface ButtonPropsVariantOverrides {
-    soft: true;
+declare module '@mui/material/styles' {
+  interface PaletteColor {
+    neutral: string;
+  }
+
+  interface PaletteOptions {
+    neutral: PaletteColorOptions;
+  }
+
+  interface Palette {
+    neutral: PaletteColorOptions;
   }
 }
-declare module '@mui/material/Chip' {
-  interface ChipPropsVariantOverrides {
-    soft: true;
-  }
-}
 
-const commonPaletteOptions: PaletteOptions = {
+const commonPaletteOptions: Partial<PaletteOptions> = {
   info: {
     50: '#e6f3ff',
-    100: '#b5d3fa',
-    200: '#84b3f5',
-    300: '#5a88df',
-    400: '#325ac4',
-    500: '#1C3FAA',
-    600: '#1a3b9f',
-    700: '#183692',
-    800: '#163388',
-    900: '#152f7e',
-    main: '#1C3FAA',
+    100: '#b2ccff',
+    200: '#7da5ff',
+    300: '#5b87f2',
+    400: '#3f6de1',
+    500: '#3160D8',
+    600: '#1d4fd7',
+    700: '#1144d2',
+    800: '#083dc0',
+    900: '#0036ad',
+    main: '#3160D8',
     contrastText: '#fff'
   },
   success: {
@@ -110,6 +114,20 @@ const lightModePallet: PaletteOptions = {
     secondary: '#fff',
     disabled: '#cfdde7'
   },
+  neutral: {
+    50: '#e6f3ff',
+    100: '#b2ccff',
+    200: '#7da5ff',
+    300: '#5b87f2',
+    400: '#3f6de1',
+    500: '#3160D8',
+    600: '#1d4fd7',
+    700: '#1144d2',
+    800: '#083dc0',
+    900: '#0036ad',
+    main: '#3160D8',
+    contrastText: '#fff'
+  },
   ...commonPaletteOptions
 };
 
@@ -152,6 +170,20 @@ const darkModePallet: PaletteOptions = {
     disabled: '',
     secondary: '#fff',
     primary: '#fff'
+  },
+  neutral: {
+    50: '#e6f3ff',
+    100: '#b2ccff',
+    200: '#7da5ff',
+    300: '#5b87f2',
+    400: '#3f6de1',
+    500: '#3160D8',
+    600: '#1d4fd7',
+    700: '#1144d2',
+    800: '#083dc0',
+    900: '#0036ad',
+    main: '#3160D8',
+    contrastText: '#fff'
   },
   ...commonPaletteOptions
 };
