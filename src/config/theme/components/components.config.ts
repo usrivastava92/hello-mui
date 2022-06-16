@@ -25,11 +25,6 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
           border: '1.3px solid'
         }
       },
-      defaultProps: {
-        sx: {
-          boxShadow: 0
-        }
-      },
       variants: getButtonVariants()
     },
     MuiBreadcrumbs: {

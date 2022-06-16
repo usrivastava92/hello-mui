@@ -14,8 +14,6 @@ declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
     neutral: true;
     transparent: true;
-    primary: false;
-    secondary: false;
   }
 }
 
@@ -26,6 +24,8 @@ export const ButtonVariants = [
   'soft'
 ] as const;
 export const ButtonColors = [
+  'primary',
+  'secondary',
   'info',
   'success',
   'warning',
@@ -40,101 +40,185 @@ type ButtonVariantProps = {
 };
 
 const softVariant = (color: ButtonColorsType): ButtonVariantProps => {
-  if (color == 'transparent') {
-    return {
-      props: { variant: 'soft', color: color },
-      style: ({ theme }) => ({
-        color: alpha(
-          (theme.palette[color] as SimplePaletteColorOptions).contrastText!,
-          0.8
-        ),
-        backgroundColor: (theme.palette[color] as ColorPartial)['50'],
-        '&:hover': {
-          backgroundColor: alpha(
-            (theme.palette[color] as ColorPartial)['100']!,
-            0.02
-          )
-        }
-      })
-    };
+  switch (color) {
+    case 'secondary':
+      return {
+        props: { variant: 'soft', color: color },
+        style: ({ theme }) => ({
+          color: alpha(
+            (theme.palette[color] as SimplePaletteColorOptions).contrastText!,
+            0.8
+          ),
+          backgroundColor: (theme.palette[color] as ColorPartial)['50']
+        })
+      };
+    case 'transparent':
+      return {
+        props: { variant: 'soft', color: color },
+        style: ({ theme }) => ({
+          color: alpha(
+            (theme.palette[color] as SimplePaletteColorOptions).contrastText!,
+            0.8
+          ),
+          backgroundColor: (theme.palette[color] as ColorPartial)['50'],
+          '&:hover': {
+            backgroundColor: alpha(
+              (theme.palette[color] as ColorPartial)['100']!,
+              0.02
+            )
+          }
+        })
+      };
+    default:
+      return {
+        props: { variant: 'soft', color: color },
+        style: ({ theme }) => ({
+          color: (theme.palette[color] as ColorPartial)['900'],
+          backgroundColor: (theme.palette[color] as ColorPartial)['50'],
+          '&:hover': {
+            backgroundColor: (theme.palette[color] as ColorPartial)['100']
+          }
+        })
+      };
   }
-  return {
-    props: { variant: 'soft', color: color },
-    style: ({ theme }) => ({
-      color: (theme.palette[color] as ColorPartial)['900'],
-      backgroundColor: (theme.palette[color] as ColorPartial)['50'],
-      '&:hover': {
-        backgroundColor: (theme.palette[color] as ColorPartial)['100']
-      }
-    })
-  };
 };
 
 const textVariant = (color: ButtonColorsType): ButtonVariantProps => {
-  if (color == 'transparent') {
-    return {
-      props: { variant: 'text', color: color },
-      style: ({ theme }) => ({
-        color: (theme.palette[color] as SimplePaletteColorOptions).contrastText,
-        '&:hover': {
-          backgroundColor: alpha(
-            (theme.palette[color] as ColorPartial)['50']!,
-            0.1
-          )
-        }
-      })
-    };
+  switch (color) {
+    case 'primary':
+      return {
+        props: { variant: 'text', color: color },
+        style: ({ theme }) => ({
+          color: (theme.palette[color] as SimplePaletteColorOptions).main,
+          '&:hover': {
+            backgroundColor: alpha(
+              (theme.palette[color] as ColorPartial)['100']!,
+              0.2
+            )
+          }
+        })
+      };
+    case 'secondary':
+      return {
+        props: { variant: 'text', color: color },
+        style: ({ theme }) => ({
+          color: (theme.palette[color] as SimplePaletteColorOptions)
+            .contrastText,
+          '&:hover': {
+            backgroundColor: (theme.palette[color] as ColorPartial)['200']
+          }
+        })
+      };
+    case 'transparent':
+      return {
+        props: { variant: 'text', color: color },
+        style: ({ theme }) => ({
+          color: (theme.palette[color] as SimplePaletteColorOptions)
+            .contrastText,
+          '&:hover': {
+            backgroundColor: alpha(
+              (theme.palette[color] as ColorPartial)['50']!,
+              0.1
+            )
+          }
+        })
+      };
+    default:
+      return {
+        props: { variant: 'text', color: color },
+        style: ({ theme }) => ({
+          color: (theme.palette[color] as SimplePaletteColorOptions).main,
+          '&:hover': {
+            backgroundColor: alpha(
+              (theme.palette[color] as ColorPartial)['50']!,
+              0.4
+            )
+          }
+        })
+      };
   }
-  return {
-    props: { variant: 'text', color: color },
-    style: ({ theme }) => ({
-      color: (theme.palette[color] as SimplePaletteColorOptions).main,
-      '&:hover': {
-        backgroundColor: alpha(
-          (theme.palette[color] as ColorPartial)['50']!,
-          0.4
-        )
-      }
-    })
-  };
 };
 
 const containedVariant = (color: ButtonColorsType): ButtonVariantProps => {
-  return {
-    props: { variant: 'contained', color: color },
-    style: ({ theme }) => ({
-      color: (theme.palette[color] as SimplePaletteColorOptions).contrastText,
-      backgroundColor: (theme.palette[color] as SimplePaletteColorOptions).main
-    })
-  };
+  switch (color) {
+    case 'secondary':
+      return {
+        props: { variant: 'contained', color: color },
+        style: ({ theme }) => ({
+          color: (theme.palette[color] as SimplePaletteColorOptions)
+            .contrastText,
+          backgroundColor: (theme.palette[color] as ColorPartial)['50'],
+          '&:hover': {
+            backgroundColor: (theme.palette[color] as ColorPartial)['50']
+          }
+        })
+      };
+    default:
+      return {
+        props: { variant: 'contained', color: color },
+        style: ({ theme }) => ({
+          color: (theme.palette[color] as SimplePaletteColorOptions)
+            .contrastText,
+          backgroundColor: (theme.palette[color] as SimplePaletteColorOptions)
+            .main
+        })
+      };
+  }
 };
 
 const outlinedVariant = (color: ButtonColorsType): ButtonVariantProps => {
-  if (color == 'transparent') {
-    return {
-      props: { variant: 'outlined', color: color },
-      style: ({ theme }) => ({
-        color: (theme.palette[color] as SimplePaletteColorOptions).contrastText,
-        '&:hover': {
-          backgroundColor: (theme.palette[color] as ColorPartial)['50'],
-          borderColor: (theme.palette[color] as SimplePaletteColorOptions)
-            .contrastText
-        }
-      })
-    };
+  switch (color) {
+    case 'primary':
+      return {
+        props: { variant: 'outlined', color: color },
+        style: ({ theme }) => ({
+          color: (theme.palette[color] as SimplePaletteColorOptions).main,
+          '&:hover': {
+            backgroundColor: alpha(
+              (theme.palette[color] as ColorPartial)['100']!,
+              0.5
+            )
+          }
+        })
+      };
+    case 'secondary':
+      return {
+        props: { variant: 'outlined', color: color },
+        style: ({ theme }) => ({
+          color: (theme.palette[color] as SimplePaletteColorOptions)
+            .contrastText,
+          '&:hover': {
+            backgroundColor: (theme.palette[color] as ColorPartial)['100']
+          }
+        })
+      };
+    case 'transparent':
+      return {
+        props: { variant: 'outlined', color: color },
+        style: ({ theme }) => ({
+          color: (theme.palette[color] as SimplePaletteColorOptions)
+            .contrastText,
+          '&:hover': {
+            backgroundColor: (theme.palette[color] as ColorPartial)['50'],
+            borderColor: (theme.palette[color] as SimplePaletteColorOptions)
+              .contrastText
+          }
+        })
+      };
+    default:
+      return {
+        props: { variant: 'outlined', color: color },
+        style: ({ theme }) => ({
+          color: (theme.palette[color] as SimplePaletteColorOptions).main,
+          '&:hover': {
+            backgroundColor: alpha(
+              (theme.palette[color] as ColorPartial)['50']!,
+              0.5
+            )
+          }
+        })
+      };
   }
-  return {
-    props: { variant: 'outlined', color: color },
-    style: ({ theme }) => ({
-      color: (theme.palette[color] as SimplePaletteColorOptions).main,
-      '&:hover': {
-        backgroundColor: alpha(
-          (theme.palette[color] as ColorPartial)['50']!,
-          0.5
-        )
-      }
-    })
-  };
 };
 
 export const getButtonVariants = (): ButtonVariantProps[] => {

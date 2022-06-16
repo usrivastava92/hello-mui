@@ -107,10 +107,10 @@ export const UserLayout1: React.FC = () => {
     <>
       <Typography variant="lg">Users Layout 1</Typography>
       <Stack spacing={1} sx={{ py: 2 }}>
-        <Button sx={{ boxShadow: 1 }} color="info" variant="contained">
+        <Button color="info" variant="contained">
           Add New User
         </Button>
-        <IconButton sx={{ boxShadow: 3 }}>
+        <IconButton color="secondary" sx={{ borderRadius: 2 }}>
           <AddIcon />
         </IconButton>
         <Box flexGrow={1}></Box>
