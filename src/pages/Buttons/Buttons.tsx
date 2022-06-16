@@ -1,7 +1,6 @@
 import { Button, Card, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { AppDivider } from '@/components/Divider';
-import { LoadingButton } from '@mui/lab';
 import {
   ButtonColors,
   ButtonVariants
@@ -74,9 +73,6 @@ export const Buttons: React.FC = () => {
               <Button color="warning" variant="contained">
                 Large
               </Button>
-              <LoadingButton color="error" variant="contained">
-                Large
-              </LoadingButton>
             </Stack>
           </Card>
         </Grid>
