@@ -31,7 +31,6 @@ export const SearchInput: React.FC<InputBaseProps> = ({ sx }): JSX.Element => {
           borderRadius: 30,
           pl: 2,
           height: 40,
-          bgcolor: 'primary.dark',
           ...sx
         }}
         placeholder="Search..."

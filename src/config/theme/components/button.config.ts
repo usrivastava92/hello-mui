@@ -74,7 +74,6 @@ const outlinedVariant = (color: ButtonColorsType): ButtonVariantProps => {
   return {
     props: { variant: 'outlined', color: color },
     style: ({ theme }) => ({
-      border: '1.3px solid',
       color: (theme.palette[color] as SimplePaletteColorOptions).main,
       '&:hover': {
         backgroundColor: alpha(

@@ -12,6 +12,14 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
         root: {
           textTransform: 'none',
           fontWeight: 600
+        },
+        outlined: {
+          border: '1.3px solid'
+        }
+      },
+      defaultProps: {
+        sx: {
+          boxShadow: 0
         }
       },
       variants: getButtonVariants()

@@ -15,7 +15,21 @@ declare module '@mui/material/styles' {
   }
 }
 
-const commonPaletteOptions: Partial<PaletteOptions> = {
+const commonPaletteOptions: PaletteOptions = {
+  neutral: {
+    50: '#edf2f6',
+    100: '#b4bbca',
+    200: '#7b859d',
+    300: '#677089',
+    400: '#5e667d',
+    500: '#52596e',
+    600: '#434a5b',
+    700: '#373e4c',
+    800: '#323b4a',
+    900: '#2d3748',
+    main: '#52596e',
+    contrastText: '#fff'
+  },
   info: {
     50: '#e6f3ff',
     100: '#b2ccff',
@@ -114,20 +128,6 @@ const lightModePallet: PaletteOptions = {
     secondary: '#fff',
     disabled: '#cfdde7'
   },
-  neutral: {
-    50: '#e6f3ff',
-    100: '#b2ccff',
-    200: '#7da5ff',
-    300: '#5b87f2',
-    400: '#3f6de1',
-    500: '#3160D8',
-    600: '#1d4fd7',
-    700: '#1144d2',
-    800: '#083dc0',
-    900: '#0036ad',
-    main: '#3160D8',
-    contrastText: '#fff'
-  },
   ...commonPaletteOptions
 };
 
@@ -170,20 +170,6 @@ const darkModePallet: PaletteOptions = {
     disabled: '',
     secondary: '#fff',
     primary: '#fff'
-  },
-  neutral: {
-    50: '#e6f3ff',
-    100: '#b2ccff',
-    200: '#7da5ff',
-    300: '#5b87f2',
-    400: '#3f6de1',
-    500: '#3160D8',
-    600: '#1d4fd7',
-    700: '#1144d2',
-    800: '#083dc0',
-    900: '#0036ad',
-    main: '#3160D8',
-    contrastText: '#fff'
   },
   ...commonPaletteOptions
 };

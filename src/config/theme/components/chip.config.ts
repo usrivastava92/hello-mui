@@ -19,13 +19,7 @@ declare module '@mui/material/Chip' {
 }
 
 const ChipVariants = ['outlined', 'soft', 'filled'] as const;
-const ButtonColors = [
-  'info',
-  'success',
-  'warning',
-  'error',
-  'neutral'
-] as const;
+const ButtonColors = ['info', 'success', 'warning', 'error'] as const;
 type ButtonColorsType = typeof ButtonColors[number];
 type ChipVariantProps = {
   props: Partial<ComponentsPropsList['MuiChip']>;
