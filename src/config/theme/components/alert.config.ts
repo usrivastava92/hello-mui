@@ -6,24 +6,26 @@ import {
 import { ComponentsPropsList } from '@mui/material/styles/props';
 import { Theme } from '@mui/material/styles/createTheme';
 
-declare module '@mui/material/Button' {
-  interface ButtonPropsVariantOverrides {
+declare module '@mui/material/Alert' {
+  interface AlertPropsVariantOverrides {
     soft: true;
   }
 
-  interface ButtonPropsColorOverrides {
+  interface AlertPropsColorOverrides {
+    primary: true;
+    secondary: true;
     neutral: true;
     transparent: true;
   }
 }
 
-export const ButtonVariants = [
-  'contained',
+export const AlertVariants = [
+  'filled',
   'outlined',
   'soft',
-  'text'
+  'standard'
 ] as const;
-export const ButtonColors = [
+export const AlertColors = [
   'primary',
   'secondary',
   'info',
@@ -33,13 +35,13 @@ export const ButtonColors = [
   'neutral',
   'transparent'
 ] as const;
-type ButtonColorsType = typeof ButtonColors[number];
-type ButtonVariantProps = {
-  props: Partial<ComponentsPropsList['MuiButton']>;
+type AlertColorsType = typeof AlertColors[number];
+type AlertVariantProps = {
+  props: Partial<ComponentsPropsList['MuiAlert']>;
   style: Interpolation<{ theme: Theme }>;
 };
 
-const softVariant = (color: ButtonColorsType): ButtonVariantProps => {
+const softVariant = (color: AlertColorsType): AlertVariantProps => {
   switch (color) {
     case 'secondary':
       return {
@@ -83,11 +85,12 @@ const softVariant = (color: ButtonColorsType): ButtonVariantProps => {
   }
 };
 
-const textVariant = (color: ButtonColorsType): ButtonVariantProps => {
+const standardVariant = (color: AlertColorsType): AlertVariantProps => {
+  const variant = 'standard';
   switch (color) {
     case 'primary':
       return {
-        props: { variant: 'text', color: color },
+        props: { variant: variant, color: color },
         style: ({ theme }) => ({
           color: (theme.palette[color] as SimplePaletteColorOptions).main,
           '&:hover': {
@@ -100,7 +103,7 @@ const textVariant = (color: ButtonColorsType): ButtonVariantProps => {
       };
     case 'secondary':
       return {
-        props: { variant: 'text', color: color },
+        props: { variant: variant, color: color },
         style: ({ theme }) => ({
           color: (theme.palette[color] as SimplePaletteColorOptions)
             .contrastText,
@@ -111,7 +114,7 @@ const textVariant = (color: ButtonColorsType): ButtonVariantProps => {
       };
     case 'transparent':
       return {
-        props: { variant: 'text', color: color },
+        props: { variant: variant, color: color },
         style: ({ theme }) => ({
           color: (theme.palette[color] as SimplePaletteColorOptions)
             .contrastText,
@@ -125,7 +128,7 @@ const textVariant = (color: ButtonColorsType): ButtonVariantProps => {
       };
     default:
       return {
-        props: { variant: 'text', color: color },
+        props: { variant: variant, color: color },
         style: ({ theme }) => ({
           color: (theme.palette[color] as SimplePaletteColorOptions).main,
           '&:hover': {
@@ -139,11 +142,12 @@ const textVariant = (color: ButtonColorsType): ButtonVariantProps => {
   }
 };
 
-const containedVariant = (color: ButtonColorsType): ButtonVariantProps => {
+const filledVariant = (color: AlertColorsType): AlertVariantProps => {
+  const variant = 'filled';
   switch (color) {
     case 'secondary':
       return {
-        props: { variant: 'contained', color: color },
+        props: { variant: variant, color: color },
         style: ({ theme }) => ({
           color: (theme.palette[color] as SimplePaletteColorOptions)
             .contrastText,
@@ -155,7 +159,7 @@ const containedVariant = (color: ButtonColorsType): ButtonVariantProps => {
       };
     default:
       return {
-        props: { variant: 'contained', color: color },
+        props: { variant: variant, color: color },
         style: ({ theme }) => ({
           color: (theme.palette[color] as SimplePaletteColorOptions)
             .contrastText,
@@ -166,11 +170,12 @@ const containedVariant = (color: ButtonColorsType): ButtonVariantProps => {
   }
 };
 
-const outlinedVariant = (color: ButtonColorsType): ButtonVariantProps => {
+const outlinedVariant = (color: AlertColorsType): AlertVariantProps => {
+  const variant = 'outlined';
   switch (color) {
     case 'primary':
       return {
-        props: { variant: 'outlined', color: color },
+        props: { variant: variant, color: color },
         style: ({ theme }) => ({
           color: (theme.palette[color] as SimplePaletteColorOptions).main,
           '&:hover': {
@@ -183,7 +188,7 @@ const outlinedVariant = (color: ButtonColorsType): ButtonVariantProps => {
       };
     case 'secondary':
       return {
-        props: { variant: 'outlined', color: color },
+        props: { variant: variant, color: color },
         style: ({ theme }) => ({
           color: (theme.palette[color] as SimplePaletteColorOptions)
             .contrastText,
@@ -194,7 +199,7 @@ const outlinedVariant = (color: ButtonColorsType): ButtonVariantProps => {
       };
     case 'transparent':
       return {
-        props: { variant: 'outlined', color: color },
+        props: { variant: variant, color: color },
         style: ({ theme }) => ({
           color: (theme.palette[color] as SimplePaletteColorOptions)
             .contrastText,
@@ -207,7 +212,7 @@ const outlinedVariant = (color: ButtonColorsType): ButtonVariantProps => {
       };
     default:
       return {
-        props: { variant: 'outlined', color: color },
+        props: { variant: variant, color: color },
         style: ({ theme }) => ({
           color: (theme.palette[color] as SimplePaletteColorOptions).main,
           '&:hover': {
@@ -221,21 +226,21 @@ const outlinedVariant = (color: ButtonColorsType): ButtonVariantProps => {
   }
 };
 
-export const getButtonVariants = (): ButtonVariantProps[] => {
-  const variants: ButtonVariantProps[] = [];
-  ButtonVariants.forEach((variant) => {
+export const getAlertVariants = (): AlertVariantProps[] => {
+  const variants: AlertVariantProps[] = [];
+  AlertVariants.forEach((variant) => {
     switch (variant) {
-      case 'text':
-        ButtonColors.forEach((color) => variants.push(textVariant(color)));
+      case 'standard':
+        AlertColors.forEach((color) => variants.push(standardVariant(color)));
         break;
       case 'outlined':
-        ButtonColors.forEach((color) => variants.push(outlinedVariant(color)));
+        AlertColors.forEach((color) => variants.push(outlinedVariant(color)));
         break;
-      case 'contained':
-        ButtonColors.forEach((color) => variants.push(containedVariant(color)));
+      case 'filled':
+        AlertColors.forEach((color) => variants.push(filledVariant(color)));
         break;
       case 'soft':
-        ButtonColors.forEach((color) => variants.push(softVariant(color)));
+        AlertColors.forEach((color) => variants.push(softVariant(color)));
         break;
     }
   });

@@ -1,6 +1,7 @@
 import { Components, PaletteOptions } from '@mui/material';
 import { getButtonVariants } from '@/config/theme/components/button.config';
 import { getChipVariants } from '@/config/theme/components/chip.config';
+import { getAlertVariants } from '@/config/theme/components/alert.config';
 
 export const getComponentOptions = (palette: PaletteOptions): Components => {
   return {
@@ -14,6 +15,9 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
     },
     MuiChip: {
       variants: getChipVariants()
+    },
+    MuiAlert: {
+      variants: getAlertVariants()
     },
     MuiButton: {
       styleOverrides: {
