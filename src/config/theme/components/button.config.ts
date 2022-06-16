@@ -13,18 +13,25 @@ declare module '@mui/material/Button' {
 
   interface ButtonPropsColorOverrides {
     neutral: true;
+    transparent: true;
     primary: false;
     secondary: false;
   }
 }
 
-const ButtonVariants = ['text', 'outlined', 'contained', 'soft'] as const;
-const ButtonColors = [
+export const ButtonVariants = [
+  'text',
+  'outlined',
+  'contained',
+  'soft'
+] as const;
+export const ButtonColors = [
   'info',
   'success',
   'warning',
   'error',
-  'neutral'
+  'neutral',
+  'transparent'
 ] as const;
 type ButtonColorsType = typeof ButtonColors[number];
 type ButtonVariantProps = {
@@ -33,6 +40,24 @@ type ButtonVariantProps = {
 };
 
 const softVariant = (color: ButtonColorsType): ButtonVariantProps => {
+  if (color == 'transparent') {
+    return {
+      props: { variant: 'soft', color: color },
+      style: ({ theme }) => ({
+        color: alpha(
+          (theme.palette[color] as SimplePaletteColorOptions).contrastText!,
+          0.8
+        ),
+        backgroundColor: (theme.palette[color] as ColorPartial)['50'],
+        '&:hover': {
+          backgroundColor: alpha(
+            (theme.palette[color] as ColorPartial)['100']!,
+            0.02
+          )
+        }
+      })
+    };
+  }
   return {
     props: { variant: 'soft', color: color },
     style: ({ theme }) => ({
@@ -46,6 +71,20 @@ const softVariant = (color: ButtonColorsType): ButtonVariantProps => {
 };
 
 const textVariant = (color: ButtonColorsType): ButtonVariantProps => {
+  if (color == 'transparent') {
+    return {
+      props: { variant: 'text', color: color },
+      style: ({ theme }) => ({
+        color: (theme.palette[color] as SimplePaletteColorOptions).contrastText,
+        '&:hover': {
+          backgroundColor: alpha(
+            (theme.palette[color] as ColorPartial)['50']!,
+            0.1
+          )
+        }
+      })
+    };
+  }
   return {
     props: { variant: 'text', color: color },
     style: ({ theme }) => ({
@@ -71,6 +110,19 @@ const containedVariant = (color: ButtonColorsType): ButtonVariantProps => {
 };
 
 const outlinedVariant = (color: ButtonColorsType): ButtonVariantProps => {
+  if (color == 'transparent') {
+    return {
+      props: { variant: 'outlined', color: color },
+      style: ({ theme }) => ({
+        color: (theme.palette[color] as SimplePaletteColorOptions).contrastText,
+        '&:hover': {
+          backgroundColor: (theme.palette[color] as ColorPartial)['50'],
+          borderColor: (theme.palette[color] as SimplePaletteColorOptions)
+            .contrastText
+        }
+      })
+    };
+  }
   return {
     props: { variant: 'outlined', color: color },
     style: ({ theme }) => ({

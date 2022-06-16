@@ -62,12 +62,12 @@ interface MenuProps {
 
 const getMenuSxProps = (level: number): SxProps<Theme> => {
   if (level >= 3) {
-    return { borderRadius: 2, bgcolor: 'primary.darker' };
+    return { borderRadius: 2, bgcolor: 'primary.700' };
   }
   if (level === 2) {
-    return { borderRadius: 2, bgcolor: 'primary.dark' };
+    return { borderRadius: 2, bgcolor: 'primary.700' };
   }
-  return { borderRadius: 0, bgcolor: 'primary.main' };
+  return { borderRadius: 0, bgcolor: 'primary.500' };
 };
 
 const Menu: React.FC<MenuProps> = ({

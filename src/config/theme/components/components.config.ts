@@ -4,13 +4,21 @@ import { getChipVariants } from '@/config/theme/components/chip.config';
 
 export const getComponentOptions = (palette: PaletteOptions): Components => {
   return {
+    MuiGrid: {
+      defaultProps: {
+        sx: {
+          height: '100%',
+          width: '100%'
+        }
+      }
+    },
     MuiChip: {
       variants: getChipVariants()
     },
     MuiButton: {
       styleOverrides: {
         root: {
-          textTransform: 'none',
+          textTransform: 'capitalize',
           fontWeight: 600
         },
         outlined: {

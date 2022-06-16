@@ -4,46 +4,21 @@ import { PaletteColorOptions } from '@mui/material/styles/createPalette';
 declare module '@mui/material/styles' {
   interface PaletteColor {
     neutral: string;
+    transparent: string;
   }
 
   interface PaletteOptions {
-    neutral: PaletteColorOptions;
+    neutral?: PaletteColorOptions;
+    transparent?: PaletteColorOptions;
   }
 
   interface Palette {
     neutral: PaletteColorOptions;
+    transparent: PaletteColorOptions;
   }
 }
 
 const commonPaletteOptions: PaletteOptions = {
-  neutral: {
-    50: '#edf2f6',
-    100: '#b4bbca',
-    200: '#7b859d',
-    300: '#677089',
-    400: '#5e667d',
-    500: '#52596e',
-    600: '#434a5b',
-    700: '#373e4c',
-    800: '#323b4a',
-    900: '#2d3748',
-    main: '#52596e',
-    contrastText: '#fff'
-  },
-  info: {
-    50: '#e6f3ff',
-    100: '#b2ccff',
-    200: '#7da5ff',
-    300: '#5b87f2',
-    400: '#3f6de1',
-    500: '#3160D8',
-    600: '#1d4fd7',
-    700: '#1144d2',
-    800: '#083dc0',
-    900: '#0036ad',
-    main: '#3160D8',
-    contrastText: '#fff'
-  },
   success: {
     50: '#d8f8bc',
     100: '#caef7b',
@@ -128,6 +103,48 @@ const lightModePallet: PaletteOptions = {
     secondary: '#fff',
     disabled: '#cfdde7'
   },
+  info: {
+    50: '#e6f3ff',
+    100: '#96aff0',
+    200: '#476be1',
+    300: '#2b51cc',
+    400: '#2145b5',
+    500: '#1c3daa',
+    600: '#1d3aaa',
+    700: '#1a38aa',
+    800: '#0d37ac',
+    900: '#0036ad',
+    main: '#1c3daa',
+    contrastText: '#fff'
+  },
+  transparent: {
+    50: 'rgba(0,0,0,0)',
+    100: 'rgba(0,0,0,0)',
+    200: 'rgba(0,0,0,0)',
+    300: 'rgba(0,0,0,0)',
+    400: 'rgba(0,0,0,0)',
+    500: 'rgba(0,0,0,0)',
+    600: 'rgba(0,0,0,0)',
+    700: 'rgba(0,0,0,0)',
+    800: 'rgba(0,0,0,0)',
+    900: 'rgba(0,0,0,0)',
+    main: 'rgba(0,0,0,0)',
+    contrastText: '#2d3748'
+  },
+  neutral: {
+    50: '#edf2f6',
+    100: '#b4bbca',
+    200: '#7b859d',
+    300: '#677089',
+    400: '#5e667d',
+    500: '#52596e',
+    600: '#434a5b',
+    700: '#373e4c',
+    800: '#323b4a',
+    900: '#2d3748',
+    main: '#52596e',
+    contrastText: '#fff'
+  },
   ...commonPaletteOptions
 };
 
@@ -170,6 +187,48 @@ const darkModePallet: PaletteOptions = {
     disabled: '',
     secondary: '#fff',
     primary: '#fff'
+  },
+  info: {
+    50: '#e6f3ff',
+    100: '#b2ccff',
+    200: '#7da5ff',
+    300: '#5b87f2',
+    400: '#3f6de1',
+    500: '#3160D8',
+    600: '#1d4fd7',
+    700: '#1144d2',
+    800: '#083dc0',
+    900: '#0036ad',
+    main: '#3160D8',
+    contrastText: '#fff'
+  },
+  neutral: {
+    50: '#edf2f6',
+    100: '#b4bbca',
+    200: '#7b859d',
+    300: '#677089',
+    400: '#5e667d',
+    500: '#52596e',
+    600: '#434a5b',
+    700: '#373e4c',
+    800: '#323b4a',
+    900: '#2d3748',
+    main: '#52596e',
+    contrastText: '#fff'
+  },
+  transparent: {
+    50: 'rgba(0,0,0,0)',
+    100: 'rgba(0,0,0,0)',
+    200: 'rgba(0,0,0,0)',
+    300: 'rgba(0,0,0,0)',
+    400: 'rgba(0,0,0,0)',
+    500: 'rgba(0,0,0,0)',
+    600: 'rgba(0,0,0,0)',
+    700: 'rgba(0,0,0,0)',
+    800: 'rgba(0,0,0,0)',
+    900: 'rgba(0,0,0,0)',
+    main: 'rgba(0,0,0,0)',
+    contrastText: '#fff'
   },
   ...commonPaletteOptions
 };

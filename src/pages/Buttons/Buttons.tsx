@@ -2,6 +2,10 @@ import { Button, Card, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { AppDivider } from '@/components/Divider';
 import { LoadingButton } from '@mui/lab';
+import {
+  ButtonColors,
+  ButtonVariants
+} from '@/config/theme/components/button.config';
 
 export const Buttons: React.FC = () => {
   return (
@@ -9,107 +13,32 @@ export const Buttons: React.FC = () => {
       <Typography variant="lg" fontWeight="medium">
         Buttons
       </Typography>
-      <Grid sx={{ mt: 1 }} container rowSpacing={2} columnSpacing={2}>
-        <Grid item sm={12} lg={6}>
-          <Card>
-            <Typography sx={{ m: 2 }} variant="base" component="div">
-              Basic Buttons
-            </Typography>
-            <AppDivider type="secondary" />
-            <Stack sx={{ m: 2, flexWrap: 'wrap' }} spacing={2}>
-              <Button color="neutral" variant="contained">
-                Neutral
-              </Button>
-              <Button color="info" variant="contained">
-                Info
-              </Button>
-              <Button color="success" variant="contained">
-                Success
-              </Button>
-              <Button color="warning" variant="contained">
-                Warning
-              </Button>
-              <Button color="error" variant="contained">
-                Error
-              </Button>
-            </Stack>
-          </Card>
-        </Grid>
-        <Grid item sm={12} lg={6}>
-          <Card>
-            <Typography sx={{ m: 2 }} variant="base" component="div">
-              Outlined Buttons
-            </Typography>
-            <AppDivider type="secondary" />
-            <Stack sx={{ m: 2, flexWrap: 'wrap' }} spacing={2}>
-              <Button color="neutral" variant="outlined">
-                Neutral
-              </Button>
-              <Button color="info" variant="outlined">
-                Info
-              </Button>
-              <Button color="success" variant="outlined">
-                Success
-              </Button>
-              <Button color="warning" variant="outlined">
-                Warning
-              </Button>
-              <Button color="error" variant="outlined">
-                Error
-              </Button>
-            </Stack>
-          </Card>
-        </Grid>
-        <Grid item sm={12} lg={6}>
-          <Card>
-            <Typography sx={{ m: 2 }} variant="base" component="div">
-              Text Buttons
-            </Typography>
-            <AppDivider type="secondary" />
-            <Stack sx={{ m: 2, flexWrap: 'wrap' }} spacing={2}>
-              <Button color="neutral" variant="text">
-                Neutral
-              </Button>
-              <Button color="info" variant="text">
-                Info
-              </Button>
-              <Button color="success" variant="text">
-                Success
-              </Button>
-              <Button color="warning" variant="text">
-                Warning
-              </Button>
-              <Button color="error" variant="text">
-                Error
-              </Button>
-            </Stack>
-          </Card>
-        </Grid>
-        <Grid item sm={12} lg={6}>
-          <Card>
-            <Typography sx={{ m: 2 }} variant="base" component="div">
-              Soft Buttons
-            </Typography>
-            <AppDivider type="secondary" />
-            <Stack sx={{ m: 2, flexWrap: 'wrap' }} spacing={2}>
-              <Button color="neutral" variant="soft">
-                Neutral
-              </Button>
-              <Button color="info" variant="soft">
-                Info
-              </Button>
-              <Button color="success" variant="soft">
-                Success
-              </Button>
-              <Button color="warning" variant="soft">
-                Warning
-              </Button>
-              <Button color="error" variant="soft">
-                Error
-              </Button>
-            </Stack>
-          </Card>
-        </Grid>
+      <Grid sx={{ mt: 1 }} container spacing={2}>
+        {ButtonVariants.map((variant) => (
+          <Grid item sm={12} lg={6}>
+            <Card>
+              <Typography
+                sx={{ m: 2, textTransform: 'capitalize' }}
+                variant="base"
+                component="div"
+              >
+                {variant} Buttons
+              </Typography>
+              <AppDivider type="secondary" />
+              <Stack
+                sx={{ m: 2, flexWrap: 'wrap' }}
+                spacing={2}
+                justifyContent="space-evenly"
+              >
+                {ButtonColors.map((color) => (
+                  <Button color={color} variant={variant}>
+                    {color}
+                  </Button>
+                ))}
+              </Stack>
+            </Card>
+          </Grid>
+        ))}
         <Grid item sm={12} lg={6}>
           <Card>
             <Typography sx={{ m: 2 }} variant="base" component="div">
