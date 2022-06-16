@@ -12,9 +12,9 @@ export const Buttons: React.FC = () => {
       <Typography variant="lg" fontWeight="medium">
         Buttons
       </Typography>
-      <Grid sx={{ mt: 1 }} container spacing={2}>
-        {ButtonVariants.map((variant) => (
-          <Grid item sm={12} lg={6}>
+      <Grid sx={{ pt: 1 }} container spacing={2}>
+        {ButtonVariants.map((variant, index) => (
+          <Grid key={index} item sm={12} lg={6}>
             <Card>
               <Typography
                 sx={{ m: 2, textTransform: 'capitalize' }}
@@ -29,8 +29,8 @@ export const Buttons: React.FC = () => {
                 spacing={2}
                 justifyContent="space-evenly"
               >
-                {ButtonColors.map((color) => (
-                  <Button color={color} variant={variant}>
+                {ButtonColors.map((color, index) => (
+                  <Button key={index} color={color} variant={variant}>
                     {color}
                   </Button>
                 ))}

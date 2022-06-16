@@ -14,8 +14,6 @@ declare module '@mui/material/Alert' {
   interface AlertPropsColorOverrides {
     primary: true;
     secondary: true;
-    neutral: true;
-    transparent: true;
   }
 }
 
@@ -31,9 +29,7 @@ export const AlertColors = [
   'info',
   'success',
   'warning',
-  'error',
-  'neutral',
-  'transparent'
+  'error'
 ] as const;
 type AlertColorsType = typeof AlertColors[number];
 type AlertVariantProps = {
@@ -54,32 +50,12 @@ const softVariant = (color: AlertColorsType): AlertVariantProps => {
           backgroundColor: (theme.palette[color] as ColorPartial)['50']
         })
       };
-    case 'transparent':
-      return {
-        props: { variant: 'soft', color: color },
-        style: ({ theme }) => ({
-          color: alpha(
-            (theme.palette[color] as SimplePaletteColorOptions).contrastText!,
-            0.8
-          ),
-          backgroundColor: (theme.palette[color] as ColorPartial)['50'],
-          '&:hover': {
-            backgroundColor: alpha(
-              (theme.palette[color] as ColorPartial)['100']!,
-              0.02
-            )
-          }
-        })
-      };
     default:
       return {
         props: { variant: 'soft', color: color },
         style: ({ theme }) => ({
           color: (theme.palette[color] as ColorPartial)['900'],
-          backgroundColor: (theme.palette[color] as ColorPartial)['50'],
-          '&:hover': {
-            backgroundColor: (theme.palette[color] as ColorPartial)['100']
-          }
+          backgroundColor: (theme.palette[color] as ColorPartial)['50']
         })
       };
   }
@@ -88,55 +64,19 @@ const softVariant = (color: AlertColorsType): AlertVariantProps => {
 const standardVariant = (color: AlertColorsType): AlertVariantProps => {
   const variant = 'standard';
   switch (color) {
-    case 'primary':
-      return {
-        props: { variant: variant, color: color },
-        style: ({ theme }) => ({
-          color: (theme.palette[color] as SimplePaletteColorOptions).main,
-          '&:hover': {
-            backgroundColor: alpha(
-              (theme.palette[color] as ColorPartial)['100']!,
-              0.2
-            )
-          }
-        })
-      };
     case 'secondary':
       return {
         props: { variant: variant, color: color },
         style: ({ theme }) => ({
           color: (theme.palette[color] as SimplePaletteColorOptions)
-            .contrastText,
-          '&:hover': {
-            backgroundColor: (theme.palette[color] as ColorPartial)['200']
-          }
-        })
-      };
-    case 'transparent':
-      return {
-        props: { variant: variant, color: color },
-        style: ({ theme }) => ({
-          color: (theme.palette[color] as SimplePaletteColorOptions)
-            .contrastText,
-          '&:hover': {
-            backgroundColor: alpha(
-              (theme.palette[color] as ColorPartial)['50']!,
-              0.1
-            )
-          }
+            .contrastText
         })
       };
     default:
       return {
         props: { variant: variant, color: color },
         style: ({ theme }) => ({
-          color: (theme.palette[color] as SimplePaletteColorOptions).main,
-          '&:hover': {
-            backgroundColor: alpha(
-              (theme.palette[color] as ColorPartial)['50']!,
-              0.4
-            )
-          }
+          color: (theme.palette[color] as SimplePaletteColorOptions).main
         })
       };
   }
@@ -151,10 +91,7 @@ const filledVariant = (color: AlertColorsType): AlertVariantProps => {
         style: ({ theme }) => ({
           color: (theme.palette[color] as SimplePaletteColorOptions)
             .contrastText,
-          backgroundColor: (theme.palette[color] as ColorPartial)['50'],
-          '&:hover': {
-            backgroundColor: (theme.palette[color] as ColorPartial)['50']
-          }
+          backgroundColor: (theme.palette[color] as ColorPartial)['50']
         })
       };
     default:
@@ -173,54 +110,23 @@ const filledVariant = (color: AlertColorsType): AlertVariantProps => {
 const outlinedVariant = (color: AlertColorsType): AlertVariantProps => {
   const variant = 'outlined';
   switch (color) {
-    case 'primary':
-      return {
-        props: { variant: variant, color: color },
-        style: ({ theme }) => ({
-          color: (theme.palette[color] as SimplePaletteColorOptions).main,
-          '&:hover': {
-            backgroundColor: alpha(
-              (theme.palette[color] as ColorPartial)['100']!,
-              0.5
-            )
-          }
-        })
-      };
     case 'secondary':
       return {
         props: { variant: variant, color: color },
         style: ({ theme }) => ({
+          borderColor: alpha(
+            (theme.palette[color] as SimplePaletteColorOptions).contrastText!,
+            0.5
+          ),
           color: (theme.palette[color] as SimplePaletteColorOptions)
-            .contrastText,
-          '&:hover': {
-            backgroundColor: (theme.palette[color] as ColorPartial)['100']
-          }
-        })
-      };
-    case 'transparent':
-      return {
-        props: { variant: variant, color: color },
-        style: ({ theme }) => ({
-          color: (theme.palette[color] as SimplePaletteColorOptions)
-            .contrastText,
-          '&:hover': {
-            backgroundColor: (theme.palette[color] as ColorPartial)['50'],
-            borderColor: (theme.palette[color] as SimplePaletteColorOptions)
-              .contrastText
-          }
+            .contrastText
         })
       };
     default:
       return {
         props: { variant: variant, color: color },
         style: ({ theme }) => ({
-          color: (theme.palette[color] as SimplePaletteColorOptions).main,
-          '&:hover': {
-            backgroundColor: alpha(
-              (theme.palette[color] as ColorPartial)['50']!,
-              0.5
-            )
-          }
+          color: (theme.palette[color] as SimplePaletteColorOptions).main
         })
       };
   }
