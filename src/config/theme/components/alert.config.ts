@@ -3,8 +3,13 @@ import {
   ColorPartial,
   SimplePaletteColorOptions
 } from '@mui/material/styles/createPalette';
-import { ComponentsPropsList } from '@mui/material/styles/props';
+import {
+  ComponentsProps,
+  ComponentsPropsList
+} from '@mui/material/styles/props';
 import { Theme } from '@mui/material/styles/createTheme';
+import { ComponentsOverrides } from '@mui/material/styles/overrides';
+import { ComponentsVariants } from '@mui/material/styles/variants';
 
 declare module '@mui/material/Alert' {
   interface AlertPropsVariantOverrides {
@@ -132,7 +137,7 @@ const outlinedVariant = (color: AlertColorsType): AlertVariantProps => {
   }
 };
 
-export const getAlertVariants = (): AlertVariantProps[] => {
+const getAlertVariants = (): AlertVariantProps[] => {
   const variants: AlertVariantProps[] = [];
   AlertVariants.forEach((variant) => {
     switch (variant) {
@@ -151,4 +156,12 @@ export const getAlertVariants = (): AlertVariantProps[] => {
     }
   });
   return variants;
+};
+
+export const ALERT_OPTIONS: {
+  defaultProps?: ComponentsProps['MuiAlert'];
+  styleOverrides?: ComponentsOverrides['MuiAlert'];
+  variants?: ComponentsVariants['MuiAlert'];
+} = {
+  variants: getAlertVariants()
 };

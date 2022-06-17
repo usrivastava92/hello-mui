@@ -3,8 +3,13 @@ import {
   ColorPartial,
   SimplePaletteColorOptions
 } from '@mui/material/styles/createPalette';
-import { ComponentsPropsList } from '@mui/material/styles/props';
+import {
+  ComponentsProps,
+  ComponentsPropsList
+} from '@mui/material/styles/props';
 import { Theme } from '@mui/material/styles/createTheme';
+import { ComponentsOverrides } from '@mui/material/styles/overrides';
+import { ComponentsVariants } from '@mui/material/styles/variants';
 
 declare module '@mui/material/Button' {
   interface ButtonPropsVariantOverrides {
@@ -230,7 +235,7 @@ const outlinedVariant = (color: ButtonColorsType): ButtonVariantProps => {
   }
 };
 
-export const getButtonVariants = (): ButtonVariantProps[] => {
+const getButtonVariants = (): ButtonVariantProps[] => {
   const variants: ButtonVariantProps[] = [];
   ButtonVariants.forEach((variant) => {
     switch (variant) {
@@ -249,4 +254,26 @@ export const getButtonVariants = (): ButtonVariantProps[] => {
     }
   });
   return variants;
+};
+
+export const BUTTON_OPTIONS: {
+  defaultProps?: ComponentsProps['MuiButton'];
+  styleOverrides?: ComponentsOverrides['MuiButton'];
+  variants?: ComponentsVariants['MuiButton'];
+} = {
+  defaultProps: {
+    sx: {
+      m: 2
+    }
+  },
+  styleOverrides: {
+    root: {
+      textTransform: 'capitalize',
+      fontWeight: 600
+    },
+    outlined: {
+      border: '1.3px solid'
+    }
+  },
+  variants: getButtonVariants()
 };

@@ -22,6 +22,7 @@ import { ProfileOverview2 } from '@/pages/Profiles/Overview2';
 import { ProfileOverview3 } from '@/pages/Profiles/Overview3';
 import { Alerts } from '@/pages/Alerts';
 import { Chips } from '@/pages/Chips';
+import { Forms } from '@/pages/Forms';
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -61,6 +62,7 @@ function getRoutes(): JSX.Element {
 function getNestedRoutes(): JSX.Element {
   return (
     <>
+      <Route path="regularForm" element={<Forms />}></Route>
       <Route path="chips" element={<Chips />}></Route>
       <Route path="buttons" element={<Buttons />}></Route>
       <Route path="alerts" element={<Alerts />}></Route>

@@ -6,13 +6,12 @@ import { SHADOW_OPTIONS } from '@/config/theme/shadow.config';
 import { BREAKPOINT_OPTIONS } from '@/config/theme/breakpoint.config';
 
 const getTheme = (mode: PaletteMode): ThemeOptions => {
-  const palette = getPaletteByMode(mode);
   return {
-    palette: palette,
+    palette: getPaletteByMode(mode),
     shadows: SHADOW_OPTIONS,
     typography: TYPOGRAPHY_OPTIONS,
     breakpoints: BREAKPOINT_OPTIONS,
-    components: getComponentOptions(palette)
+    components: getComponentOptions()
   };
 };
 

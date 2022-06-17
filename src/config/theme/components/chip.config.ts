@@ -3,8 +3,13 @@ import {
   ColorPartial,
   SimplePaletteColorOptions
 } from '@mui/material/styles/createPalette';
-import { ComponentsPropsList } from '@mui/material/styles/props';
+import {
+  ComponentsProps,
+  ComponentsPropsList
+} from '@mui/material/styles/props';
 import { Theme } from '@mui/material/styles/createTheme';
+import { ComponentsOverrides } from '@mui/material/styles/overrides';
+import { ComponentsVariants } from '@mui/material/styles/variants';
 
 declare module '@mui/material/Chip' {
   interface ChipPropsVariantOverrides {
@@ -100,7 +105,7 @@ const outlinedVariant = (color: ChipColorsType): ChipVariantProps => {
   }
 };
 
-export const getChipVariants = (): ChipVariantProps[] => {
+const getChipVariants = (): ChipVariantProps[] => {
   const variants: ChipVariantProps[] = [];
   ChipVariants.forEach((variant) => {
     switch (variant) {
@@ -116,4 +121,17 @@ export const getChipVariants = (): ChipVariantProps[] => {
     }
   });
   return variants;
+};
+
+export const CHIP_OPTIONS: {
+  defaultProps?: ComponentsProps['MuiChip'];
+  styleOverrides?: ComponentsOverrides['MuiChip'];
+  variants?: ComponentsVariants['MuiChip'];
+} = {
+  styleOverrides: {
+    root: {
+      fontWeight: 500
+    }
+  },
+  variants: getChipVariants()
 };

@@ -1,33 +1,15 @@
-import { Components, PaletteOptions } from '@mui/material';
-import { getButtonVariants } from '@/config/theme/components/button.config';
-import { getChipVariants } from '@/config/theme/components/chip.config';
-import { getAlertVariants } from '@/config/theme/components/alert.config';
+import { Components } from '@mui/material';
+import { BUTTON_OPTIONS } from '@/config/theme/components/button.config';
+import { CHIP_OPTIONS } from '@/config/theme/components/chip.config';
+import { ALERT_OPTIONS } from '@/config/theme/components/alert.config';
+import { TEXT_FIELD_OPTIONS } from '@/config/theme/components/textField.config';
 
-export const getComponentOptions = (palette: PaletteOptions): Components => {
+export const getComponentOptions = (): Components => {
   return {
-    MuiChip: {
-      styleOverrides: {
-        root: {
-          fontWeight: 500
-        }
-      },
-      variants: getChipVariants()
-    },
-    MuiAlert: {
-      variants: getAlertVariants()
-    },
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          textTransform: 'capitalize',
-          fontWeight: 600
-        },
-        outlined: {
-          border: '1.3px solid'
-        }
-      },
-      variants: getButtonVariants()
-    },
+    MuiTextField: TEXT_FIELD_OPTIONS,
+    MuiChip: CHIP_OPTIONS,
+    MuiAlert: ALERT_OPTIONS,
+    MuiButton: BUTTON_OPTIONS,
     MuiBreadcrumbs: {
       defaultProps: {
         color: 'inherit'
