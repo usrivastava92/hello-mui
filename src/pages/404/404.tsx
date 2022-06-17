@@ -13,7 +13,8 @@ export const PageNotFound: React.FC = () => {
         alignItems="center"
         sx={{
           height: '100vh',
-          textAlign: { xs: 'center', lg: 'left' }
+          textAlign: { xs: 'center', lg: 'left' },
+          color: (theme) => theme.palette.primary.contrastText
         }}
       >
         <Box className="-intro-x">
@@ -25,19 +26,13 @@ export const PageNotFound: React.FC = () => {
           />
         </Box>
         <Box>
-          <Typography
-            fontWeight="bold"
-            variant="6xl"
-            className="intro-x"
-            component="div"
-          >
+          <Typography fontWeight="bold" variant="6xl" className="intro-x">
             404
           </Typography>
           <Typography
             fontWeight="bold"
             sx={{ typography: { xs: 'xl', lg: '3xl' } }}
             className="intro-x"
-            component="div"
           >
             Oops. This page has gone missing.
           </Typography>
@@ -51,10 +46,15 @@ export const PageNotFound: React.FC = () => {
           </Typography>
           <Button
             variant="outlined"
-            sx={(theme) => ({
+            sx={{
               mt: 4,
-              borderColor: theme.palette.mode == 'light' ? 'white' : undefined
-            })}
+              borderColor: (theme) => theme.palette.primary.contrastText,
+              color: (theme) => theme.palette.primary.contrastText,
+              '&:hover': {
+                borderColor: (theme) => theme.palette.primary.contrastText,
+                backgroundColor: (theme) => theme.palette.primary.main
+              }
+            }}
             className="intro-x"
             onClick={() => navigate('/', { replace: true })}
           >
