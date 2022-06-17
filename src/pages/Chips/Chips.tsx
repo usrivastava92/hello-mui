@@ -24,7 +24,12 @@ export const Chips: React.FC = () => {
                 {variant} Chips
               </Typography>
               <AppDivider type="secondary" />
-              <Stack spacing={2} sx={{ p: 2 }} justifyContent="space-around">
+              <Stack
+                spacing={2}
+                sx={{ p: 2 }}
+                justifyContent="space-around"
+                flexWrap="wrap"
+              >
                 {ChipColors.map((color, index) => (
                   <Chip color={color} variant={variant} label={color}></Chip>
                 ))}

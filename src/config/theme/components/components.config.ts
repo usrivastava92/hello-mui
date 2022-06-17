@@ -5,14 +5,6 @@ import { getAlertVariants } from '@/config/theme/components/alert.config';
 
 export const getComponentOptions = (palette: PaletteOptions): Components => {
   return {
-    MuiGrid: {
-      defaultProps: {
-        sx: {
-          height: '100%',
-          width: '100%'
-        }
-      }
-    },
     MuiChip: {
       styleOverrides: {
         root: {
