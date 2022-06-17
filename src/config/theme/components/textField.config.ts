@@ -38,7 +38,7 @@ const standardVariant = (color: TextFieldColorsType): TextFieldVariantProps => {
           '& .MuiInput-underline:after': {
             borderBottomColor: 'black'
           },
-          '& .MuiOutlinedInput-root': {
+          '& .MuiStandardInput-root': {
             '& fieldset': {
               borderWidth: 1.5,
               borderColor: (theme.palette[color] as ColorPartial)['500']
@@ -71,26 +71,28 @@ const filledVariant = (color: TextFieldColorsType): TextFieldVariantProps => {
             color: (theme.palette[color] as ColorPartial)['500']
           },
           '& label': {
-            fontWeight: 500,
+            fontWeight: 400,
             color: (theme.palette[color] as ColorPartial)['500']
           },
-          '& label.Mui-focused': {},
-          '& .MuiInput-underline:after': {
-            borderBottomColor: 'red'
+          '& label.Mui-focused': {
+            fontWeight: 500
           },
-          '& fieldset': {
-            borderWidth: 1.5,
-            borderColor: (theme.palette[color] as ColorPartial)['500']
-          },
-          '&:hover fieldset': {
-            borderColor: (theme.palette[color] as ColorPartial)['100']
-          },
-          '&.Mui-focused fieldset': {
-            borderWidth: 3,
-            borderColor: alpha(
-              (theme.palette[color] as ColorPartial)['500']!,
-              0.6
-            )
+          '& .MuiInput-underline': {},
+          '& .MuiFilledInput-root': {
+            '& fieldset': {
+              borderWidth: 1.5,
+              borderColor: (theme.palette[color] as ColorPartial)['500']
+            },
+            '&:hover fieldset': {
+              borderColor: (theme.palette[color] as ColorPartial)['100']
+            },
+            '&.Mui-focused fieldset': {
+              borderWidth: 3,
+              borderColor: alpha(
+                (theme.palette[color] as ColorPartial)['500']!,
+                0.6
+              )
+            }
           }
         })
       };
@@ -108,10 +110,12 @@ const outlinedVariant = (color: TextFieldColorsType): TextFieldVariantProps => {
             color: (theme.palette[color] as ColorPartial)['500']
           },
           '& label': {
-            fontWeight: 500,
+            fontWeight: 400,
             color: (theme.palette[color] as ColorPartial)['500']
           },
-          '& label.Mui-focused': {},
+          '& label.Mui-focused': {
+            fontWeight: 500
+          },
           '& .MuiInput-underline:after': {
             borderBottomColor: 'black'
           },
@@ -172,7 +176,7 @@ export const TEXT_FIELD_OPTIONS: {
   styleOverrides: {
     root: {
       '& fieldset': {
-        borderRadius: 12
+        borderRadius: '0.5rem'
       }
     }
   },
