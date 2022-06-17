@@ -9,11 +9,11 @@ import {
   LinearProgress,
   Link,
   Stack,
+  TextField,
   Typography
 } from '@mui/material';
 import { UserProps, USERS } from '@/pages/Users/userData';
 import AddIcon from '@mui/icons-material/Add';
-import { SearchInput } from '@/layouts/TopMenuLayout/components/TopBar';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -114,7 +114,7 @@ export const UserLayout1: React.FC = () => {
           <AddIcon />
         </IconButton>
         <Box flexGrow={1}></Box>
-        <SearchInput sx={{ borderRadius: 2, bgcolor: 'secondary.lighter' }} />
+        <TextField variant="filled" color="success"></TextField>
       </Stack>
       <Grid container rowSpacing={2} columnSpacing={2}>
         <GroupedTransition>

@@ -27,7 +27,6 @@ export const Forms: React.FC = () => {
               <Stack spacing={2} sx={{ p: 2 }} flexWrap="wrap">
                 {TextFieldColors.map((color, index) => (
                   <TextField
-                    id="filled-error-helper-text"
                     defaultValue="Hello World"
                     helperText="Incorrect entry."
                     key={index}

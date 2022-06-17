@@ -30,6 +30,9 @@ const standardVariant = (color: TextFieldColorsType): TextFieldVariantProps => {
       return {
         props: { variant: variant, color: color },
         style: ({ theme }) => ({
+          input: {
+            color: (theme.palette[color] as ColorPartial)['500']
+          },
           '& label': {
             fontWeight: 400,
             color: (theme.palette[color] as ColorPartial)['500']
@@ -38,6 +41,9 @@ const standardVariant = (color: TextFieldColorsType): TextFieldVariantProps => {
             fontWeight: 500
           },
           '& .MuiInput-underline:before': {
+            borderColor: (theme.palette[color] as ColorPartial)['500']
+          },
+          '&:hover .MuiInput-underline:before': {
             borderColor: (theme.palette[color] as ColorPartial)['500']
           },
           '& .MuiInput-underline:after': {
@@ -87,6 +93,9 @@ const filledVariant = (color: TextFieldColorsType): TextFieldVariantProps => {
           },
           '& .MuiInput-underline': {},
           '& .MuiFilledInput-underline:before': {
+            borderBottom: 0
+          },
+          '&:hover .MuiFilledInput-underline:before': {
             borderBottom: 0
           },
           '& .MuiFilledInput-underline:after': {
