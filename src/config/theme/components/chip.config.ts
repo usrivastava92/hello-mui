@@ -1,5 +1,8 @@
 import { alpha, Interpolation } from '@mui/material';
-import { ColorPartial, SimplePaletteColorOptions } from '@mui/material/styles/createPalette';
+import {
+  ColorPartial,
+  SimplePaletteColorOptions
+} from '@mui/material/styles/createPalette';
 import { ComponentsPropsList } from '@mui/material/styles/props';
 import { Theme } from '@mui/material/styles/createTheme';
 
@@ -14,13 +17,15 @@ declare module '@mui/material/Chip' {
 }
 
 export const ChipVariants = ['outlined', 'soft', 'filled'] as const;
-export const ChipColors = ['primary',
+export const ChipColors = [
+  'primary',
   'secondary',
   'info',
   'success',
   'warning',
   'error',
-  'neutral'] as const;
+  'neutral'
+] as const;
 type ChipColorsType = typeof ChipColors[number];
 type ChipVariantProps = {
   props: Partial<ComponentsPropsList['MuiChip']>;
@@ -33,15 +38,20 @@ const softVariant = (color: ChipColorsType): ChipVariantProps => {
       return {
         props: { variant: 'soft', color: color },
         style: ({ theme }) => ({
-          color: (theme.palette[color] as SimplePaletteColorOptions).contrastText,
-          backgroundColor: alpha((theme.palette[color] as ColorPartial)['200']!, 0.8)
+          color: (theme.palette[color] as SimplePaletteColorOptions)
+            .contrastText,
+          backgroundColor: alpha(
+            (theme.palette[color] as ColorPartial)['200']!,
+            0.8
+          )
         })
       };
     case 'secondary':
       return {
         props: { variant: 'soft', color: color },
         style: ({ theme }) => ({
-          color: (theme.palette[color] as SimplePaletteColorOptions).contrastText,
+          color: (theme.palette[color] as SimplePaletteColorOptions)
+            .contrastText,
           backgroundColor: (theme.palette[color] as ColorPartial)['400']
         })
       };
@@ -62,7 +72,8 @@ const filledVariant = (color: ChipColorsType): ChipVariantProps => {
       return {
         props: { variant: 'filled', color: color },
         style: ({ theme }) => ({
-          color: (theme.palette[color] as SimplePaletteColorOptions).contrastText
+          color: (theme.palette[color] as SimplePaletteColorOptions)
+            .contrastText
         })
       };
   }
@@ -75,7 +86,8 @@ const outlinedVariant = (color: ChipColorsType): ChipVariantProps => {
         props: { variant: 'outlined', color: color },
         style: ({ theme }) => ({
           borderColor: (theme.palette[color] as ColorPartial)['900'],
-          color: (theme.palette[color] as SimplePaletteColorOptions).contrastText
+          color: (theme.palette[color] as SimplePaletteColorOptions)
+            .contrastText
         })
       };
     default:

@@ -1,4 +1,9 @@
-import { createTheme, CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material';
+import {
+  createTheme,
+  CssBaseline,
+  ThemeProvider,
+  useMediaQuery
+} from '@mui/material';
 import React from 'react';
 import './App.scss';
 import { getThemeOptionsByMode } from './config/theme/theme';
@@ -56,8 +61,8 @@ function getRoutes(): JSX.Element {
 function getNestedRoutes(): JSX.Element {
   return (
     <>
-      <Route path='chips' element={<Chips />}></Route>
-      <Route path='buttons' element={<Buttons />}></Route>
+      <Route path="chips" element={<Chips />}></Route>
+      <Route path="buttons" element={<Buttons />}></Route>
       <Route path="alerts" element={<Alerts />}></Route>
       <Route path="tooltips" element={<Tooltips />}></Route>
       <Route path="usersLayout1" element={<UserLayout1 />}></Route>

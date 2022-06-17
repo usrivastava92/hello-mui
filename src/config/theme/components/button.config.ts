@@ -1,5 +1,8 @@
 import { alpha, Interpolation } from '@mui/material';
-import { ColorPartial, SimplePaletteColorOptions } from '@mui/material/styles/createPalette';
+import {
+  ColorPartial,
+  SimplePaletteColorOptions
+} from '@mui/material/styles/createPalette';
 import { ComponentsPropsList } from '@mui/material/styles/props';
 import { Theme } from '@mui/material/styles/createTheme';
 
