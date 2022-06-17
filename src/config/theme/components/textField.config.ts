@@ -31,13 +31,13 @@ const standardVariant = (color: TextFieldColorsType): TextFieldVariantProps => {
         props: { variant: variant, color: color },
         style: ({ theme }) => ({
           '& label': {
-            fontWeight: 500,
+            fontWeight: 400,
             color: (theme.palette[color] as ColorPartial)['500']
           },
-          '& label.Mui-focused': {},
-          '& .MuiInput-underline:after': {
-            borderBottomColor: 'black'
+          '& label.Mui-focused': {
+            fontWeight: 500
           },
+          '& .MuiInput-underline:after': {},
           '& .MuiStandardInput-root': {
             '& fieldset': {
               borderWidth: 1.5,
@@ -78,6 +78,9 @@ const filledVariant = (color: TextFieldColorsType): TextFieldVariantProps => {
             fontWeight: 500
           },
           '& .MuiInput-underline': {},
+          '& .MuiFilledInput-underline:after': {
+            borderBottom: 0
+          },
           '& .MuiFilledInput-root': {
             '& fieldset': {
               borderWidth: 1.5,
@@ -115,9 +118,6 @@ const outlinedVariant = (color: TextFieldColorsType): TextFieldVariantProps => {
           },
           '& label.Mui-focused': {
             fontWeight: 500
-          },
-          '& .MuiInput-underline:after': {
-            borderBottomColor: 'black'
           },
           '& .MuiOutlinedInput-root': {
             '& fieldset': {
