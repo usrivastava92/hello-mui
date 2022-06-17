@@ -1,7 +1,6 @@
 import {
   Box,
   Collapse,
-  IconButton,
   List,
   ListItemButton,
   ListItemText,
@@ -63,12 +62,12 @@ interface MenuProps {
 
 const getMenuSxProps = (level: number): SxProps<Theme> => {
   if (level >= 3) {
-    return { borderRadius: 2, bgcolor: 'primary.darker' };
+    return { borderRadius: 2, bgcolor: 'primary.700' };
   }
   if (level === 2) {
-    return { borderRadius: 2, bgcolor: 'primary.dark' };
+    return { borderRadius: 2, bgcolor: 'primary.700' };
   }
-  return { borderRadius: 0, bgcolor: 'primary.main' };
+  return { borderRadius: 0, bgcolor: 'primary.500' };
 };
 
 const Menu: React.FC<MenuProps> = ({
@@ -107,20 +106,21 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
   menuItems = []
 }): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const toggleMenu = () => setMenuOpen(!menuOpen);
   return (
     <Box sx={{ display: { xs: 'block', md: 'none' } }} component="div">
-      <Stack justifyContent="space-between" sx={{ mx: 2 }}>
+      <Stack justifyContent="space-between" sx={{ mx: 2, my: 0.5 }}>
         <BrandLogo />
-        <IconButton
-          onClick={() => setMenuOpen(!menuOpen)}
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-        >
-          {menuOpen ? <CloseIcon /> : <MenuIcon />}
-        </IconButton>
+        <Stack onClick={toggleMenu}>
+          {menuOpen ? (
+            <CloseIcon
+              sx={{ color: 'primary.contrastText' }}
+              fontSize="large"
+            />
+          ) : (
+            <MenuIcon sx={{ color: 'primary.contrastText' }} fontSize="large" />
+          )}
+        </Stack>
       </Stack>
       <AppDivider type="primary" />
       <Menu menuItems={menuItems} open={menuOpen} />

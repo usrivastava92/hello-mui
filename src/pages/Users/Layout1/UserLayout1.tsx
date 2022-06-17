@@ -18,41 +18,60 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { AppDivider } from '@/components/Divider';
+import { GroupedTransition } from '@/components/GroupedTransition';
 
 const User: React.FC<UserProps> = ({ user }) => {
   return (
     <Card>
-      <Stack spacing={2} sx={{ p: 2 }}>
-        <Avatar sx={{ width: 56, height: 56, color: 'dark.lighter' }}></Avatar>
-        <Stack direction="column" alignItems="flex-start">
-          <Typography component={Link} fontWeight="medium">
-            {user.name}
-          </Typography>
-          <Typography variant="xs" color="dark.main">
-            {user.profession}
-          </Typography>
-        </Stack>
-        <Box flexGrow={1}></Box>
-        <IconButton>
-          <FacebookIcon />
-        </IconButton>
-        <IconButton>
-          <TwitterIcon />
-        </IconButton>
-        <IconButton>
-          <LinkedInIcon />
-        </IconButton>
-      </Stack>
+      <Grid container sx={{ p: 2 }}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          display="flex"
+          flexDirection={{ xs: 'column', md: 'row' }}
+          justifyContent={{ xs: 'center', md: 'flex-start' }}
+          alignItems="center"
+        >
+          <Avatar sx={{ width: 56, height: 56 }}></Avatar>
+          <Stack
+            sx={{ m: 2 }}
+            direction="column"
+            alignItems={{ xs: 'center', md: 'flex-start' }}
+          >
+            <Typography component={Link} fontWeight="medium">
+              {user.name}
+            </Typography>
+            <Typography variant="xs">{user.profession}</Typography>
+          </Stack>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          display="flex"
+          justifyContent={{ xs: 'center', md: 'flex-end' }}
+          alignItems="center"
+        >
+          <IconButton>
+            <FacebookIcon />
+          </IconButton>
+          <IconButton>
+            <TwitterIcon />
+          </IconButton>
+          <IconButton>
+            <LinkedInIcon />
+          </IconButton>
+        </Grid>
+      </Grid>
       <AppDivider type="secondary" />
-      <Stack sx={{ m: 2 }} justifyContent="space-between">
-        <Stack direction="column" sx={{ width: '50%' }} spacing={1}>
+      <Grid container sx={{ p: 2 }} spacing={2}>
+        <Grid item xs={12} md={6}>
           <Stack justifyContent="space-between" sx={{ width: '100%' }}>
-            <Typography variant="xs" component={Link} color="dark.main">
+            <Typography variant="xs" component={Link}>
               Progress
             </Typography>
-            <Typography variant="xs" color="dark.main">
-              {user.progress}%
-            </Typography>
+            <Typography variant="xs">{user.progress}%</Typography>
           </Stack>
           <LinearProgress
             sx={{ width: '100%' }}
@@ -60,16 +79,25 @@ const User: React.FC<UserProps> = ({ user }) => {
             variant="determinate"
             value={user.progress}
           />
-        </Stack>
-        <Stack spacing={2}>
-          <Button size="small" color="info" variant="contained">
-            Message
-          </Button>
-          <Button size="small" color="dark" variant="contained">
-            Profile
-          </Button>
-        </Stack>
-      </Stack>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          display="flex"
+          justifyContent={{ xs: 'center', md: 'flex-end' }}
+          alignItems="center"
+        >
+          <Stack spacing={2}>
+            <Button size="small" color="info" variant="contained">
+              Message
+            </Button>
+            <Button size="small" color="success" variant="contained">
+              Profile
+            </Button>
+          </Stack>
+        </Grid>
+      </Grid>
     </Card>
   );
 };
@@ -79,21 +107,23 @@ export const UserLayout1: React.FC = () => {
     <>
       <Typography variant="lg">Users Layout 1</Typography>
       <Stack spacing={1} sx={{ py: 2 }}>
-        <Button sx={{ boxShadow: 1 }} color="info" variant="contained">
+        <Button color="info" variant="contained">
           Add New User
         </Button>
-        <IconButton sx={{ boxShadow: 3 }}>
+        <IconButton color="secondary" sx={{ borderRadius: 2 }}>
           <AddIcon />
         </IconButton>
         <Box flexGrow={1}></Box>
         <SearchInput sx={{ borderRadius: 2, bgcolor: 'secondary.lighter' }} />
       </Stack>
-      <Grid className="intro-y" container rowSpacing={2} columnSpacing={2}>
-        {USERS.map((user, index) => (
-          <Grid key={index} item xs={12} md={6}>
-            <User user={user} />
-          </Grid>
-        ))}
+      <Grid container rowSpacing={2} columnSpacing={2}>
+        <GroupedTransition>
+          {USERS.map((user, index) => (
+            <Grid key={index} item xs={12} md={6}>
+              <User user={user} />
+            </Grid>
+          ))}
+        </GroupedTransition>
       </Grid>
     </>
   );

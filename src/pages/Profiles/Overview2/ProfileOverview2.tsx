@@ -18,21 +18,19 @@ const User: React.FC<UserProps> = ({ user }) => {
   return (
     <Card>
       <Stack spacing={2} sx={{ p: 2 }}>
-        <Avatar sx={{ width: 56, height: 56, color: 'dark.lighter' }}></Avatar>
+        <Avatar sx={{ width: 56, height: 56 }}></Avatar>
         <Stack direction="column" alignItems="flex-start">
           <Typography component={Link} fontWeight="bold">
             {user.name}
           </Typography>
-          <Typography variant="xs" color="dark.main">
-            {user.profession}
-          </Typography>
+          <Typography variant="xs">{user.profession}</Typography>
         </Stack>
         <Box flexGrow={1}></Box>
         <Stack spacing={2}>
           <Button size="small" color="info" variant="contained">
             Message
           </Button>
-          <Button size="small" color="dark" variant="contained">
+          <Button size="small" variant="contained">
             Profile
           </Button>
         </Stack>

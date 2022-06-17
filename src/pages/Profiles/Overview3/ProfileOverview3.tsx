@@ -23,25 +23,20 @@ const User: React.FC<UserProps> = ({ user }) => {
     <Card>
       <Box sx={{ p: 2 }}>
         <Stack spacing={2} justifyContent="flex-start">
-          <Avatar
-            variant="square"
-            sx={{ width: 56, height: 56, color: 'dark.lighter' }}
-          ></Avatar>
+          <Avatar variant="square" sx={{ width: 56, height: 56 }}></Avatar>
           <Stack direction="column" alignItems="flex-start">
             <Typography component={Link} fontWeight="bold">
               {user.name}
             </Typography>
-            <Typography variant="xs" color="dark.main">
-              {user.profession}
-            </Typography>
+            <Typography variant="xs">{user.profession}</Typography>
           </Stack>
         </Stack>
         <Typography sx={{ py: 2 }}>{user.bio}</Typography>
-        <Stack justifyContent="flex-start" spacing={1} color="dark.main">
+        <Stack justifyContent="flex-start" spacing={1}>
           <EmailIcon />
           <Typography>{user.email}</Typography>
         </Stack>
-        <Stack justifyContent="flex-start" spacing={1} color="dark.main">
+        <Stack justifyContent="flex-start" spacing={1}>
           <InstagramIcon />
           <Typography>{user.name}</Typography>
         </Stack>
@@ -50,12 +45,10 @@ const User: React.FC<UserProps> = ({ user }) => {
       <Stack sx={{ m: 2 }} justifyContent="space-between">
         <Stack direction="column" sx={{ width: '50%' }} spacing={1}>
           <Stack justifyContent="space-between" sx={{ width: '100%' }}>
-            <Typography variant="xs" component={Link} color="dark.main">
+            <Typography variant="xs" component={Link}>
               Progress
             </Typography>
-            <Typography variant="xs" color="dark.main">
-              {user.progress}%
-            </Typography>
+            <Typography variant="xs">{user.progress}%</Typography>
           </Stack>
           <LinearProgress
             sx={{ width: '100%' }}
@@ -68,7 +61,7 @@ const User: React.FC<UserProps> = ({ user }) => {
           <Button size="small" color="info" variant="contained">
             Message
           </Button>
-          <Button size="small" color="dark" variant="contained">
+          <Button size="small" variant="contained">
             Profile
           </Button>
         </Stack>

@@ -9,7 +9,7 @@ export const randomUser = (): IUser => {
     name: faker.name.findName(),
     profession: faker.name.jobTitle(),
     progress: randomInt(),
-    bio: faker.lorem.sentence(),
+    bio: faker.lorem.paragraph(),
     email: faker.internet.email()
   };
 };

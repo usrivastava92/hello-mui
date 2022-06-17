@@ -25,9 +25,10 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, level = 1 }) => {
   return (
     <ListItemButton
       component="li"
-      className={`top-menu ${
-        level === 1 && item.isActive ? 'top-menu--active' : ''
-      }`}
+      className={`top-menu 
+      ${level === 1 ? '-intro-y' : ''}
+      ${level === 1 && item.isActive ? 'top-menu--active' : ''}
+      `}
       onClick={handleClick}
     >
       {item.icon}
@@ -75,7 +76,11 @@ export const TopNav: React.FC<TopNavProps> = ({
 }): JSX.Element => {
   return (
     <Box
-      sx={{ mt: 2, px: 6, display: { xs: 'none', md: 'block' } }}
+      sx={{
+        mt: 2,
+        px: 6,
+        display: { xs: 'none', md: 'block' }
+      }}
       className="top-nav"
       component="nav"
     >

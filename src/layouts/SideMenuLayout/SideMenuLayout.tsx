@@ -15,7 +15,7 @@ export const SideMenuLayout: React.FC<SideMenuLayoutProps> = ({
   mini = false
 }) => {
   return (
-    <>
+    <Box sx={{ color: 'primary.contrastText' }}>
       <MobileMenu menuItems={MENU_ITEMS}></MobileMenu>
       <Stack>
         <SideNav menuItems={MENU_ITEMS} mini={mini} />
@@ -28,6 +28,6 @@ export const SideMenuLayout: React.FC<SideMenuLayoutProps> = ({
           </ContentWrapper>
         </Box>
       </Stack>
-    </>
+    </Box>
   );
 };

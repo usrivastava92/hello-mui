@@ -9,7 +9,7 @@ import { Outlet } from 'react-router-dom';
 
 export const TopMenuLayout: React.FC = () => {
   return (
-    <Box>
+    <Box sx={{ color: 'primary.contrastText' }}>
       <MobileMenu menuItems={MENU_ITEMS} />
       <TopBar />
       <TopNav menuItems={MENU_ITEMS} />

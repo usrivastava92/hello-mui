@@ -431,7 +431,7 @@ export const MENU_ITEMS: IMenuItem[] = [
         id: 'components/alert',
         icon: <BoltIcon />,
         nesterItems: [],
-        routerLink: 'alert'
+        routerLink: 'alerts'
       },
       {
         displayName: 'Progress Bar',

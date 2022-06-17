@@ -1,6 +1,10 @@
 import { Button, Card, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { AppDivider } from '@/components/Divider';
+import {
+  ButtonColors,
+  ButtonVariants
+} from '@/config/theme/components/button.config';
 
 export const Buttons: React.FC = () => {
   return (
@@ -8,34 +12,66 @@ export const Buttons: React.FC = () => {
       <Typography variant="lg" fontWeight="medium">
         Buttons
       </Typography>
-      <Grid sx={{ mt: 1 }} container rowSpacing={2} columnSpacing={2}>
+      <Grid sx={{ pt: 1 }} container spacing={2}>
+        {ButtonVariants.map((variant, index) => (
+          <Grid key={index} item sm={12} lg={6}>
+            <Card>
+              <Typography
+                sx={{ m: 2, textTransform: 'capitalize' }}
+                variant="base"
+                component="div"
+              >
+                {variant} Buttons
+              </Typography>
+              <AppDivider type="secondary" />
+              <Stack
+                sx={{ m: 2, flexWrap: 'wrap' }}
+                spacing={2}
+                justifyContent="space-evenly"
+              >
+                {ButtonColors.map((color, index) => (
+                  <Button key={index} color={color} variant={variant}>
+                    {color}
+                  </Button>
+                ))}
+              </Stack>
+            </Card>
+          </Grid>
+        ))}
         <Grid item sm={12} lg={6}>
           <Card>
             <Typography sx={{ m: 2 }} variant="base" component="div">
-              Basic Buttons
+              Size Buttons
             </Typography>
             <AppDivider type="secondary" />
             <Stack sx={{ m: 2, flexWrap: 'wrap' }} spacing={2}>
-              <Button color="primary" variant="contained">
-                Primary
+              <Button size="small" color="info" variant="contained">
+                Small
               </Button>
-              <Button color="dark" variant="contained">
-                Dark
+              <Button size="medium" color="info" variant="contained">
+                Medium
               </Button>
-              <Button color="secondary" variant="contained">
-                Secondary
+              <Button size="large" color="info" variant="contained">
+                Large
               </Button>
+            </Stack>
+          </Card>
+        </Grid>
+        <Grid item sm={12} lg={6}>
+          <Card>
+            <Typography sx={{ m: 2 }} variant="base" component="div">
+              Loading State Buttons
+            </Typography>
+            <AppDivider type="secondary" />
+            <Stack sx={{ m: 2, flexWrap: 'wrap' }} spacing={2}>
               <Button color="info" variant="contained">
-                Info
+                Small
               </Button>
               <Button color="success" variant="contained">
-                Success
+                Medium
               </Button>
               <Button color="warning" variant="contained">
-                Warning
-              </Button>
-              <Button color="error" variant="contained">
-                Error
+                Large
               </Button>
             </Stack>
           </Card>
@@ -43,61 +79,36 @@ export const Buttons: React.FC = () => {
         <Grid item sm={12} lg={6}>
           <Card>
             <Typography sx={{ m: 2 }} variant="base" component="div">
-              Outlined Buttons
+              Elevated Buttons
             </Typography>
             <AppDivider type="secondary" />
             <Stack sx={{ m: 2, flexWrap: 'wrap' }} spacing={2}>
-              <Button color="primary" variant="outlined">
-                Primary
+              <Button sx={{ boxShadow: 1 }} color="info" variant="contained">
+                Elevation 1
               </Button>
-              <Button color="dark" variant="outlined">
-                Dark
+              <Button sx={{ boxShadow: 2 }} color="info" variant="contained">
+                Elevation 2
               </Button>
-              <Button color="secondary" variant="outlined">
-                Secondary
+              <Button sx={{ boxShadow: 3 }} color="info" variant="contained">
+                Elevation 3
               </Button>
-              <Button color="info" variant="outlined">
-                Info
+              <Button sx={{ boxShadow: 4 }} color="info" variant="contained">
+                Elevation 4
               </Button>
-              <Button color="success" variant="outlined">
-                Success
+              <Button sx={{ boxShadow: 5 }} color="info" variant="contained">
+                Elevation 5
               </Button>
-              <Button color="warning" variant="outlined">
-                Warning
+              <Button sx={{ boxShadow: 6 }} color="info" variant="contained">
+                Elevation 6
               </Button>
-              <Button color="error" variant="outlined">
-                Error
+              <Button sx={{ boxShadow: 7 }} color="info" variant="contained">
+                Elevation 7
               </Button>
-            </Stack>
-          </Card>
-        </Grid>
-        <Grid item sm={12} lg={6}>
-          <Card>
-            <Typography sx={{ m: 2 }} variant="base" component="div">
-              Text Buttons
-            </Typography>
-            <AppDivider type="secondary" />
-            <Stack sx={{ m: 2, flexWrap: 'wrap' }} spacing={2}>
-              <Button color="primary" variant="text">
-                Primary
+              <Button sx={{ boxShadow: 8 }} color="info" variant="contained">
+                Elevation 8
               </Button>
-              <Button color="dark" variant="text">
-                Dark
-              </Button>
-              <Button color="secondary" variant="text">
-                Secondary
-              </Button>
-              <Button color="info" variant="text">
-                Info
-              </Button>
-              <Button color="success" variant="text">
-                Success
-              </Button>
-              <Button color="warning" variant="text">
-                Warning
-              </Button>
-              <Button color="error" variant="text">
-                Error
+              <Button sx={{ boxShadow: 9 }} color="info" variant="contained">
+                Elevation 9
               </Button>
             </Stack>
           </Card>
