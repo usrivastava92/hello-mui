@@ -20,7 +20,14 @@ import { GroupedTransition } from '@/components/GroupedTransition';
 
 const User: React.FC<UserProps> = ({ user }) => {
   return (
-    <Card>
+    <Card
+      sx={{
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+      }}
+    >
       <Grid container sx={{ p: 2 }} rowSpacing={1}>
         <Grid
           item
@@ -66,8 +73,10 @@ const User: React.FC<UserProps> = ({ user }) => {
           </Stack>
         </Grid>
       </Grid>
-      <AppDivider type="secondary" />
-      <Grid container sx={{ p: 2 }}>
+      <Grid container sx={{ p: 2 }} spacing={2}>
+        <Grid item xs={12}>
+          <AppDivider type="secondary" />
+        </Grid>
         <Grid item xs={12}>
           <Stack spacing={2} justifyContent="space-between">
             <Button size="small" color="info" variant="contained">
