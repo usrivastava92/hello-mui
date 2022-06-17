@@ -14,6 +14,11 @@ export const getComponentOptions = (palette: PaletteOptions): Components => {
       }
     },
     MuiChip: {
+      styleOverrides: {
+        root: {
+          fontWeight: 500
+        }
+      },
       variants: getChipVariants()
     },
     MuiAlert: {

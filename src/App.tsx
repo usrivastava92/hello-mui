@@ -1,9 +1,4 @@
-import {
-  createTheme,
-  CssBaseline,
-  ThemeProvider,
-  useMediaQuery
-} from '@mui/material';
+import { createTheme, CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material';
 import React from 'react';
 import './App.scss';
 import { getThemeOptionsByMode } from './config/theme/theme';
@@ -21,6 +16,7 @@ import { ProfileOverview1 } from '@/pages/Profiles/Overview1';
 import { ProfileOverview2 } from '@/pages/Profiles/Overview2';
 import { ProfileOverview3 } from '@/pages/Profiles/Overview3';
 import { Alerts } from '@/pages/Alerts';
+import { Chips } from '@/pages/Chips';
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -60,7 +56,8 @@ function getRoutes(): JSX.Element {
 function getNestedRoutes(): JSX.Element {
   return (
     <>
-      <Route path="buttons" element={<Buttons />}></Route>
+      <Route path='chips' element={<Chips />}></Route>
+      <Route path='buttons' element={<Buttons />}></Route>
       <Route path="alerts" element={<Alerts />}></Route>
       <Route path="tooltips" element={<Tooltips />}></Route>
       <Route path="usersLayout1" element={<UserLayout1 />}></Route>

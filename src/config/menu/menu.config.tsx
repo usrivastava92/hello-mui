@@ -434,6 +434,14 @@ export const MENU_ITEMS: IMenuItem[] = [
         routerLink: 'alerts'
       },
       {
+        displayName: 'Chip',
+        isOpen: false,
+        id: 'components/chips',
+        icon: <BoltIcon />,
+        nesterItems: [],
+        routerLink: 'chips'
+      },
+      {
         displayName: 'Progress Bar',
         isOpen: false,
         id: 'components/progressbar',
