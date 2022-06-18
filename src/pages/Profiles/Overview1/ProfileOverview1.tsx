@@ -5,7 +5,6 @@ import {
   Card,
   Chip,
   Grid,
-  LinearProgress,
   Link,
   Stack,
   Tab,
@@ -21,6 +20,7 @@ import { GroupedTransition } from '@/components/GroupedTransition';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import BorderAllIcon from '@mui/icons-material/BorderAll';
 import CodeIcon from '@mui/icons-material/Code';
+import { ProgressBar } from '@/components/ProgressBar';
 
 const TABS = ['Dashboard', 'Account & Profile', 'Activities', 'Tasks'];
 
@@ -32,7 +32,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
     <Grid container spacing={2}>
       <GroupedTransition>
         <Grid item xs={12}>
-          <Card>
+          <Card sx={{ height: '100%' }}>
             <Grid container sx={{ p: 2 }}>
               <Grid
                 item
@@ -61,7 +61,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
                 md={4}
                 display="flex"
                 flexDirection="column"
-                justifyContent="center"
+                justifyContent="space-between"
                 alignItems={{ xs: 'center', md: 'flex-start' }}
                 sx={{
                   p: 2,
@@ -70,14 +70,16 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
                   borderTop: { xs: 1, md: 0 },
                   borderBottom: { xs: 1, md: 0 },
                   borderColor: {
-                    xs: 'secondary.contrastBorder',
-                    md: 'secondary.contrastBorder'
+                    xs: 'secondary.900',
+                    md: 'secondary.900'
                   }
                 }}
               >
                 <Stack justifyContent="flex-start" spacing={1}>
                   <EmailIcon />
-                  <Typography variant="sm">{profileInfo.email}</Typography>
+                  <Typography variant="sm" textTransform="lowercase">
+                    {profileInfo.email}
+                  </Typography>
                 </Stack>
                 <Stack justifyContent="flex-start" spacing={1}>
                   <InstagramIcon />
@@ -138,7 +140,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
           </Card>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Card>
+          <Card sx={{ height: '100%' }}>
             <Stack sx={{ p: 2 }} justifyContent="space-between">
               <Typography fontWeight="bold">Top Categories</Typography>
               <MoreHorizIcon />
@@ -251,7 +253,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
           </Card>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Card>
+          <Card sx={{ height: '100%' }}>
             <Stack
               sx={{ px: 2, pt: 0.8, pb: 0 }}
               justifyContent="space-between"
@@ -270,39 +272,24 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
             <AppDivider type="secondary" />
             <Grid container sx={{ p: 2 }} spacing={2}>
               <Grid item xs={12}>
-                <Stack justifyContent="space-between">
-                  <Typography>Pending Tasks</Typography>
-                  <Typography>20%</Typography>
-                </Stack>
-                <LinearProgress
-                  sx={{ width: '100%' }}
-                  color="info"
-                  variant="determinate"
-                  value={20}
+                <ProgressBar
+                  percentage={20}
+                  startLabel="Pending Tasks"
+                  endLabel="20%"
                 />
               </Grid>
               <Grid item xs={12}>
-                <Stack justifyContent="space-between">
-                  <Typography>Completed Tasks</Typography>
-                  <Typography>42</Typography>
-                </Stack>
-                <LinearProgress
-                  sx={{ width: '100%' }}
-                  color="info"
-                  variant="determinate"
-                  value={42}
+                <ProgressBar
+                  percentage={42}
+                  startLabel="Completed Tasks"
+                  endLabel="42%"
                 />
               </Grid>
               <Grid item xs={12}>
-                <Stack justifyContent="space-between">
-                  <Typography>Tasks In Progress</Typography>
-                  <Typography>2 / 20</Typography>
-                </Stack>
-                <LinearProgress
-                  sx={{ width: '100%' }}
-                  color="info"
-                  variant="determinate"
-                  value={(2 / 20) * 100}
+                <ProgressBar
+                  percentage={(2 / 20) * 100}
+                  startLabel="Tasks In Progress"
+                  endLabel="2/20"
                 />
               </Grid>
               <Grid item xs={12} sx={{ textAlign: 'center' }}>
@@ -312,10 +299,14 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
           </Card>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Card>
-            <Stack sx={{ p: 2 }} justifyContent="space-between">
+          <Card sx={{ height: '100%' }}>
+            <Stack sx={{ pl: 2 }} justifyContent="space-between">
               <Typography fontWeight="bold">Daily Sales</Typography>
-              <Button variant="outlined" startIcon={<BorderAllIcon />}>
+              <Button
+                variant="outlined"
+                color="transparent"
+                startIcon={<BorderAllIcon />}
+              >
                 Download Excel
               </Button>
             </Stack>
@@ -427,7 +418,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
           </Card>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Card>
+          <Card sx={{ height: '100%' }}>
             <Stack sx={{ p: 2, pb: 0 }} justifyContent="space-between">
               <Typography fontWeight="bold">Latest Tasks</Typography>
               <Tabs
@@ -549,9 +540,13 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
         </Grid>
         <Grid item xs={12}>
           <Card>
-            <Stack sx={{ p: 2 }} justifyContent="space-between">
+            <Stack sx={{ pl: 2 }} justifyContent="space-between">
               <Typography fontWeight="bold">General Statistics</Typography>
-              <Button variant="outlined" startIcon={<CodeIcon />}>
+              <Button
+                variant="outlined"
+                color="transparent"
+                startIcon={<CodeIcon />}
+              >
                 Download XML
               </Button>
             </Stack>

@@ -73,19 +73,23 @@ const User: React.FC<UserProps> = ({ user }) => {
           </Stack>
         </Grid>
       </Grid>
-      <Grid container sx={{ p: 2 }} spacing={2}>
+      <Grid container sx={{ pt: 2 }}>
         <Grid item xs={12}>
           <AppDivider type="secondary" />
         </Grid>
-        <Grid item xs={12}>
-          <Stack spacing={2} justifyContent="space-between">
-            <Button size="small" color="info" variant="contained">
-              Message
-            </Button>
-            <Button size="small" color="secondary" variant="outlined">
-              Profile
-            </Button>
-          </Stack>
+        <Grid
+          item
+          xs={12}
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <Button size="small" color="info" variant="contained">
+            Message
+          </Button>
+          <Button size="small" color="secondary" variant="outlined">
+            Profile
+          </Button>
         </Grid>
       </Grid>
     </Card>

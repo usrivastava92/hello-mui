@@ -6,7 +6,6 @@ import {
   Card,
   Grid,
   IconButton,
-  LinearProgress,
   Link,
   Stack,
   TextField,
@@ -19,10 +18,11 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { AppDivider } from '@/components/Divider';
 import { GroupedTransition } from '@/components/GroupedTransition';
+import { ProgressBar } from '@/components/ProgressBar';
 
 const User: React.FC<UserProps> = ({ user }) => {
   return (
-    <Card>
+    <Card sx={{ height: '100%' }}>
       <Grid container sx={{ p: 2 }}>
         <Grid
           item
@@ -65,20 +65,22 @@ const User: React.FC<UserProps> = ({ user }) => {
         </Grid>
       </Grid>
       <AppDivider type="secondary" />
-      <Grid container sx={{ p: 2 }} spacing={2}>
-        <Grid item xs={12} md={6}>
-          <Stack justifyContent="space-between" sx={{ width: '100%' }}>
-            <Typography variant="xs" component={Link}>
-              Progress
-            </Typography>
-            <Typography variant="xs">{user.progress}%</Typography>
-          </Stack>
-          <LinearProgress
-            sx={{ width: '100%' }}
-            color="info"
-            variant="determinate"
-            value={user.progress}
-          />
+      <Grid container sx={{ px: 2 }} spacing={2}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          display="flex"
+          justifyContent="flex-start"
+          alignItems="center"
+        >
+          {
+            <ProgressBar
+              percentage={user.progress}
+              startLabel={'Progress'}
+              endLabel={`${user.progress}%`}
+            />
+          }
         </Grid>
         <Grid
           item
@@ -114,7 +116,7 @@ export const UserLayout1: React.FC = () => {
           <AddIcon />
         </IconButton>
         <Box flexGrow={1}></Box>
-        <TextField variant="filled" color="success"></TextField>
+        <TextField variant="filled" color="primary"></TextField>
       </Stack>
       <Grid container rowSpacing={2} columnSpacing={2}>
         <GroupedTransition>
