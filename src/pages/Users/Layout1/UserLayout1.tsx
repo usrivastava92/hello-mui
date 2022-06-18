@@ -20,6 +20,36 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { AppDivider } from '@/components/Divider';
 import { GroupedTransition } from '@/components/GroupedTransition';
 
+interface ProgressBarProps {
+  percentage: number;
+  startLabel?: string;
+  endLabel?: string;
+}
+
+const ProgressBar: React.FC<ProgressBarProps> = ({
+  percentage,
+  startLabel,
+  endLabel
+}) => {
+  const LabelStack = (
+    <Stack justifyContent="space-between">
+      {startLabel && <Typography variant="xs">{startLabel}</Typography>}
+      {endLabel && <Typography variant="xs">{endLabel}</Typography>}
+    </Stack>
+  );
+  return (
+    <Box sx={{ width: '100%' }}>
+      {(startLabel || endLabel) && LabelStack}
+      <LinearProgress
+        sx={{ width: '100%', mt: 1 }}
+        color="info"
+        variant="determinate"
+        value={percentage}
+      />
+    </Box>
+  );
+};
+
 const User: React.FC<UserProps> = ({ user }) => {
   return (
     <Card>
@@ -65,20 +95,22 @@ const User: React.FC<UserProps> = ({ user }) => {
         </Grid>
       </Grid>
       <AppDivider type="secondary" />
-      <Grid container sx={{ p: 2 }} spacing={2}>
-        <Grid item xs={12} md={6}>
-          <Stack justifyContent="space-between" sx={{ width: '100%' }}>
-            <Typography variant="xs" component={Link}>
-              Progress
-            </Typography>
-            <Typography variant="xs">{user.progress}%</Typography>
-          </Stack>
-          <LinearProgress
-            sx={{ width: '100%' }}
-            color="info"
-            variant="determinate"
-            value={user.progress}
-          />
+      <Grid container sx={{ px: 2 }} spacing={2}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          display="flex"
+          justifyContent="flex-start"
+          alignItems="center"
+        >
+          {
+            <ProgressBar
+              percentage={user.progress}
+              startLabel={'Progress'}
+              endLabel={`${user.progress}%`}
+            />
+          }
         </Grid>
         <Grid
           item
@@ -114,7 +146,7 @@ export const UserLayout1: React.FC = () => {
           <AddIcon />
         </IconButton>
         <Box flexGrow={1}></Box>
-        <TextField variant="filled" color="success"></TextField>
+        <TextField variant="filled" color="primary"></TextField>
       </Stack>
       <Grid container rowSpacing={2} columnSpacing={2}>
         <GroupedTransition>

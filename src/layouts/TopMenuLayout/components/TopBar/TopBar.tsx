@@ -21,6 +21,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from 'react-router-dom';
 import { AppDivider } from '@/components/Divider';
+import { DarkModeSwitcher } from '@/components/DarkModeSwitcher';
 
 export const SearchInput: React.FC<InputBaseProps> = ({ sx }): JSX.Element => {
   return (
@@ -110,6 +111,7 @@ export const TopBar: React.FC = (): JSX.Element => {
           <Box sx={{ flexGrow: 1 }} />
           <Stack className="intro-x" justifyContent="space-between">
             <SearchInput />
+            <DarkModeSwitcher />
             <IconButton size="large" edge="end">
               <Badge badgeContent="9+" color="error" component="div">
                 <NotificationsIcon />

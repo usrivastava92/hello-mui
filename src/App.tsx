@@ -1,6 +1,8 @@
 import {
   createTheme,
   CssBaseline,
+  PaletteMode,
+  Theme,
   ThemeProvider,
   useMediaQuery
 } from '@mui/material';
@@ -24,19 +26,35 @@ import { Alerts } from '@/pages/Alerts';
 import { Chips } from '@/pages/Chips';
 import { Forms } from '@/pages/Forms';
 
+export const ColorModeContext = React.createContext({
+  toggleColorMode: () => {}
+});
+
 function App() {
+  const [mode, setMode] = React.useState<PaletteMode>('light');
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  const theme = React.useMemo(
+  const colorMode = React.useMemo(
+    () => ({
+      toggleColorMode: () => {
+        console.log('qsedw');
+        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+      }
+    }),
+    []
+  );
+  const theme = React.useMemo<Theme>(
     () =>
       createTheme(getThemeOptionsByMode(prefersDarkMode ? 'dark' : 'light')),
     [prefersDarkMode]
   );
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <BrowserRouter>{getRoutes()}</BrowserRouter>
-    </ThemeProvider>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <BrowserRouter>{getRoutes()}</BrowserRouter>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 }
 
