@@ -6,7 +6,6 @@ import {
   Card,
   Grid,
   IconButton,
-  LinearProgress,
   Link,
   Stack,
   TextField,
@@ -19,36 +18,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { AppDivider } from '@/components/Divider';
 import { GroupedTransition } from '@/components/GroupedTransition';
-
-interface ProgressBarProps {
-  percentage: number;
-  startLabel?: string;
-  endLabel?: string;
-}
-
-const ProgressBar: React.FC<ProgressBarProps> = ({
-  percentage,
-  startLabel,
-  endLabel
-}) => {
-  const LabelStack = (
-    <Stack justifyContent="space-between">
-      {startLabel && <Typography variant="xs">{startLabel}</Typography>}
-      {endLabel && <Typography variant="xs">{endLabel}</Typography>}
-    </Stack>
-  );
-  return (
-    <Box sx={{ width: '100%' }}>
-      {(startLabel || endLabel) && LabelStack}
-      <LinearProgress
-        sx={{ width: '100%', mt: 1 }}
-        color="info"
-        variant="determinate"
-        value={percentage}
-      />
-    </Box>
-  );
-};
+import { ProgressBar } from '@/components/ProgressBar';
 
 const User: React.FC<UserProps> = ({ user }) => {
   return (
