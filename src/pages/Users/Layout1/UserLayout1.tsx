@@ -52,7 +52,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
 
 const User: React.FC<UserProps> = ({ user }) => {
   return (
-    <Card>
+    <Card sx={{ height: '100%' }}>
       <Grid container sx={{ p: 2 }}>
         <Grid
           item

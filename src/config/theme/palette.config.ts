@@ -92,7 +92,7 @@ const lightModePallet: PaletteOptions = {
     800: '#d7e2eb',
     900: '#cfdde7',
     main: '#edf2f6',
-    contrastText: '#2d3748'
+    contrastText: '#2E3849'
   },
   background: {
     paper: '#ffffff',
@@ -177,7 +177,7 @@ const darkModePallet: PaletteOptions = {
     900: '#181f29',
     A100: '#313a55',
     main: '#293145',
-    contrastText: '#fff'
+    contrastText: '#E1E7EF'
   },
   background: {
     paper: '#313a55',
@@ -214,7 +214,7 @@ const darkModePallet: PaletteOptions = {
     800: '#323b4a',
     900: '#2d3748',
     main: '#52596e',
-    contrastText: '#fff'
+    contrastText: '#E1E7EF'
   },
   transparent: {
     50: 'rgba(0,0,0,0)',
@@ -228,7 +228,7 @@ const darkModePallet: PaletteOptions = {
     800: 'rgba(0,0,0,0)',
     900: 'rgba(0,0,0,0)',
     main: 'rgba(0,0,0,0)',
-    contrastText: '#fff'
+    contrastText: '#E1E7EF'
   },
   ...commonPaletteOptions
 };

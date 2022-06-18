@@ -32,7 +32,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
     <Grid container spacing={2}>
       <GroupedTransition>
         <Grid item xs={12}>
-          <Card>
+          <Card sx={{ height: '100%' }}>
             <Grid container sx={{ p: 2 }}>
               <Grid
                 item
@@ -70,8 +70,8 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
                   borderTop: { xs: 1, md: 0 },
                   borderBottom: { xs: 1, md: 0 },
                   borderColor: {
-                    xs: 'secondary.contrastBorder',
-                    md: 'secondary.contrastBorder'
+                    xs: 'secondary.900',
+                    md: 'secondary.900'
                   }
                 }}
               >
@@ -138,7 +138,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
           </Card>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Card>
+          <Card sx={{ height: '100%' }}>
             <Stack sx={{ p: 2 }} justifyContent="space-between">
               <Typography fontWeight="bold">Top Categories</Typography>
               <MoreHorizIcon />
@@ -251,7 +251,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
           </Card>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Card>
+          <Card sx={{ height: '100%' }}>
             <Stack
               sx={{ px: 2, pt: 0.8, pb: 0 }}
               justifyContent="space-between"
@@ -312,10 +312,14 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
           </Card>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Card>
-            <Stack sx={{ p: 2 }} justifyContent="space-between">
+          <Card sx={{ height: '100%' }}>
+            <Stack sx={{ pl: 2 }} justifyContent="space-between">
               <Typography fontWeight="bold">Daily Sales</Typography>
-              <Button variant="outlined" startIcon={<BorderAllIcon />}>
+              <Button
+                variant="outlined"
+                color="transparent"
+                startIcon={<BorderAllIcon />}
+              >
                 Download Excel
               </Button>
             </Stack>
@@ -427,7 +431,7 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
           </Card>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Card>
+          <Card sx={{ height: '100%' }}>
             <Stack sx={{ p: 2, pb: 0 }} justifyContent="space-between">
               <Typography fontWeight="bold">Latest Tasks</Typography>
               <Tabs
@@ -549,9 +553,13 @@ const Profile: React.FC<ProfileProps> = ({ profileInfo }) => {
         </Grid>
         <Grid item xs={12}>
           <Card>
-            <Stack sx={{ p: 2 }} justifyContent="space-between">
+            <Stack sx={{ pl: 2 }} justifyContent="space-between">
               <Typography fontWeight="bold">General Statistics</Typography>
-              <Button variant="outlined" startIcon={<CodeIcon />}>
+              <Button
+                variant="outlined"
+                color="transparent"
+                startIcon={<CodeIcon />}
+              >
                 Download XML
               </Button>
             </Stack>
