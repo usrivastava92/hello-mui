@@ -40,6 +40,9 @@ const standardVariant = (color: TextFieldColorsType): TextFieldVariantProps => {
           '& label.Mui-focused': {
             fontWeight: 500
           },
+          '&:hover:not(.Mui-disabled):before': {
+            border: 'none'
+          },
           '& .MuiInput-underline:before': {
             borderColor: (theme.palette[color] as ColorPartial)['500']
           },
@@ -77,12 +80,17 @@ const filledVariant = (color: TextFieldColorsType): TextFieldVariantProps => {
       return {
         props: { variant: variant, color: color },
         style: ({ theme }) => ({
+          borderRadius: theme.spacing(2),
           input: {
             backgroundColor: alpha(
               (theme.palette[color] as ColorPartial)['50']!,
               0.5
             ),
-            color: (theme.palette[color] as ColorPartial)['500']
+            color: (theme.palette[color] as ColorPartial)['500'],
+            borderRadius: theme.spacing(2)
+          },
+          '&:hover:not(.Mui-disabled):before': {
+            border: 'none'
           },
           '& label': {
             fontWeight: 400,
@@ -149,11 +157,15 @@ const outlinedVariant = (color: TextFieldColorsType): TextFieldVariantProps => {
               borderColor: (theme.palette[color] as ColorPartial)['100']
             },
             '&.Mui-focused fieldset': {
-              borderWidth: 3,
+              borderWidth: 0.5,
               borderColor: alpha(
                 (theme.palette[color] as ColorPartial)['500']!,
+                0.5
+              ),
+              boxShadow: `${alpha(
+                (theme.palette[color] as ColorPartial)['100']!,
                 0.6
-              )
+              )} 0 0 0 0.17rem`
             }
           }
         })

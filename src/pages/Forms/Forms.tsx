@@ -41,6 +41,31 @@ export const Forms: React.FC = () => {
             </Card>
           </Grid>
         ))}
+        <Grid item sm={12} lg={6}>
+          <Card>
+            <Typography
+              sx={{ m: 2, textTransform: 'capitalize' }}
+              variant="base"
+              component="div"
+            >
+              Text Inputs
+            </Typography>
+            <AppDivider type="secondary" />
+            <Stack spacing={2} sx={{ p: 2 }} flexWrap="wrap">
+              {TextFieldColors.map((color, index) => (
+                <TextField
+                  defaultValue="Hello World"
+                  helperText="Incorrect entry."
+                  key={index}
+                  color={color}
+                  label={color}
+                >
+                  {color}
+                </TextField>
+              ))}
+            </Stack>
+          </Card>
+        </Grid>
       </Grid>
     </>
   );
