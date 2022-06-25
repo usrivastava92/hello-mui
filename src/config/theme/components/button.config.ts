@@ -269,11 +269,6 @@ export const BUTTON_OPTIONS: {
   styleOverrides?: ComponentsOverrides['MuiButton'];
   variants?: ComponentsVariants['MuiButton'];
 } = {
-  defaultProps: {
-    sx: {
-      m: 2
-    }
-  },
   styleOverrides: {
     root: {
       textTransform: 'capitalize',

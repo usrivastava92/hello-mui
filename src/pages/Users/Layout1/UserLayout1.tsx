@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Avatar,
-  Box,
   Button,
   Card,
   Grid,
@@ -65,7 +64,7 @@ const User: React.FC<UserProps> = ({ user }) => {
         </Grid>
       </Grid>
       <AppDivider type="secondary" />
-      <Grid container sx={{ px: 2 }} spacing={2}>
+      <Grid container sx={{ p: 2 }} spacing={2}>
         <Grid
           item
           xs={12}
@@ -108,14 +107,10 @@ export const UserLayout1: React.FC = () => {
   return (
     <>
       <Typography variant="lg">Users Layout 1</Typography>
-      <Stack spacing={1} sx={{ py: 2 }}>
-        <Button color="info" variant="contained">
+      <Stack sx={{ py: 2 }} justifyContent="space-between">
+        <Button color="info" variant="contained" endIcon={<AddIcon />}>
           Add New User
         </Button>
-        <IconButton color="secondary" sx={{ borderRadius: 2 }}>
-          <AddIcon />
-        </IconButton>
-        <Box flexGrow={1}></Box>
         <TextField variant="filled" color="primary"></TextField>
       </Stack>
       <Grid container rowSpacing={2} columnSpacing={2}>

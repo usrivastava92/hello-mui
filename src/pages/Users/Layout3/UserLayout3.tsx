@@ -78,6 +78,7 @@ const User: React.FC<UserProps> = ({ user }) => {
           <AppDivider type="secondary" />
         </Grid>
         <Grid
+          sx={{ p: 2 }}
           item
           xs={12}
           display="flex"
